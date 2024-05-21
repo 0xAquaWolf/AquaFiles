@@ -1,0 +1,1 @@
+yabai --restart-service
