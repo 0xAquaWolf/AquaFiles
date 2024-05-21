@@ -29,7 +29,7 @@ config.audible_bell = "Disabled" -- disable sounds when at the end of doc
 -- config.color_scheme = scheme_for_apperance(wezterm.gui.get_apperanace()) -- get the current theme
 
 config.font = wezterm.font("OperatorMonoSSmLig Nerd Font")
-config.font_size = 18.0
+config.font_size = 20
 -- config.font_weight
 config.cursor_blink_rate = 800
 
