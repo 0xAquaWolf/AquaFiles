@@ -10,13 +10,12 @@ pushd ~/.config/karabiner/
 echo "Deleting old karabiner.json config file"
 rm -rf karabiner.json
 # stow the new files
-pushd ~/.dotfiles/
+pushd ~/AquaFiles/
 echo "Stowing Karabiners"
 stow karabiner
 
 echo "Removing all directories from stack popd"
 # Pop all directories off of the stack
-popd
 popd
 popd
 
