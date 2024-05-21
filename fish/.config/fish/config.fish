@@ -44,6 +44,7 @@ alias which "type -a"
 
 alias .. "cd .."
 alias ... "cd ../.."
+alias .... "cd ../../.."
 
 # |======  LS  ======|
 alias ls "eza --icons=always --git-ignore --ignore-glob='node_modules'"
@@ -59,7 +60,7 @@ alias sfs "source ~/.config/fish/config.fish" # source fish shell
 alias nrc "vim ~/.config/nvim/init.lua"
 alias arc "vim ~/.alacritty.yml"
 alias wrc "vim ~/.wezterm.lua"
-alias skrd "vim ~/.skhdrc"
+alias skrc "vim ~/.skhdrc"
 alias trc "vim ~/.tmux.conf"
 alias zelrc "vim ~/.config/zellij/config.kdl"
 alias yrc "vim ~/.yabairc"
