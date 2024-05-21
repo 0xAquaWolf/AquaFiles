@@ -1,0 +1,11 @@
+command_timeout = 10000
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[cmd_duration]
+min_time = 4
+show_milliseconds = false
+disabled = false
+format = " 🕙 $duration($style) "
+style = "bold italic #87A752"

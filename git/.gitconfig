@@ -1,0 +1,7 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = 0xAquaWolf
+	email = 0xaquawolf@protonmail.com
+[core]
+	editor = nvim
