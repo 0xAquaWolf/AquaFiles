@@ -64,7 +64,7 @@ alias skrc "vim ~/.skhdrc"
 alias trc "vim ~/.tmux.conf"
 alias zelrc "vim ~/.config/zellij/config.kdl"
 alias yrc "vim ~/.yabairc"
-alias krc "vim ~/.config/karabiner/karabiner.json"
+alias krc "vim ~/repos/karabiner/rules.ts"
 alias zshrc "vim ~/.config/.zshrc"
 
 # |======  Applications  ======|
@@ -112,6 +112,34 @@ end
 function stow_all
     for pkg in */
         stow --adopt (basename $pkg)
+    end
+end
+
+function toggle_wezterm_font
+    set CONFIG_FILE "$HOME/AquaFiles/wezterm/.wezterm.lua"
+    set FONT_SIZE_18 18
+    set FONT_SIZE_20 20
+
+    # Check if the config file exists
+    if test -f $CONFIG_FILE
+        # Find the current font size using awk
+        set CURRENT_FONT_SIZE (awk -F' = ' '/font_size/ {print $2}' $CONFIG_FILE | tr -d ',')
+
+        # Toggle the font size
+        if test "$CURRENT_FONT_SIZE" = "$FONT_SIZE_18"
+            set NEW_FONT_SIZE $FONT_SIZE_20
+        else if test "$CURRENT_FONT_SIZE" = "$FONT_SIZE_20"
+            set NEW_FONT_SIZE $FONT_SIZE_18
+        else
+            echo "Current font size is not 18 or 20. No changes made"
+            return
+        end
+
+        # Use sed to replace the current font size with the new font size
+        sed -i.bak "s/font_size = $CURRENT_FONT_SIZE/font_size = $NEW_FONT_SIZE/" "$CONFIG_FILE"
+        echo "Font size updated from $CURRENT_FONT_SIZE to $NEW_FONT_SIZE in $CONFIG_FILE"
+    else
+        echo "Configuration file $CONFIG_FILE not found"
     end
 end
 
