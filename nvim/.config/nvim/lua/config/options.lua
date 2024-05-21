@@ -13,7 +13,7 @@ opt.foldmethod = "manual"
 opt.foldenable = false
 
 -- scrolling
-opt.number = false
-opt.relativenumber = false
+opt.number = true
+opt.relativenumber = true
 opt.scrolloff = 8
 opt.linebreak = true
