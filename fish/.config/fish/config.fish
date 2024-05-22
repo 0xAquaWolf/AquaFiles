@@ -39,6 +39,7 @@ set -g theme_hostname always
 alias vim nvim
 alias c clear
 alias e exit
+alias cd z
 
 # |====== Utils  ======|
 alias sf "fzf | xargs nvim"
@@ -94,7 +95,6 @@ alias cap "cat package.json"
 alias bd "bun dev"
 alias bp "bun run build && bun run preview"
 alias bb "bun run build"
-
 
 # |======  Folders ======|
 alias sb "cd /Users/no1/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain && vim ."
