@@ -239,7 +239,8 @@ alias krs="launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_conso
 alias sf="fd --type f --hidden --exclude .git | fzf | xargs nvim"
 
 # |====== Eval ======|
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+
 eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
