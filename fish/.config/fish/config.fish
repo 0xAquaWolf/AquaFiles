@@ -1,3 +1,9 @@
+eval (/opt/homebrew/bin/brew shellenv)
+
+starship init fish | source # https://starship.rs/
+zoxide init fish | source # 'ajeetdsouza/zoxide'
+fnm --log-level quiet env --use-on-cd | source # "Schniz/fnm"
+
 # paths
 set fish_greeting ""
 set fish_key_bindings fish_vi_key_bindings
@@ -9,20 +15,21 @@ fish_add_path ~/scripts
 fish_add_path ~/go/bin
 
 # global variables
-# set -gx TERM xterm-256color
+# set -x LS_COLORS (vivid generate catppuccin-mocha)
+set -gx TERM xterm-256color
 set -Ux EDITOR nvim
 set -gx VISUAL nvim
 set -g ESPANSO_CONFIG ~/.config/espanso/
-set -x LS_COLORS (vivid generate catppuccin-mocha)
 set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -Ux FZF
 
 # FZF Config
-set -g FZF_DEFAULT_COMMAND 'ag -g "" --hidden --ignore .git'
+set -g FZF_DEFAULT_COMMAND "fd -H -E '.git'"
 set -g FZF_PREVIEW_FILE_CMD 'Bat --style=numbers --color=always --line-rage :500'
 set -g FZF_LEGACY_KEYBINDINGS 0
 # theme
-
 set -g theme_color_scheme "Catppuccin Mocha"
+
 set -g fish_prompt_pwd_dir_length 1
 set -g theme_display_user yes
 set -g theme_hide_hostname no
@@ -35,7 +42,7 @@ alias e exit
 
 # |====== Utils  ======|
 alias pp "string split ':' $PATH | fzf" # print path
-alias sf "fd --type f --hidden --exclude .git | fzf | xargs nvim"
+alias sf "fzf | xargs nvim"
 alias rm "rm -i"
 alias cp "cp -i"
 alias mkdir "mkdir -p"
@@ -92,8 +99,10 @@ alias bb "bun run build"
 # |======  Folders ======|
 alias sb "cd /Users/no1/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain && vim ."
 
-# |======  Folders ======|
-
+# |======  HomeBrew ======|
+alias bi "arch -arm64 brew install"
+alias bs "brew search"
+alias bi "brew info"
 
 # |======  Functions ======|
 
@@ -152,11 +161,16 @@ function help
     command $argv --help 2>&1 | bat --language=help --style=plain
 end
 
-eval (/opt/homebrew/bin/brew shellenv)
-
-fzf --fish | source
-zoxide init fish | source
-starship init fish | source
+function where
+    for cmd in $argv
+        command -s $cmd
+        if test $status -eq 0
+            command -v $cmd
+        else
+            echo "$cmd: command not found"
+        end
+    end
+end
 
 # switch statement that figures out your os and uses the correct config 
 # switch (uname)
