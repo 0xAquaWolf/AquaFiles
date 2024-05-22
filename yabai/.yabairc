@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
+
 #
 # for this to work you must configure sudo such that
 # it will be able to run the command without password
@@ -16,7 +18,6 @@ yabai -m config layout bsp
 
 echo "yabai configuration loaded.."
 
-echo "Hello World!"
 # Defaults new window position: Verticl -> Right | Horizontal -> Bottom
 yabai -m config window_placement second_child
 
@@ -64,18 +65,14 @@ yabai -m rule --add app="^Walter's Currency Converter.app$" manage=off
 yabai -m rule --add app="^Rize$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
-yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off
+yabai -m rule --add label="System Settings" app="^System Settings$" title=".*" manage=off
 yabai -m rule --add label="App Store" app="^App Store$" manage=off
 yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
 yabai -m rule --add label="Calculator" app="^Calculator$" manage=off
 yabai -m rule --add label="Dictionary" app="^Dictionary$" manage=off
 yabai -m rule --add label="Software Update" title="Software Update" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
-
-# yabai -m rule --add label="KeePassXC" app="^KeePassXC$" manage=off
-# yabai -m rule --add label="mpv" app="^mpv$" manage=off
-# yabai -m rule --add label="HHKB" app="HHKB Keymap Tool" title="About This Mac" manage=off
-#
+yabai -m rule --add label="KeyCaster" app="KeyCaster" manage=off
 
 # ===== Signals ================================
 
