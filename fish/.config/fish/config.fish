@@ -1,4 +1,4 @@
-eval (/opt/homebrew/bin/brew shellenv)
+# eval (/opt/homebrew/bin/brew shellenv)
 
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
@@ -41,13 +41,13 @@ alias c clear
 alias e exit
 
 # |====== Utils  ======|
-alias pp "string split ':' $PATH | fzf" # print path
 alias sf "fzf | xargs nvim"
 alias rm "rm -i"
 alias cp "cp -i"
 alias mkdir "mkdir -p"
 alias h history
 alias which "type -a"
+alias pp "string split ':' $PATH | fzf"
 
 alias .. "cd .."
 alias ... "cd ../.."
