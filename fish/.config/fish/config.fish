@@ -23,6 +23,7 @@ set -g ESPANSO_CONFIG ~/.config/espanso/
 set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -Ux FZF
 set -gx XDG_CONFIG_HOME ~/.config
+set -gx BAT_THEME "Catppuccin Mocha"
 
 # FZF Config
 set -g FZF_DEFAULT_COMMAND "fd -H -E '.git'"
