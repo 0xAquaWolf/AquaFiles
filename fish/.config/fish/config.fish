@@ -22,6 +22,7 @@ set -gx VISUAL nvim
 set -g ESPANSO_CONFIG ~/.config/espanso/
 set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -Ux FZF
+set -gx XDG_CONFIG_HOME ~/.config
 
 # FZF Config
 set -g FZF_DEFAULT_COMMAND "fd -H -E '.git'"
@@ -39,7 +40,6 @@ set -g theme_hostname always
 alias vim nvim
 alias c clear
 alias e exit
-alias cd z
 
 # |====== Utils  ======|
 alias sf "fzf | xargs nvim"
