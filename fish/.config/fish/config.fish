@@ -1,4 +1,4 @@
-# eval (/opt/homebrew/bin/brew shellenv)
+eval (/opt/homebrew/bin/brew shellenv)
 
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
@@ -15,13 +15,13 @@ fish_add_path ~/scripts
 fish_add_path ~/go/bin
 
 # global variables
-# set -x LS_COLORS (vivid generate catppuccin-mocha)
+
+set -x LS_COLORS (vivid generate catppuccin-mocha)
 set -gx TERM xterm-256color
 set -Ux EDITOR nvim
 set -gx VISUAL nvim
 set -g ESPANSO_CONFIG ~/.config/espanso/
 set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
-set -Ux FZF
 set -gx XDG_CONFIG_HOME ~/.config
 set -gx BAT_THEME "Catppuccin Mocha"
 
@@ -29,9 +29,11 @@ set -gx BAT_THEME "Catppuccin Mocha"
 set -g FZF_DEFAULT_COMMAND "fd -H -E '.git'"
 set -g FZF_PREVIEW_FILE_CMD 'Bat --style=numbers --color=always --line-rage :500'
 set -g FZF_LEGACY_KEYBINDINGS 0
+
 # theme
 set -g theme_color_scheme "Catppuccin Mocha"
 
+# fish options
 set -g fish_prompt_pwd_dir_length 1
 set -g theme_display_user yes
 set -g theme_hide_hostname no
@@ -48,7 +50,7 @@ alias rm "rm -i"
 alias cp "cp -i"
 alias mkdir "mkdir -p"
 alias h history
-alias which "type -a"
+#alias which "type -a"
 alias pp "string split ':' $PATH | fzf"
 
 alias .. "cd .."
@@ -62,13 +64,13 @@ alias ll "ls -l"
 alias lt "ls -lTa"
 
 # |======  Config App  ======|
-alias nrc "vim ~/.dotfiles/nvim/.config/nvim/init.lua"
+alias nrc "vim ~/.config/nvim/lua/"
 alias frc "vim ~/.config/fish/config.fish" # fish shell rc
 alias erc "vim ~/.config/espanso/"
 alias sfs "source ~/.config/fish/config.fish" # source fish shell
 alias nrc "vim ~/.config/nvim/init.lua"
 alias arc "vim ~/.alacritty.yml"
-alias wrc "vim ~/.wezterm.lua"
+alias wrc "vim ~/.config/wezterm/wezterm.lua"
 alias skrc "vim ~/.skhdrc"
 alias trc "vim ~/.tmux.conf"
 alias zelrc "vim ~/.config/zellij/config.kdl"
@@ -171,6 +173,24 @@ function where
             echo "$cmd: command not found"
         end
     end
+end
+
+function rds # remove DS_STORE
+    # Check if argument is provided, otherwise use current directory
+    if test -z $argv
+        set directory .
+    else
+        set directory $argv[1]
+    end
+
+    # Print message indictating the directory being processed
+    echo "Removing .DS_STORE files from $directory"
+
+    # remove .DS_STORE files
+    find $directory -type f -name .DS_STORE -exec rm -f {} +
+
+    # print message indicating completion
+    echo "ALL .DS_STORE files have been removed from $directory"
 end
 
 # switch statement that figures out your os and uses the correct config 
