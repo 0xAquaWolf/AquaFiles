@@ -58,6 +58,7 @@ yabai -m config                              \
 
 # yabai blacklist rules
 yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
+yabai -m rule --add app="^Raycast Settings$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Gestimer$" manage=off
