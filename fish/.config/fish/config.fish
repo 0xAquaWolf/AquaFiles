@@ -52,6 +52,7 @@ alias mkdir "mkdir -p"
 alias h history
 alias pp "string split ':' $PATH | fzf"
 alias skv "skhd --stop-service && skhd -V"
+alias awi "yabai -m query --windows | fx"
 
 alias .. "cd .."
 alias ... "cd ../.."
