@@ -62,7 +62,7 @@ alias l "eza --icons=always --git --ignore-glob='node_modules'"
 alias ls "eza --icons=always --git-ignore --ignore-glob='node_modules'"
 alias lla "ls -la"
 alias ll "ls -l"
-alias lt "ls -lTa"
+alias lt "ls --tree --level=3 --long"
 
 # |======  Config App  ======|
 alias nrc "vim ~/.config/nvim/lua/"
