@@ -2,7 +2,7 @@ eval (/opt/homebrew/bin/brew shellenv)
 
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
-fnm --log-level quiet env --use-on-cd | source # "Schniz/fnm"
+fnm env --use-on-cd | source # "Schniz/fnm"
 
 # paths
 set fish_greeting ""
@@ -50,14 +50,15 @@ alias rm "rm -i"
 alias cp "cp -i"
 alias mkdir "mkdir -p"
 alias h history
-#alias which "type -a"
 alias pp "string split ':' $PATH | fzf"
+alias skv "skhd --stop-service && skhd -V"
 
 alias .. "cd .."
 alias ... "cd ../.."
 alias .... "cd ../../.."
 
 # |======  LS  ======|
+alias l "eza --icons=always --git --ignore-glob='node_modules'"
 alias ls "eza --icons=always --git-ignore --ignore-glob='node_modules'"
 alias lla "ls -la"
 alias ll "ls -l"
