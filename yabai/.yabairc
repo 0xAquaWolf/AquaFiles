@@ -32,7 +32,7 @@ yabai -m config                              \
     window_animation_duration   0.10         \
     window_opacity_duration     0.10         \
     active_window_opacity       1            \
-    normal_window_opacity       0.80         \
+    normal_window_opacity       0.95         \
     window_opacity              on           \
     insert_feedback_color       0xaad75f5f   \
     active_window_border_color  0xBF775759   \
@@ -63,8 +63,7 @@ yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Gestimer$" manage=off
 yabai -m rule --add app="^Walter's Currency Converter$" manage=off
-yabai -m rule --add app="^Rize$" manage=off
-yabai -m rule --add app="^Rize Blocker$" manage=off
+yabai -m rule --add app="^Rize$" title="^Blocker$" manage=off
 yabai -m rule --add app="^Mail$" manage=off
 yabai -m rule --add app="^Notes$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
@@ -79,13 +78,14 @@ yabai -m rule --add app="^IINA$" manage=off
 yabai -m rule --add app="^Shortcat$" manage=off
 yabai -m rule --add app="^(Calculator|System Preferences|Archieve Utilitiy)$" manage=off
 yabai -m rule --add label="mpv" app="^mpv$" manage=off
-yyabai -m rule --add title='Settings$' manage=off
+yabai -m rule --add title='Settings$' manage=off
 yabai -m rule --add app="^System Settings$" title=".*" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add title="^Preferences$" manage=off
 yabai -m rule --add title="^Digital Colour Meter$" manage=off
-yabai -m rule --add title="^General.*" manage=offabai -m rule --add label="KeePassXC" app="^KeePassXC$" manage=off
+yabai -m rule --add title="^General.*" manage=off
+yabai -m rule --add title="^Steam*" manage=off
 
 # use this config to always float and position a specific app like our floating todolist
 # yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2

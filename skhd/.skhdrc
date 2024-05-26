@@ -5,6 +5,7 @@
     "arc"
     "Brave Browser"
     "Obsidian"
+    "Final Cut Pro"
 ]
 
 # === App launch commands ===
@@ -96,7 +97,7 @@ shift + alt - y : yabai -m space --mirror y-axis
 # flip along x-axis
 shift + alt - x : yabai -m space --mirror y-axis
 # balance out tree of windows (reset to default)
-shift + alt - b : yabai -m space --balance
+shift + cmd - b : yabai -m space --balance
 
 # Make window native fullscreen
 shift + alt - f : yabai -m window --toggle zoom-fullscreen
