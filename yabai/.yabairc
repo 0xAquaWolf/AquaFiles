@@ -86,6 +86,7 @@ yabai -m rule --add title="^Preferences$" manage=off
 yabai -m rule --add title="^Digital Colour Meter$" manage=off
 yabai -m rule --add title="^General.*" manage=off
 yabai -m rule --add title="^Steam*" manage=off
+# yabai -m rule --add app="^OBS Studio$" title="^Chat$" sticky=on
 
 # use this config to always float and position a specific app like our floating todolist
 # yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2
