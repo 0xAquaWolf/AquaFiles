@@ -1,3 +1,21 @@
+#!/bin/zsh
+
+# Install xCode cli tools
+echo "Installing commandline tools..."
+xcode-select --install
+
+# Homebrew
+## Install
+echo "Installing Brew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew analytics off
+
+## Taps
+echo "Tapping Brew..."
+brew tap homebrew/cask-fonts
+brew tap FelixKratz/formulae
+brew tap koekeishiya/formulae
+
 # check the current nvram boot arms are corrent
 # if not set and reboot
 # if corrent continue the script
@@ -13,7 +31,23 @@ reboot now
 # make sure brew is being installed in the correct directory
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install stow fish neovim starship zoxide fnm vivid
+echo "Installing Brew Formulae..."
+
+brew install stow \
+fish \
+neovim \
+starship \
+zoxide \
+fnm \
+vivid \
+eza \
+fzf \
+rg \
+bat \
+fastfetch \
+fd \
+lazygit \
+wget
 
 # add fish to /etc/shells -> /usr/local/bin/fish
 sudo echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
@@ -37,9 +71,6 @@ cd ~/AquaFiles
 stow fish
 
 source ~/.config/fish/config.fish
-
-# This is needed after i stowed fish config
-brew install eza fzf rg bat fastfetch fd lazygit wget
 
 cd ~/AquaFiles
 stow git
