@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 echo "Installing Dependencies"
 # Packages
 brew install lua
