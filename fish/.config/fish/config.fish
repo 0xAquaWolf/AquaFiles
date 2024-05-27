@@ -13,9 +13,10 @@ fish_add_path /bin
 fish_add_path ~/.local/bin
 fish_add_path ~/scripts
 fish_add_path ~/go/bin
+fish_add_path ~/.bun/bin
+
 
 # global variables
-
 set -x LS_COLORS (vivid generate catppuccin-mocha)
 set -gx TERM xterm-256color
 set -Ux EDITOR nvim
@@ -24,6 +25,7 @@ set -g ESPANSO_CONFIG ~/.config/espanso/
 set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -gx XDG_CONFIG_HOME ~/.config
 set -gx BAT_THEME "Catppuccin Mocha"
+set -gx BUN_INSTALL "$HOME/.bun"
 
 # FZF Config
 set -g FZF_DEFAULT_COMMAND "fd -H -E '.git'"
@@ -59,8 +61,8 @@ alias ... "cd ../.."
 alias .... "cd ../../.."
 
 # |======  LS  ======|
-alias l "eza --icons=always --git --ignore-glob='node_modules'"
-alias ls "eza --icons=always --git-ignore --ignore-glob='node_modules'"
+alias l "eza --icons=always --git"
+alias ls "eza --icons=always --git --git-ignore --ignore-glob='node_modules'"
 alias lla "ls -la"
 alias ll "ls -l"
 alias lt "ls --tree --level=3 --long"
@@ -209,3 +211,5 @@ end
 # if test -f $LOCAL_CONFIG
 # end
 #   source $LOCAL_CONFIG
+
+# bun
