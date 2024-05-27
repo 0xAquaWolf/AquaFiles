@@ -9,8 +9,8 @@
 ]
 
 # === App launch commands ===
-cmd - return : open -n -a "wezterm.app"
-cmd + shift - return : open -n ~
+# cmd - return : open -n -a "wezterm.app"
+# cmd + shift - return : open -n ~
 
 # TODO: figure out window resizing
 
@@ -139,7 +139,6 @@ ctrl + alt + cmd - s : yabai --start-service; # o for stOp
 #
 # # sleep
 # cmd + shift - s : osascript -e 'tell app "System Events" to sleep'
-
 
 # Extras
 
