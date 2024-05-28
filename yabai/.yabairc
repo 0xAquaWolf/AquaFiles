@@ -24,8 +24,8 @@ yabai -m config --space games layout float
 # global settings
 yabai -m config                              \
     external_bar                off:41:0     \
-    mouse_follows_focus         on          \ # set to off for thumbnails
-    focus_follows_mouse         autoraise    \ # set to default for thumbnailsb
+    mouse_follows_focus         on           \
+    focus_follows_mouse         autoraise    \
     window_placement            second_child \
     window_topmost              off          \
     window_shadow               off          \
@@ -66,7 +66,7 @@ yabai -m rule --add app="^Walter's Currency Converter$" manage=off
 yabai -m rule --add app="^Rize$" title="^Blocker$" manage=off
 yabai -m rule --add app="^Mail$" manage=off
 yabai -m rule --add app="^Notes$" manage=off
-yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Finder$" manage=on
 yabai -m rule --add app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
@@ -86,7 +86,7 @@ yabai -m rule --add title="^Preferences$" manage=off
 yabai -m rule --add title="^Digital Colour Meter$" manage=off
 yabai -m rule --add title="^General.*" manage=off
 yabai -m rule --add title="^Steam*" manage=off
-# yabai -m rule --add app="^OBS Studio$" title="^Chat$" sticky=on
+yabai -m rule --add app="^OBS Studio$" title="^Chat$" manage=off
 
 # use this config to always float and position a specific app like our floating todolist
 # yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2
