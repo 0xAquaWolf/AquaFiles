@@ -1,5 +1,5 @@
-export interface KarabinerRules {
   description?: string;
+  export interface KarabinerRules {
   manipulators?: Manipulator[];
 }
 

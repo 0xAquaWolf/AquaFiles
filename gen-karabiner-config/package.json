@@ -12,6 +12,10 @@
   },
   "scripts": {
     "build": "tsm rules.ts",
-    "watch": "nodemon --exec yarn build -e ts"
+    "watch": "nodemon --exec yarn build -e ts",
+    "play": "ts-node playground.ts"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.2"
   }
 }

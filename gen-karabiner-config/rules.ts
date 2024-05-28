@@ -10,9 +10,10 @@ const rules: KarabinerRules[] = [
         description: "Caps Lock -> Hyper Key",
         from: {
           key_code: "caps_lock",
-          modifiers: {
-            optional: ["any"],
-          },
+        },
+        "parameters": {
+          "basic.to_if_alone_timeout_milliseconds": 250,
+          "basic.to_if_held_down_threshold_milliseconds": 250 
         },
         to: [
           {
@@ -49,9 +50,6 @@ const rules: KarabinerRules[] = [
           modifiers: {
             mandatory: [
               "command"
-            ],
-            optional: [
-              "any"
             ]
           }
         },
@@ -75,9 +73,6 @@ const rules: KarabinerRules[] = [
               "command",
               "shift"
             ],
-            optional: [
-              "any"
-            ]
           }
         },
         to: [
@@ -339,7 +334,7 @@ const rules: KarabinerRules[] = [
 ];
 
 fs.writeFileSync(
-  "~/AquaFiles/karabiner/.config/karabiner/karabiner.json",
+  "/Users/0xaquawolf/AquaFiles/karabiner/.config/karabiner/karabiner.json",
   JSON.stringify(
     {
       global: {
