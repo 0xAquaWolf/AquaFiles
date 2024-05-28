@@ -24,8 +24,8 @@ yabai -m config --space games layout float
 # global settings
 yabai -m config                              \
     external_bar                off:41:0     \
-    mouse_follows_focus         on           \
-    focus_follows_mouse         autoraise    \
+    mouse_follows_focus         on          \ # set to off for thumbnails
+    focus_follows_mouse         autoraise    \ # set to default for thumbnailsb
     window_placement            second_child \
     window_topmost              off          \
     window_shadow               off          \
