@@ -2,8 +2,7 @@
 # this script is going to be used to update karabiners json
 
 # CD into karabiners repo dir
-pushd ~/repos/karabiner/
-
+pushd ~/AquaFiles/gen-karabiner-config/
 echo "Building Karabiners.json config file"
 bun run build
 
