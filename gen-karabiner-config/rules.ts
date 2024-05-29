@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
+import { createHyperSubLayers, app, open, rectangle, shell, yabai } from "./utils";
 
 const rules: KarabinerRules[] = [
  {
@@ -12,8 +12,8 @@ const rules: KarabinerRules[] = [
           key_code: "caps_lock",
         },
         "parameters": {
-          "basic.to_if_alone_timeout_milliseconds": 250,
-          "basic.to_if_held_down_threshold_milliseconds": 250 
+          "basic.to_if_alone_timeout_milliseconds": 4000,
+          // "basic.to_if_held_down_threshold_milliseconds": 250 
         },
         to: [
           {
@@ -84,15 +84,13 @@ const rules: KarabinerRules[] = [
     ]
   },
   ...createHyperSubLayers({
-    spacebar: open(
-      "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
-    ),
+    spacebar: yabai("yabai -m window --focus east"),
+    // yabai window commands
+    h : yabai("yabai -m window --focus west"),
+    j : yabai("yabai -m window --focus south"),
+    l : yabai("yabai -m window --focus east"),
+    k : yabai("yabai -m window --focus north"),
     // b = "B"rowse
-    /* 
-     * github trending explore page
-     * youtube -> channel
-     * twitch -> channel
-     * */
     b: {
       t: open("https://twitter.com"),
       r: open("https://reddit.com"),

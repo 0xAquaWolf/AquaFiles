@@ -237,7 +237,7 @@ function describeYabaiCommand(command) {
 
     for (const { regex, description } of descriptions) {
         if (regex.test(command)) {
-            return description;
+            return `Yabai: ${description}` ;
         }
     }
 
@@ -248,14 +248,14 @@ function describeYabaiCommand(command) {
    *
  * Shortcut for managing window management with yabai
  */
-export function yabai(shell_command: string): LayerCommand {
+export function yabai(command: string): LayerCommand {
   return {
     to: [
       {
-        shell_command,
+        shell_command: command.trim(),
       },
     ],
-    description: `Yabai: ${shell_command}`,
+    description: describeYabaiCommand(command),
   };
 }
 
