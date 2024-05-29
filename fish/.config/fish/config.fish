@@ -79,7 +79,7 @@ alias skrc "vim ~/.skhdrc"
 alias trc "vim ~/.tmux.conf"
 alias zelrc "vim ~/.config/zellij/config.kdl"
 alias yrc "vim ~/.yabairc"
-alias krc "vim ~/repos/karabiner/rules.ts"
+alias krc "vim ~/AquaFiles/gen-karabiner-config/rules.ts"
 alias zshrc "vim ~/.config/.zshrc"
 
 # |======  Applications  ======|
@@ -91,7 +91,7 @@ alias cat bat
 alias lg lazygit
 alias ct cointop
 alias top htop
-alias zel "zellij --layout ~/.config/zellij/configs/layouts/dev.kdl"
+alias zel "zellij --layout ~/.config/zellij/config/layouts/dev.kdl"
 alias logk "tail -f ~/.local/share/karabiner/log/console_user_server.log"
 
 # |======  Github ======|
