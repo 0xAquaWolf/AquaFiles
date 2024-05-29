@@ -47,7 +47,18 @@ bat \
 fastfetch \
 fd \
 lazygit \
-wget
+wget \
+zellij \
+gh \
+httpie \
+espanso \
+speedtest-cli \
+htop \
+bpytop \
+mailhog \
+gorilla-cli \
+git-delta
+
 
 # add fish to /etc/shells -> /usr/local/bin/fish
 sudo echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
