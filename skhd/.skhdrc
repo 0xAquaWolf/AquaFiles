@@ -1,24 +1,24 @@
 # === blacklist apps ===
 .blacklist [
-    "qutebrowser"
     "google chrome"
-    "arc"
     "Brave Browser"
-    "Obsidian"
     "Final Cut Pro"
+    "Arc"
+    "Obsidian"
+    "CapCut"
 ]
 
 # === App launch commands ===
-# cmd - return : open -n -a "wezterm.app"
-# cmd + shift - return : open -n ~
+cmd - return : open -n -a "wezterm.app"
+cmd + shift - return : open -n ~
 
 # TODO: figure out window resizing
 
 # === window focus ===
 cmd - h : yabai -m window --focus west
-cmd - j : yabai -m window --focus south
 cmd - k : yabai -m window --focus north
 cmd - l : yabai -m window --focus east
+cmd - j : yabai -m window --focus south
 
 # === swap windows ===
 ctrl + cmd - j : yabai -m window --swap south
@@ -26,11 +26,14 @@ ctrl + cmd - k : yabai -m window --swap north
 ctrl + cmd - h : yabai -m window --swap west
 ctrl + cmd - l : yabai -m window --swap east
 
+# Enable / Disable gaps in current workspace: ctrl + lalt - g
+ctrl + lalt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
+
 # === warp windows (maintain relative tiling) ===
-ctrl + alt - j : yabai -m window --warp south
-ctrl + alt - k : yabai -m window --warp north
-ctrl + alt - h : yabai -m window --warp west
-ctrl + alt - l : yabai -m window --warp east
+# ctrl + alt - j : yabai -m window --warp south
+# ctrl + alt - k : yabai -m window --warp north
+# ctrl + alt - h : yabai -m window --warp west
+# ctrl + alt - l : yabai -m window --warp east
 
 # === send window to desktop and follow focus ===
 
@@ -54,17 +57,13 @@ shift + ctrl - down : yabai -m window --move rel:0:30
 shift + ctrl - up : yabai -m window --move rel:0:-30
 shift + ctrl - right: yabai -m window --move rel:30:0
 
-# increase window size
-# shift + alt - h : yabai -m window --resize left:-20:0
-# shift + alt - j : yabai -m window --resize bottom:0:-20
-# shift + alt - k : yabai -m window --resize top:0:-20
-# shift + alt - l : yabai -m window --resize right:20:0
+## Resize (ctrl + lalt - ...)
+# Resize windows: ctrl + lalt - {h, j, k, l}
+ctrl + lalt - h    : yabai -m window --resize right:-100:0 || yabai -m window --resize left:-100:0
+ctrl + lalt - j    : yabai -m window --resize bottom:0:100 || yabai -m window --resize top:0:100
+ctrl + lalt - k    : yabai -m window --resize bottom:0:-100 || yabai -m window --resize top:0:-100
+ctrl + lalt - l : yabai -m window --resize right:100:0 || yabai -m window --resize left:100:0
 
-# decrease window size
-shift + cmd - h : yabai -m window --resize left:-20:0
-shift + cmd - j : yabai -m window --resize bottom:0:-20
-shift + cmd - k : yabai -m window --resize top:0:20
-shift + cmd - l : yabai -m window --resize right:20:0
 
 # set insertion point in focused container (this is like i3 where you specify where the next window should tile)
 # ctrl + alt - h : yabai -m window --insert west
@@ -76,7 +75,7 @@ shift + cmd - l : yabai -m window --resize right:20:0
 # === Layout ===
 
 # toggle sticky and pip top right
- alt - p : yabai -m window --toggle sticky; yabai -m window --grid 5:5:4:0:1:1
+alt - p : yabai -m window --toggle sticky; yabai -m window --grid 5:5:4:0:1:1
 
 # toggle sticky on currently active window
 alt - s : yabai -m window --toggle sticky
@@ -130,8 +129,8 @@ ctrl + alt + cmd - s : yabai --start-service; # o for stOp
 # cmd - escape : pmset displaysleepnow
 # # logout
 # cmd + shift - e : osascript -e 'tell app "System Events" to log out'
-#
 # # power down 
+#
 # cmd + shift - p : osascript -e 'tell app "System Events" to shut down'
 #
 # # reboot
