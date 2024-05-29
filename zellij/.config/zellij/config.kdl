@@ -223,38 +223,8 @@ pane_frames false
 // Define color themes for Zellij
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
-themes {
-  default {
-    bg "#acb0be" // Surface2
-    fg "#acb0be" // Surface2
-    red "#d20f39"
-    green "#40a02b"
-    blue "#1e66f5"
-    yellow "#df8e1d"
-    magenta "#ea76cb" // Pink
-    orange "#fe640b" // Peach
-    cyan "#04a5e5" // Sky
-    black "#dce0e8" // Crust
-    white "#4c4f69" // Text
-  }
-}
 
-//
-// themes {
-//     dracula {
-//         fg 248 248 242
-//         bg 40 42 54
-//         red 255 85 85
-//         green 80 250 123
-//         yellow 241 250 140
-//         blue 98 114 164
-//         magenta 255 121 198
-//         orange 255 184 108
-//         cyan 139 233 253
-//         black 0 0 0
-//         white 255 255 255
-//     }
-// }
+theme "catppuccin-mocha"
 
 // Choose the theme that is specified in the themes section.
 // Default: default
