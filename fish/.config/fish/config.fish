@@ -2,7 +2,7 @@ eval (/opt/homebrew/bin/brew shellenv)
 
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
-fnm env --use-on-cd | source # "Schniz/fnm"
+#fnm env --use-on-cd | source # "Schniz/fnm"
 
 # paths
 set fish_greeting ""
@@ -15,6 +15,12 @@ fish_add_path ~/scripts
 fish_add_path ~/go/bin
 fish_add_path ~/.bun/bin
 
+# pnpm
+set -gx PNPM_HOME /Users/0xaquawolf/Library/pnpm
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
 
 # global variables
 set -x LS_COLORS (vivid generate catppuccin-mocha)
@@ -69,6 +75,7 @@ alias lt "eza -lAh --icons=always --git --tree --level=4 --long --ignore-glob='n
 
 # |======  Config App  ======|
 alias nrc "vim ~/.config/nvim/lua/"
+alias orc "vim /Users/0xaquawolf/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain/.obsidian.vimrc"
 alias frc "vim ~/.config/fish/config.fish" # fish shell rc
 alias erc "vim ~/.config/espanso/"
 alias sfs "source ~/.config/fish/config.fish" # source fish shell
@@ -103,11 +110,11 @@ alias bd "bun dev"
 alias bp "bun run build && bun run preview"
 alias bb "bun run build"
 
-# |======  Folders ======|
-alias sb "cd /Users/no1/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain && vim ."
+# |======  Obsidian ======|
+alias sb "cd /Users/0xaquawolf/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain && vim ."
 
 # |======  HomeBrew ======|
-alias bi "arch -arm64 brew install"
+alias bi "brew install"
 alias bs "brew search"
 alias bi "brew info"
 
