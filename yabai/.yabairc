@@ -24,7 +24,7 @@ yabai -m config --space games layout float
 # global settings
 yabai -m config                              \
     external_bar                off:41:0     \
-    mouse_follows_focus         on           \
+    mouse_follows_focus         off           \
     focus_follows_mouse         autoraise    \
     window_placement            second_child \
     window_topmost              off          \
@@ -32,7 +32,7 @@ yabai -m config                              \
     window_animation_duration   0.10         \
     window_opacity_duration     0.10         \
     active_window_opacity       1            \
-    normal_window_opacity       0.95         \
+    normal_window_opacity       0.98         \
     window_opacity              on           \
     insert_feedback_color       0xaad75f5f   \
     active_window_border_color  0xBF775759   \
@@ -89,6 +89,7 @@ yabai -m rule --add title="^Steam*" manage=off
 yabai -m rule --add app="^OBS Studio$" title="^Chat$" manage=off
 yabai -m rule --add app="^Stardew Valley$" manage=off
 yabai -m rule --add app="^LuLu$" manage=off
+yabai -m rule --add app="^Godot$" manage=off
 # use this config to always float and position a specific app like our floating todolist
 # yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2
 

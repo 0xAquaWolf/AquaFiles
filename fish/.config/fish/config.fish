@@ -93,12 +93,12 @@ alias zshrc "vim ~/.config/.zshrc"
 alias gl gorilla
 alias btop bpytop
 alias nf neofetch
-alias ff fastfetch
+alias ff "fastfetch -l arch2"
 alias cat bat
 alias lg lazygit
 alias ct cointop
 alias top htop
-alias zel "zellij --layout ~/.config/zellij/config/layouts/dev.kdl"
+alias zel "zellij --layout ~/.config/zellij/layouts/dev.kdl"
 alias logk "tail -f ~/.local/share/karabiner/log/console_user_server.log"
 
 # |======  Github ======|
@@ -202,6 +202,42 @@ function rds # remove DS_STORE
 
     # print message indicating completion
     echo "ALL .DS_STORE files have been removed from $directory"
+end
+
+function secure_delete
+    if test (count $argv) -ne 1
+        echo "Usage: secure_delete <path_to_file>"
+        return 1
+    end
+
+    set file_path $argv[1]
+
+    if not test -f $file_path
+        echo "Error: File not found: $file_path"
+        return 1
+    end
+
+    # Use gshred to overwrite the file securely and then delete it
+    gshred -v -n 3 -z $file_path
+
+    if test $status -eq 0
+        echo "File successfully overwritten and deleted: $file_path"
+    else
+        echo "Error: Failed to overwrite the file: $file_path"
+        return 1
+    end
+end
+
+function extract_word
+    set input_string $argv[1]
+    set word (echo $input_string | sed -n 's/^[0-9]*) *"\([^"]*\)"/\1/p')
+    echo $word
+end
+
+function ch_ff_logo
+    set selected_logo (fastfetch --list-logos | fzf)
+    set clean_word (extract_word $selected_logo)
+    fastfetch --logo $clean_word
 end
 
 # switch statement that figures out your os and uses the correct config 

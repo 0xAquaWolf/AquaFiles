@@ -1,9 +1,16 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle, shell, yabai } from "./utils";
+import {
+  createHyperSubLayers,
+  app,
+  open,
+  rectangle,
+  shell,
+  yabai,
+} from "./utils";
 
 const rules: KarabinerRules[] = [
- {
+  {
     description: "Hyper Key (⌃⌥⇧⌘)",
     manipulators: [
       {
@@ -11,9 +18,9 @@ const rules: KarabinerRules[] = [
         from: {
           key_code: "caps_lock",
         },
-        "parameters": {
+        parameters: {
           "basic.to_if_alone_timeout_milliseconds": 4000,
-          // "basic.to_if_held_down_threshold_milliseconds": 250 
+          // "basic.to_if_held_down_threshold_milliseconds": 250
         },
         to: [
           {
@@ -48,18 +55,16 @@ const rules: KarabinerRules[] = [
         from: {
           key_code: "return_or_enter",
           modifiers: {
-            mandatory: [
-              "command"
-            ]
-          }
+            mandatory: ["command"],
+          },
         },
         to: [
           {
-            shell_command: "open -n -a 'wezterm.app'"
-          }
-        ]
-      }
-    ]
+            shell_command: "open -n -a 'wezterm.app'",
+          },
+        ],
+      },
+    ],
   },
   {
     description: "Cmd + Shift + Return to open home directory",
@@ -69,27 +74,24 @@ const rules: KarabinerRules[] = [
         from: {
           key_code: "return_or_enter",
           modifiers: {
-            mandatory: [
-              "command",
-              "shift"
-            ],
-          }
+            mandatory: ["command", "shift"],
+          },
         },
         to: [
           {
-            shell_command: "open -n ~"
-          }
-        ]
-      }
-    ]
+            shell_command: "open -n ~",
+          },
+        ],
+      },
+    ],
   },
   ...createHyperSubLayers({
     spacebar: yabai("yabai -m window --focus east"),
     // yabai window commands
-    h : yabai("yabai -m window --focus west"),
-    j : yabai("yabai -m window --focus south"),
-    l : yabai("yabai -m window --focus east"),
-    k : yabai("yabai -m window --focus north"),
+    h: yabai("yabai -m window --focus west"),
+    j: yabai("yabai -m window --focus south"),
+    l: yabai("yabai -m window --focus east"),
+    k: yabai("yabai -m window --focus north"),
     // b = "B"rowse
     b: {
       t: open("https://twitter.com"),

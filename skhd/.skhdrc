@@ -6,11 +6,14 @@
     "Arc"
     "Obsidian"
     "CapCut"
+    "Live"
+    "Path Finder"
 ]
 
 # === App launch commands ===
 cmd - return : open -n -a "wezterm.app"
-cmd + shift - return : open -n ~
+cmd + shift - e : open -n -a "PathOfExileClient"
+cmd + shift - return : Killall "Path Finder" | open -n -a "Path Finder"
 
 # TODO: figure out window resizing
 
