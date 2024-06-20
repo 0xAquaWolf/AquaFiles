@@ -23,7 +23,7 @@ brew tap koekeishiya/formulae
 
 # Display a message to the users asking permission to reboot machine and telling them about the process that is envolved in using the install script
 
-# add arm64 to boot flags
+# add arm64 to boot flags TODO: Do i still need this?
 nvram boot-arg '-arm64e_preview_abi' # reboot computer afterwards
 reboot now
 

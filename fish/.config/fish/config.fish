@@ -2,7 +2,7 @@ eval (/opt/homebrew/bin/brew shellenv)
 
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
-#fnm env --use-on-cd | source # "Schniz/fnm"
+fnm env --use-on-cd | source # "Schniz/fnm"
 
 # paths
 set fish_greeting ""
