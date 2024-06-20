@@ -37,6 +37,7 @@ export PATH=$HOME/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/scripts:$PATH
 export PATH=$HOME/go/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 
 # export BAT_THEME="Catppuccin Mocha"
 
@@ -254,7 +255,7 @@ mcd() {
 # Run zellij at the start of the shell
 
 # eval "$(zellij setup --generate-auto-start zsh)"
-
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # # Herd injected NVM configuration
 # export NVM_DIR="/Users/no1/Library/Application Support/Herd/config/nvm"
