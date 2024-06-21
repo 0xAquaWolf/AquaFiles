@@ -35,7 +35,7 @@ set -x LS_COLORS (vivid generate catppuccin-mocha)
 set -gx TERM xterm-256color
 set -Ux EDITOR nvim
 set -gx VISUAL nvim
-set -g ESPANSO_CONFIG ~/.config/espanso/
+set -gx ESPANSO_CONFIG ~/.config/espanso/
 set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -gx XDG_CONFIG_HOME ~/.config
 set -gx BAT_THEME "Catppuccin Mocha"
