@@ -1,3 +1,11 @@
+if not set -q SSH_AUTH_SOCK
+    eval (ssh-agent -c)
+    set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
+    set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+end
+
+ssh-add -q ~/.ssh/0xAquaWolf
+
 eval (/opt/homebrew/bin/brew shellenv)
 
 starship init fish | source # https://starship.rs/
@@ -249,7 +257,6 @@ function yy
     rm -f -- "$tmp"
 end
 
-# switch statement that figures out your os and uses the correct config 
 # switch (uname)
 #   case Darwin
 #     source (dirname (status --current-filename))/config-osx.fish
