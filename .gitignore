@@ -30,3 +30,5 @@ stow-global-ignore/
 node_modules/
 target/
 vendor/
+
+obs/*.mp4

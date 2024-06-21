@@ -1,0 +1,11 @@
+{
+  "accentColor": "#7d42b8",
+  "cssTheme": "Catppuccin",
+  "theme": "obsidian",
+  "interfaceFontFamily": "OperatorMonoSSmLig Nerd Font",
+  "textFontFamily": "OperatorMonoSSmLig Nerd Font",
+  "monospaceFontFamily": "OperatorMonoSSmLig Nerd Font",
+  "showViewHeader": true,
+  "translucency": false,
+  "baseFontSize": 15
+}
