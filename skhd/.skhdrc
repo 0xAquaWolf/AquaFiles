@@ -13,7 +13,8 @@
 # === App launch commands ===
 cmd - return : open -n -a "wezterm.app"
 cmd + shift - e : open -n -a "PathOfExileClient"
-cmd + shift - return : Killall "Path Finder" | open -n -a "Path Finder"
+# cmd + shift - return : Killall "Path Finder" | open -n -a "Path Finder"
+cmd + shift - return : open -n -a ~
 
 # TODO: figure out window resizing
 
