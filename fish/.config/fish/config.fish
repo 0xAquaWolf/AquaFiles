@@ -240,6 +240,15 @@ function ch_ff_logo
     fastfetch --logo $clean_word
 end
 
+function yy
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
+
 # switch statement that figures out your os and uses the correct config 
 # switch (uname)
 #   case Darwin
