@@ -41,9 +41,20 @@ suggestion, improvement or question, please open an issue or PR!
 
 ![zellij-welcome-screen](./assets/zellij-welcome-screen.jpg)
 
-| ![warning](https://github.com/images/icons/emoji/unicode/26a0.png) **WARNING**                                                                                                                  |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **These dotfiles are for my own personal use and i update them very frequently. If you want to use them: fork the repo, review the code and take what you need from it. Use at your own risk!** |
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/images/icons/emoji/unicode/26a0.png" alt="warning" style="float: left; margin-right: 10px; width: 20px; height: 20px;">
+      <b>WARNING</b>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <b>These dotfiles are for my own personal use and i update them very frequently. If you want to use them: fork the repo, review the code and take what you need from it. Use at your own risk!
+      </b>
+    </td>
+  </tr>
+</table>
 
 ## Contents
 
