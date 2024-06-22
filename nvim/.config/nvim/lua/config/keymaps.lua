@@ -2,7 +2,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Add any additional keymaps here
 local keymap = vim.keymap
-
 -- enable and disable completions engine
 keymap.set("n", "<leader>p", '<cmd>lua require("cmp").setup { enabled = true }<cr>', { desc = "Enable completion" })
 keymap.set("n", "<leader>P", "<cmd>lua require('cmp').setup { enabled = false}<cr>", { desc = "Disable completion" })
