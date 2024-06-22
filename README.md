@@ -19,9 +19,6 @@ suggestion, improvement or question, please open an issue or PR!
 
 ## Follow the Journey
 
-Live streaming daily on YouTube
-![channel link](https://www.youtube.com/channel/UCkwRYP1J1hjRXwo5lyBRWdQ)
-
 ## Screenshots
 
 > Lazyvim Welcome screen
