@@ -82,7 +82,7 @@ suggestion, improvement or question, please open an issue or PR!
   - [wezterm](https://github.com/wez/wezterm) **_(Linux, Macos & Windows)_**
   - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, Macos & Windows)_**
   - [iterm2](https://iterm2.com/) **_(Macos)_**
-- [Operator Mono](https://github.com/craftzdog/solarized-osaka.nvim)
+- [Operator Mono](https://github.com/0xAquaWolf/AquaFiles/tree/main/fonts)
 
 ## yabai Setup
 
