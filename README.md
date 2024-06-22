@@ -2,7 +2,21 @@
 
 My personal dotfiles and other configurations to create my (PDE) Personal Development Enviroment.
 
-**Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/images/icons/emoji/unicode/26a0.png" alt="warning" style="float: left; margin-right: 10px; width: 20px; height: 20px;">
+    </td>
+    <td>
+      <b>WARNING</b>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <b>If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don't want or need. Don't blindly use my settings unless you know what that entails. Use at your own risk!</b>
+    </td>
+  </tr>
+</table>
 
 > Lazyvim Welcome screen
 
@@ -12,7 +26,7 @@ My personal dotfiles and other configurations to create my (PDE) Personal Develo
 
 ![yabai demo with cmatrix 5 grid](./assets/yabai-demo-cmatrix-5-grid.jpg)
 
-> Zellij
+> Zellij fastfetch, cmatrix, htop
 
 ![zellij-in-action](./assets/zellij-in-action.jpg)
 
