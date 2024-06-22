@@ -1,21 +1,14 @@
 # AquaFiles (dotfiles)
 
-My personal dotfiles and other configurations to create my (PDE) Personal Development Enviroment.
+> My dotfiles and other configs to bootstrap my (PDE) Personal Development Enviroment.
 
-<table>
-  <tr>
-    <td>
-      <img src="https://github.com/images/icons/emoji/unicode/26a0.png" alt="warning" style="float: left; margin-right: 10px; width: 20px; height: 20px;">
-      <b>WARNING</b>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <b>These dotfiles are for my own personal use and i update them very frequently. If you want to use them: fork the repo, review the code and take what you need from it. Use at your own risk!
-      </b>
-    </td>
-  </tr>
-</table>
+My primary operating system is macOS, but I do use Linux occasionally. I always
+aim to make everything work for both platforms but no guarantees.
+
+**Feel free to try out my dotfiles or use them as inspiration!** If you have a
+suggestion, improvement or question, please open an issue or PR!
+
+## Screenshots
 
 > Lazyvim Welcome screen
 
@@ -37,7 +30,20 @@ My personal dotfiles and other configurations to create my (PDE) Personal Develo
 
 ![zellij-welcome-screen](./assets/zellij-welcome-screen.jpg)
 
-(WiP) Everything is the repo is subject to change and i'm constantly updating files and settings
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/images/icons/emoji/unicode/26a0.png" alt="warning" style="float: left; margin-right: 10px; width: 20px; height: 20px;">
+      <b>WARNING</b>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <b>These dotfiles are for my own personal use and i update them very frequently. If you want to use them: fork the repo, review the code and take what you need from it. Use at your own risk!
+      </b>
+    </td>
+  </tr>
+</table>
 
 ## Contents
 
@@ -67,13 +73,19 @@ My personal dotfiles and other configurations to create my (PDE) Personal Develo
   - [iterm2](https://iterm2.com/) **_(Macos)_**
 - [Operator Mono](https://github.com/craftzdog/solarized-osaka.nvim)
 
-## Zellij Setup
-
-## git Setup
+## yabai Setup
 
 ## fish Setup
 
-## yabai Setup
+## neovim Setup
+
+## Zellij Setup
+
+## skhd Setup
+
+## git Setup
+
+## karabiners Setup
 
 #### Design Principles
 
@@ -83,3 +95,15 @@ My personal dotfiles and other configurations to create my (PDE) Personal Develo
 - Form & Function
 - Open-Source
 - Portable
+
+#### Todo List
+
+- [ ] yabai setup
+- [ ] fish setup
+- [ ] neovim setup
+- [ ] Zellij setup
+- [ ] git setup
+- [ ] skhd setup
+- [ ] karabiners setup
+
+(WiP) Everything is the repo is subject to change and i'm constantly updating files and settings
