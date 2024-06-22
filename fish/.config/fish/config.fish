@@ -106,8 +106,12 @@ alias cat bat
 alias lg lazygit
 alias ct cointop
 alias top htop
-alias zel "zellij --layout ~/.config/zellij/layouts/dev.kdl"
 alias logk "tail -f ~/.local/share/karabiner/log/console_user_server.log"
+
+# |======  zellij  ======|
+alias zel "zellij --layout ~/.config/zellij/layouts/dev.kdl"
+alias zls "zellij ls"
+alias za "zellij attach"
 
 # |======  Github ======|
 alias ghrw "gh repo view --web"
