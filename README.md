@@ -11,7 +11,7 @@ My personal dotfiles and other configurations to create my (PDE) Personal Develo
   </tr>
   <tr>
     <td colspan="2">
-      <b>These dotfiles are for my own personal use and i update them very frequently. If you want to use fork the repo, review the code and take what you need from it. Don't just copy and files exactly without first understanding why your doing it. Use at your own risk!
+      <b>These dotfiles are for my own personal use and i update them very frequently. If you want to use them: fork the repo, review the code and take what you need from it. Use at your own risk!
       </b>
     </td>
   </tr>
