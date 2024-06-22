@@ -12,7 +12,7 @@
 
 # === App launch commands ===
 cmd - return : open -n -a "wezterm.app"
-cmd + shift - e : open -n -a "PathOfExileClient"
+# cmd + shift - e : open -n -a "PathOfExileClient"
 # cmd + shift - return : Killall "Path Finder" | open -n -a "Path Finder"
 cmd + shift - return : open -n -a ~
 
@@ -103,7 +103,7 @@ shift + alt - x : yabai -m space --mirror y-axis
 shift + cmd - b : yabai -m space --balance
 
 # Make window native fullscreen
-shift + alt - m : yabai -m window --toggle zoom-fullscreen
+shift + cmd - m : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # toggle window float
