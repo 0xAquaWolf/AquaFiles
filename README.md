@@ -6,8 +6,6 @@ My personal dotfiles and other configurations to create my (PDE) Personal Develo
   <tr>
     <td>
       <img src="https://github.com/images/icons/emoji/unicode/26a0.png" alt="warning" style="float: left; margin-right: 10px; width: 20px; height: 20px;">
-    </td>
-    <td>
       <b>WARNING</b>
     </td>
   </tr>
