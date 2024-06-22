@@ -8,6 +8,16 @@ aim to make everything work for both platforms but no guarantees.
 **Feel free to try out my dotfiles or use them as inspiration!** If you have a
 suggestion, improvement or question, please open an issue or PR!
 
+## Design Principles
+
+- Open-Source
+- Minimalisim
+- Keyboard Homerow Centric
+- Design & astetics
+- Productivity (minimize distractions)
+- Form & Function (beauty and action)
+- Portable
+
 ## Screenshots
 
 > Lazyvim Welcome screen
@@ -87,15 +97,6 @@ suggestion, improvement or question, please open an issue or PR!
 
 ## karabiners Setup
 
-#### Design Principles
-
-- Minimalisim
-- Design Focused
-- Productivity
-- Form & Function
-- Open-Source
-- Portable
-
 #### Todo List
 
 - [ ] yabai setup
@@ -106,4 +107,4 @@ suggestion, improvement or question, please open an issue or PR!
 - [ ] skhd setup
 - [ ] karabiners setup
 
-(WiP) Everything is the repo is subject to change and i'm constantly updating files and settings
+_(WiP) Everything is the repo is subject to change and i'm constantly updating files and settings_
