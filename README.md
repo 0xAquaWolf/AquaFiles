@@ -4,25 +4,25 @@ My personal dotfiles and other configurations to create my (PDE) Personal Develo
 
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
-![lazyvim welcome screen](./assets/lazyvim-welcome-aquawolf.jpg)
-
 > Lazyvim Welcome screen
 
-![yabai demo with cmatrix 5 grid](./assets/yabai-demo-cmatrix-5-grid.jpg)
+![lazyvim welcome screen](./assets/lazyvim-welcome-aquawolf.jpg)
 
 > Yabai BSP grid with 5 cmatrix running
 
-![zellij-in-action](./assets/zellij-in-action.jpg)
+![yabai demo with cmatrix 5 grid](./assets/yabai-demo-cmatrix-5-grid.jpg)
 
 > Zellij
 
-![zellij-neovim-htop-cmatrix](./assets/zellij-neovim-htop-cmatrix.jpg)
+![zellij-in-action](./assets/zellij-in-action.jpg)
 
 > Zellij Neovim HTOP cmatrix
 
-![zellij-welcome-screen](./assets/zellij-welcome-screen.jpg)
+![zellij-neovim-htop-cmatrix](./assets/zellij-neovim-htop-cmatrix.jpg)
 
 > Zellij welcome screen
+
+![zellij-welcome-screen](./assets/zellij-welcome-screen.jpg)
 
 (WiP) Everything is the repo is subject to change and i'm constantly updating files and settings
 
