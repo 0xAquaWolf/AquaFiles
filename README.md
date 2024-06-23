@@ -2,7 +2,7 @@
 
 > configs for bootstrapping my Personal Development Enviroment.
 
-My primary operating system is macOS, but I do use Linux (arch, btw!).
+My primary operating system is macOS, but I do use Linux sometimes...(arch, btw!)
 
 **Feel free to try out my dotfiles or use them as inspiration!** If you have a
 suggestion, improvement or question, please open an issue or PR!
@@ -18,6 +18,9 @@ suggestion, improvement or question, please open an issue or PR!
 - Portable
 
 ## Follow the Journey
+
+Streaming the creation of this repo and any other future projects on youtube.
+[0xAquaWolf YouTube Channel](https://www.youtube.com/channel/UCkwRYP1J1hjRXwo5lyBRWdQ)
 
 ## Screenshots
 
