@@ -20,6 +20,7 @@ suggestion, improvement or question, please open an issue or PR!
 ## Follow the Journey
 
 Streaming the creation of this repo and any other future projects on youtube.
+<br />
 [0xAquaWolf YouTube Channel](https://www.youtube.com/channel/UCkwRYP1J1hjRXwo5lyBRWdQ)
 
 ## Screenshots
