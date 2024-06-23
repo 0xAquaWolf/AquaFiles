@@ -21,6 +21,7 @@ suggestion, improvement or question, please open an issue or PR!
 
 Streaming the creation of this repo and any other future projects on youtube.
 <br />
+<br />
 [0xAquaWolf YouTube Channel](https://www.youtube.com/channel/UCkwRYP1J1hjRXwo5lyBRWdQ)
 
 ## Screenshots
@@ -29,7 +30,7 @@ Streaming the creation of this repo and any other future projects on youtube.
 
 ![lazyvim welcome screen](./assets/lazyvim-welcome-aquawolf.jpg)
 
-> Yabai BSP grid with 5 cmatrix running
+> Yabai bsp grid with 5 cmatrix running
 
 ![yabai demo with cmatrix 5 grid](./assets/yabai-demo-cmatrix-5-grid.jpg)
 
@@ -37,7 +38,7 @@ Streaming the creation of this repo and any other future projects on youtube.
 
 ![zellij-in-action](./assets/zellij-in-action.jpg)
 
-> Zellij Neovim HTOP cmatrix
+> Zellij Neovim htop cmatrix
 
 ![zellij-neovim-htop-cmatrix](./assets/zellij-neovim-htop-cmatrix.jpg)
 
@@ -68,8 +69,6 @@ Streaming the creation of this repo and any other future projects on youtube.
 - fish config
 - yabai config
 
-## Neovim setup
-
 ### Requirements
 
 - Neovim >= **0.9.0** (needs to be built with **LuaJIT**)
@@ -87,6 +86,8 @@ Streaming the creation of this repo and any other future projects on youtube.
   - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, Macos & Windows)_**
   - [iterm2](https://iterm2.com/) **_(Macos)_**
 - [Operator Mono](https://github.com/0xAquaWolf/AquaFiles/tree/main/fonts)
+
+## Neovim setup
 
 ## yabai Setup
 
