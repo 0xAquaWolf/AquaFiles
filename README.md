@@ -2,7 +2,7 @@
 
 > configs for bootstrapping my Personal Development Enviroment.
 
-My primary operating system is macOS, but I do use Linux sometimes...(arch, btw!)
+My primary operating system is macOS, but I do use Linux (arch, btw!) sometimes...
 
 **Feel free to try out my dotfiles or use them as inspiration!** If you have a
 suggestion, improvement or question, please open an issue or PR!
