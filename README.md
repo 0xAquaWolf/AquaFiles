@@ -152,7 +152,7 @@ Streaming the creation of this repo and any other future projects on youtube.
 
 ### karabiners Setup
 
-#### Todo List
+## Todo List
 
 - [ ] yabai setup
 - [ ] fish setup
