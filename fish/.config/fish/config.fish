@@ -22,6 +22,7 @@ fish_add_path ~/.local/bin
 fish_add_path ~/scripts
 fish_add_path ~/go/bin
 fish_add_path ~/.bun/bin
+fish_add_path ~/.deno/bin
 
 # pnpm
 set -gx PNPM_HOME /Users/0xaquawolf/Library/pnpm
@@ -246,7 +247,7 @@ function extract_word
     echo $word
 end
 
-function ch_ff_logo
+function ff_logo
     set selected_logo (fastfetch --list-logos | fzf)
     set clean_word (extract_word $selected_logo)
     fastfetch --logo $clean_word
@@ -260,6 +261,139 @@ function yy
     end
     rm -f -- "$tmp"
 end
+
+function test_func
+    echo $date
+end
+
+function crd # create daily jouraal note
+    set today_date (date +"%d-%m-%Y")
+    set timestamp (date +"%H-%M-%S")
+    set base_path "/Users/0xaquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain/3-Resources/journals/daily"
+
+    if test (count $argv) -gt 0
+        set filename "$base_path/$today_date-$argv[1].md"
+    else
+        set filename "$base_path/$today_date.md"
+    end
+
+    echo "# $today_date
+
+## How I'm feeling?:
+
+## Graditude:
+
+## Today's goals:
+
+## Brain Dump:
+
+" >$filename
+
+    echo "Journal entry created: $filename"
+
+    # Open the file in Neovim
+    nvim $filename
+end
+
+function in
+    set base_path "/Users/0xaquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain/0-Inbox"
+
+    if test (count $argv) -eq 0
+        set file_name ""
+    else
+        set file_name (string join " " $argv)
+    end
+
+    # Prompt for filename if it's empty
+    while test -z "$file_name"
+        read -P "Enter the name for your new note: " file_name
+        if test -z "$file_name"
+            echo "Filename cannot be empty. Please try again."
+        end
+    end
+
+    # Ensure the file name ends with .md
+    if not string match -q "*.md" $file_name
+        set file_name "$file_name.md"
+    end
+
+    # Replace spaces with underscores in the filename
+    set safe_file_name (string replace -a " " "-" $file_name)
+
+    set full_path "$base_path/$safe_file_name"
+
+    # Create an empty file
+    touch $full_path
+
+    echo "New note created: $full_path"
+
+    # Open the file in Neovim
+    nvim $full_path
+end
+
+function start-stream
+    set base_path "/Users/0xaquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain/0-Inbox"
+
+    if test (count $argv) -eq 0
+        set file_name ""
+    else
+        set file_name (string join " " $argv)
+    end
+
+    # Prompt for filename if it's empty
+    while test -z "$file_name"
+        read -P "Enter the name for your new note: " file_name
+        if test -z "$file_name"
+            echo "Filename cannot be empty. Please try again."
+        end
+    end
+
+    # Ensure the file name ends with .md
+    if not string match -q "*.md" $file_name
+        set file_name "$file_name.md"
+    end
+
+    # Replace spaces with underscores in the filename
+    set safe_file_name (string replace -a " " "-" $file_name)
+
+    set full_path "$base_path/$safe_file_name"
+
+    # Create an empty file
+    touch $full_path
+
+    echo "New note created: $full_path"
+
+    # Open the file in Neovim
+    nvim $full_path
+end
+
+function start-stream
+    set base_path "/Users/0xaquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain/3-Resources/youtube-stream"
+    set date (date +"%Y-%m-%d")
+    set filename "$date-stream-checklist.md"
+    set full_path "$base_path/$filename"
+
+    echo "# $date Streaming checklist
+
+- [ ] Create Title
+- [ ] Create Description
+- [ ] Create Thumbnail
+- [ ] Setup up mic
+- [ ] Setup Music
+- [ ] Test video
+- [ ] Speed test
+- [ ] Create Broadcast
+- [ ] Go Live
+" >$full_path
+
+    echo "Stream checklist created: $full_path"
+
+    # Open the file in Neovim
+    nvim $full_path
+end
+
+
+# This is a code snippet so that i know how to detect which OS i'm currently on and execute different scripts
 
 # switch (uname)
 #   case Darwin
