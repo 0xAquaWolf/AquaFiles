@@ -136,21 +136,21 @@ Streaming the creation of this repo and any other future projects on youtube.
   - [iterm2](https://iterm2.com/) **_(Macos)_**
 - [Operator Mono](https://github.com/0xAquaWolf/AquaFiles/tree/main/fonts)
 
-## Neovim setup
+### Neovim setup
 
-## yabai Setup
+### yabai Setup
 
-## fish Setup
+### fish Setup
 
-## neovim Setup
+### neovim Setup
 
-## Zellij Setup
+### Zellij Setup
 
-## skhd Setup
+### skhd Setup
 
-## git Setup
+### git Setup
 
-## karabiners Setup
+### karabiners Setup
 
 #### Todo List
 
@@ -161,3 +161,4 @@ Streaming the creation of this repo and any other future projects on youtube.
 - [ ] git setup
 - [ ] skhd setup
 - [ ] karabiners setup
+- [ ] add links for apps i use
