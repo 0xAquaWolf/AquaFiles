@@ -24,12 +24,12 @@ keymap.set("n", "<leader>po", "<cmd>PeekOpen<cr>", { desc = "Peek Open" })
 keymap.set("n", "<leader>pc", "<cmd>PeekClose<cr>", { desc = "Peek Close" })
 
 -- these keep the cursor in the middle when scrolling with ctrl d and u
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- and these are for searching
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
 
 -- examples
 -- convert Current line to title cases
