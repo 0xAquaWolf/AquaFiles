@@ -61,6 +61,55 @@ Streaming the creation of this repo and any other future projects on youtube.
   </tr>
 </table>
 
+## Apps i use
+
+### MacOS (Content creation, Writing, Programming)
+
+- Terminal: _Wezterm_
+- RayCast - _App Launcher_
+- Obsidian: _Sync through iCloud_
+- Yabai - _Window Manager_
+- SKHD - _Keyboard Shortcut Manager_
+- karabineers - _Hypermod and sublayers_
+- ShortCat - Vim for the desktop
+- Homebrew - package manager
+- KeyCastr - For keyboard casting of shortcuts
+
+### Chrome Extensions
+
+- Wappalyzer -
+- DarkMode - with catpuccion mocha theme
+- uBlock Origin
+- vimium
+- 1password
+- undistracted
+- block-paywall
+
+### **Desktop Apps**
+
+- Ableton Live 11 - DAW
+- Affinity Photo
+- Android File Transfer - transfer to ebook reader
+- Binarual - App Store: Binarual beats
+- CleanMyMac - Clean and optimize mac
+- LuLu - Security and network traffic blocker
+- CleanShot X - Screen shots, pin windows, recording and extracting text from images, so many good things in this app
+- Pika - for designing and color picking
+- Gestimer - This app is amazing and i use it daily - will need to either - create something like this or find something close
+- IINA - Video player like VLC but MacOS Specific
+- KeyboardCleanTool - disables the keyboard so that you can clean
+- Audio Hijack - audio routing on your computer
+- Memory Clean 3 - helps me manage ram and free some when i need it
+- Parallels - Virtual machines on macos
+- Rize - Productivity tracker for macos
+- Screen Studio - great SaaS product demos
+- Screen Flow - best screen recording software for macos and great editing experience
+- Table Plus - Database manager
+- The Unarchiever - unzipper for anything file type
+- Wondershare Recoverit - great for recovering any hardrives that need to recover
+- xScope - a set of tools for UI/UX Designers
+  HiddenBar
+
 ## Contents
 
 - Neovim config
@@ -112,5 +161,3 @@ Streaming the creation of this repo and any other future projects on youtube.
 - [ ] git setup
 - [ ] skhd setup
 - [ ] karabiners setup
-
-_(WiP) Everything is the repo is subject to change and i'm constantly updating files and settings_
