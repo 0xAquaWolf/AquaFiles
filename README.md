@@ -65,50 +65,50 @@ Streaming the creation of this repo and any other future projects on youtube.
 
 ### MacOS (Content creation, Writing, Programming)
 
-- Terminal: _Wezterm_
-- RayCast - _App Launcher_
-- Obsidian: _Sync through iCloud_
-- Yabai - _Window Manager_
-- SKHD - _Keyboard Shortcut Manager_
-- karabineers - _Hypermod and sublayers_
-- ShortCat - Vim for the desktop
-- Homebrew - package manager
-- KeyCastr - For keyboard casting of shortcuts
+- [Wezterm](https://wezfurlong.org/wezterm/) - Terminal
+- [Raycast](https://www.raycast.com/) - App Launcher
+- [Obsidian](https://obsidian.md/) - Sync through iCloud
+- [Yabai](https://github.com/koekeishiya/yabai) - Window Manager
+- [SKHD](https://github.com/koekeishiya/skhd) - Keyboard Shortcut Manager
+- [Karabiner-Elements](https://karabiner-elements.pqrs.org/) - Hypermod and sublayers
+- [ShortCat](https://shortcatapp.com/) - Vim for the desktop
+- [Homebrew](https://brew.sh/) - Package manager
+- [KeyCastr](https://github.com/keycastr/keycastr) - For keyboard casting of shortcuts
 
 ### Chrome Extensions
 
-- Wappalyzer -
-- DarkMode - with catpuccion mocha theme
-- uBlock Origin
-- vimium
-- 1password
-- undistracted
-- block-paywall
+- [Wappalyzer](https://www.wappalyzer.com/)
+- [Dark Reader](https://darkreader.org/) - with Catppuccin Mocha theme
+- [uBlock Origin](https://ublockorigin.com/)
+- [Vimium](https://vimium.github.io/)
+- [1Password](https://1password.com/)
+- [Undistracted](https://undistracted.app/)
+- [Bypass Paywalls](https://github.com/iamadamdev/bypass-paywalls-chrome)
 
-### **Desktop Apps**
+### Desktop Apps
 
-- Ableton Live 11 - DAW
-- Affinity Photo
-- Android File Transfer - transfer to ebook reader
-- Binarual - App Store: Binarual beats
-- CleanMyMac - Clean and optimize mac
-- LuLu - Security and network traffic blocker
-- CleanShot X - Screen shots, pin windows, recording and extracting text from images, so many good things in this app
-- Pika - for designing and color picking
-- Gestimer - This app is amazing and i use it daily - will need to either - create something like this or find something close
-- IINA - Video player like VLC but MacOS Specific
-- KeyboardCleanTool - disables the keyboard so that you can clean
-- Audio Hijack - audio routing on your computer
-- Memory Clean 3 - helps me manage ram and free some when i need it
-- Parallels - Virtual machines on macos
-- Rize - Productivity tracker for macos
-- Screen Studio - great SaaS product demos
-- Screen Flow - best screen recording software for macos and great editing experience
-- Table Plus - Database manager
-- The Unarchiever - unzipper for anything file type
-- Wondershare Recoverit - great for recovering any hardrives that need to recover
-- xScope - a set of tools for UI/UX Designers
-  HiddenBar
+- [Ableton Live 11](https://www.ableton.com/en/live/) - DAW
+- [Affinity Photo](https://affinity.serif.com/en-us/photo/)
+- [Android File Transfer](https://www.android.com/filetransfer/)
+- [Binaural](https://apps.apple.com/us/app/binaural-beats-generator/id1487743559) - App Store: Binaural beats
+- [CleanMyMac X](https://macpaw.com/cleanmymac)
+- [LuLu](https://objective-see.org/products/lulu.html) - Security and network traffic blocker
+- [CleanShot X](https://cleanshot.com/)
+- [Pika](https://superhighfives.com/pika) - for designing and color picking
+- [Gestimer](http://maddin.io/gestimer/)
+- [IINA](https://iina.io/) - Video player
+- [KeyboardCleanTool](https://folivora.ai/keyboardcleantool)
+- [Audio Hijack](https://rogueamoeba.com/audiohijack/)
+- [Memory Clean 3](https://fiplab.com/apps/memory-clean-for-mac)
+- [Parallels](https://www.parallels.com/)
+- [Rize](https://rize.io/) - Productivity tracker for macOS
+- [Screen Studio](https://www.screen.studio/)
+- [ScreenFlow](https://www.telestream.net/screenflow/)
+- [TablePlus](https://tableplus.com/) - Database manager
+- [The Unarchiver](https://theunarchiver.com/)
+- [Wondershare Recoverit](https://recoverit.wondershare.com/)
+- [xScope](https://xscopeapp.com/) - A set of tools for UI/UX Designers
+- [Hidden Bar](https://github.com/dwarvesf/hidden)
 
 ## Contents
 
