@@ -79,7 +79,7 @@ ctrl + lalt - l : yabai -m window --resize right:100:0 || yabai -m window --resi
 # === Layout ===
 
 # toggle sticky and pip top right
-alt - p : yabai -m window --toggle sticky; yabai -m window --grid 5:5:4:0:1:1
+alt - p : yabai -m window --toggle float; yabai -m window --grid 5:5:4:0:1:1
 
 # toggle sticky on currently active window
 alt - s : yabai -m window --toggle sticky
@@ -91,7 +91,7 @@ alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 alt - o : yabai -m window --toggle topmost
 
 # toggle picture-in-picture
-alt - p : yabai -m window --toggle border --toggle pip
+# alt - p : yabai -m window --toggle border --toggle pip
 
 # modifying current layout
 shift + alt - r : yabai -m space --rotate 270
