@@ -50,7 +50,7 @@ return {
 						local selected_entry = current_picker:get_selection()
 						local selected_path = selected_entry.path or selected_entry.value
 						require("telescope.actions").close(prompt_bufnr)
-
+						vim.api.nvim_feedkeys("i", "n", true)
 						-- Ask user for the name of the file
 						vim.ui.input({ prompt = "Enter file name: " }, function(input)
 							if input then
@@ -105,6 +105,7 @@ return {
 				return
 			end
 
+			vim.api.nvim_feedkeys("i", "n", true)
 			vim.ui.input({ prompt = "Enter new file name: " }, function(input)
 				if input then
 					-- Ensure the file has a .md extension
@@ -156,6 +157,7 @@ return {
 
 			-- Prompt for confirmation before deleting
 			vim.fn.inputsave()
+			vim.api.nvim_feedkeys("i", "n", true)
 			local confirm = vim.fn.input("Delete file " .. file_name .. "? (y/n): ")
 			vim.fn.inputrestore()
 
@@ -179,6 +181,52 @@ return {
 		end
 
 		vim.api.nvim_create_user_command("DeleteObsidianFile", delete_current_file, {})
+
+		local function move_current_file()
+			-- Get the full path of the current file
+			local current_file = vim.fn.expand("%:p")
+
+			-- Check if the file exists
+			if vim.fn.filereadable(current_file) ~= 1 then
+				vim.notify("File does not exist or is not readable", vim.log.levels.ERROR)
+				return
+			end
+
+			vim.api.nvim_feedkeys("i", "n", true)
+			-- Prompt for the new directory path
+			vim.ui.input({ prompt = "Enter new directory path: " }, function(new_dir)
+				if new_dir and new_dir ~= "" then
+					-- Ensure the new directory ends with a slash
+					if not new_dir:match("[/\\]$") then
+						new_dir = new_dir .. "/"
+					end
+
+					-- Construct the new file path
+					local file_name = vim.fn.fnamemodify(current_file, ":t")
+					local new_file_path = new_dir .. file_name
+
+					-- Attempt to move the file
+					local success, err = os.rename(current_file, new_file_path)
+					if not success then
+						vim.notify("Failed to move file: " .. err, vim.log.levels.ERROR)
+						return
+					end
+
+					-- Close the buffer associated with the moved file
+					vim.cmd("bd! " .. vim.fn.fnameescape(current_file))
+
+					-- Notify and print success message
+					vim.notify("File moved successfully to: " .. new_file_path)
+
+					-- Open the moved file for editing
+					vim.cmd("edit " .. new_file_path)
+				else
+					vim.notify("Invalid or empty directory path", vim.log.levels.ERROR)
+				end
+			end)
+		end
+
+		vim.api.nvim_create_user_command("MoveObsidianFile", move_current_file, {})
 
 		require("obsidian").setup({
 			workspaces = opts.workspaces,
