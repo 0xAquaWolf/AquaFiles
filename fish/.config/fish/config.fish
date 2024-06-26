@@ -262,10 +262,6 @@ function yy
     rm -f -- "$tmp"
 end
 
-function test_func
-    echo $date
-end
-
 function crd # create daily jouraal note
     set today_date (date +"%d-%m-%Y")
     set timestamp (date +"%H-%M-%S")
@@ -388,6 +384,52 @@ function start-stream
 
     echo "Stream checklist created: $full_path"
 
+    # Open the file in Neovim
+    nvim $full_path
+end
+
+function yt-sum
+    set base_path "/Users/0xaquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain/3-Resources/video-summaries"
+    set date (date +"%Y-%m-%d")
+
+    # Prompt for video title and URL
+    read -P "Enter the YouTube video title: " video_title
+    read -P "Enter the YouTube video URL: " video_url
+
+    # Create filename based on date and video title
+    set safe_title (string replace -a " " "-" $video_title | string lower)
+    set filename "$date-$safe_title.md"
+    set full_path "$base_path/$filename"
+
+    # Create the file with initial content
+    echo "# $video_title
+
+Date: $date
+
+URL: $video_url
+
+## Summary
+[Paste the video summary here]
+
+## My Thoughts
+[Add your thoughts and insights about the video here]
+
+## Key Points
+- 
+- 
+- 
+
+## Action Items
+- [ ] 
+- [ ] 
+- [ ] 
+
+## Related Topics
+- 
+- 
+" >$full_path
+
+    echo "Video summary template created: $full_path"
     # Open the file in Neovim
     nvim $full_path
 end
