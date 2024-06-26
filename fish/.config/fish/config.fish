@@ -1,3 +1,4 @@
+## This has been added for making sure that ssh-keys are loading into the env
 if not set -q SSH_AUTH_SOCK
     eval (ssh-agent -c)
     set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
@@ -450,5 +451,3 @@ end
 # if test -f $LOCAL_CONFIG
 # end
 #   source $LOCAL_CONFIG
-
-# bun
