@@ -10,6 +10,7 @@ suggestion, improvement or question, please open an issue or PR!
 ## Design Principles
 
 - Open-Source
+- [Flow State](<https://en.wikipedia.org/wiki/Flow_(psychology)>)
 - Minimalisim
 - Keyboard Homerow Centric
 - Design & astetics
