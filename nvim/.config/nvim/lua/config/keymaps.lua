@@ -31,6 +31,8 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
+keymap.set("n", "<leader>oc", "<cmd>CreateObsidianFile<cr>", { desc = "Create Obsidian File" })
+
 -- examples
 -- convert Current line to title cases
 -- vim.keymap.set(
