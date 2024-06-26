@@ -1,20 +1,20 @@
 return {
 	"stevearc/dressing.nvim",
-	lazy = true,
-	enabled = function()
-		return LazyVim.pick.want() == "telescope"
-	end,
-	init = function()
-		---@diagnostic disable-next-line: duplicate-set-field
-		vim.ui.select = function(...)
-			require("lazy").load({ plugins = { "dressing.nvim" } })
-			return vim.ui.select(...)
-		end
-		---@diagnostic disable-next-line: duplicate-set-field
-		vim.ui.input = function(...)
-			require("lazy").load({ plugins = { "dressing.nvim" } })
-			return vim.ui.input(...)
-		end
-	end,
 	opts = {},
+	config = function()
+		require("dressing").setup({
+			input = {
+				-- Default prompt string
+				default_prompt = "Input",
+				-- Trim trailing `:` from prompt
+				trim_prompt = true,
+				-- Can be 'left', 'right', or 'center'
+				title_pos = "left",
+				-- These are passed to nvim_open_win
+				border = "rounded",
+				-- 'editor' and 'win' will default to being centered
+				relative = "cursor",
+			},
+		})
+	end,
 }

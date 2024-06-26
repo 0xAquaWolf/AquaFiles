@@ -39,6 +39,7 @@ return {
 			end
 
 			require("telescope.builtin").find_files({
+				previewer = false,
 				prompt_title = "Select Inbox Folder",
 				cwd = vim.g.obsidian_vault_path,
 				hidden = true,
@@ -78,6 +79,106 @@ return {
 		end
 
 		vim.api.nvim_create_user_command("CreateObsidianFile", create_and_open_md_file, {})
+
+		local function rename_obsidian_file()
+			-- Check if the current buffer is a markdown file
+			if vim.bo.filetype ~= "markdown" then
+				vim.notify("Not in a markdown file", vim.log.levels.WARN)
+				return
+			end
+
+			-- Get the full path of the current file
+			local current_file = vim.fn.expand("%:p")
+
+			-- Check if the file is in an Obsidian vault based on your workspaces configuration
+			local in_vault = false
+			for _, workspace in ipairs(opts.workspaces) do
+				if string.find(current_file, workspace.path, 1, true) then
+					in_vault = true
+					break
+				end
+			end
+
+			-- If not in an Obsidian vault, notify and return
+			if not in_vault then
+				vim.notify("Not in an Obsidian vault", vim.log.levels.WARN)
+				return
+			end
+
+			vim.ui.input({ prompt = "Enter new file name: " }, function(input)
+				if input then
+					-- Ensure the file has a .md extension
+					if not input:match("%.md$") then
+						input = input .. ".md"
+					end
+
+					-- Full path of the new file
+					local new_file_path = vim.fn.expand("%:p:h") .. "/" .. input
+
+					-- Check if the user entered a valid file name
+					if input == "" then
+						vim.notify("Invalid or empty file name", vim.log.levels.ERROR)
+						return
+					end
+
+					-- Rename the file
+					local success, err = os.rename(current_file, new_file_path)
+					if not success then
+						vim.notify("Failed to rename file: " .. err, vim.log.levels.ERROR)
+						return
+					end
+
+					-- Open the newly renamed file for editing
+					vim.cmd("edit " .. new_file_path)
+
+					-- Close the buffer of the old file without deleting the file
+					vim.cmd("bd! " .. vim.fn.fnameescape(current_file))
+
+					-- Notify and print success message
+					vim.notify("File renamed successfully to " .. new_file_path)
+				end
+			end)
+		end
+
+		vim.api.nvim_create_user_command("RenameObsidianFile", rename_obsidian_file, {})
+
+		local function delete_current_file()
+			-- Get the full path of the current file
+			local current_file = vim.fn.expand("%:p")
+			-- Get just the file name without the directory
+			local file_name = vim.fn.fnamemodify(current_file, ":t")
+
+			-- Check if the file exists
+			if vim.fn.filereadable(current_file) ~= 1 then
+				vim.notify("File does not exist or is not readable", vim.log.levels.ERROR)
+				return
+			end
+
+			-- Prompt for confirmation before deleting
+			vim.fn.inputsave()
+			local confirm = vim.fn.input("Delete file " .. file_name .. "? (y/n): ")
+			vim.fn.inputrestore()
+
+			if confirm ~= "y" and confirm ~= "Y" then
+				vim.notify("File deletion canceled", vim.log.levels.INFO)
+				return
+			end
+
+			-- Attempt to delete the file
+			local success, err = os.remove(current_file)
+			if not success then
+				vim.notify("Failed to delete file: " .. err, vim.log.levels.ERROR)
+				return
+			end
+
+			-- Close the buffer associated with the deleted file
+			vim.cmd("bd! " .. vim.fn.fnameescape(current_file))
+
+			-- Notify and print success message
+			vim.notify("File deleted successfully: " .. file_name)
+		end
+
+		vim.api.nvim_create_user_command("DeleteObsidianFile", delete_current_file, {})
 
 		require("obsidian").setup({
 			workspaces = opts.workspaces,

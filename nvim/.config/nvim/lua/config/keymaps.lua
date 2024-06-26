@@ -32,6 +32,8 @@ keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
 keymap.set("n", "<leader>oc", "<cmd>CreateObsidianFile<cr>", { desc = "Create Obsidian File" })
+keymap.set("n", "<leader>or", "<cmd>RenameObsidianFile<cr>", { desc = "Rename Obsidian File" })
+keymap.set("n", "<leader>od", "<cmd>DeleteObsidianFile<cr>", { desc = "Delete Obsidian File" })
 
 -- examples
 -- convert Current line to title cases
