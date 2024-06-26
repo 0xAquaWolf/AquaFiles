@@ -16,4 +16,9 @@ opt.foldenable = false
 opt.number = true
 opt.relativenumber = true
 opt.scrolloff = 8
-opt.linebreak = true
+
+-- Check if clipboard support is available
+if vim.fn.has("clipboard") == 1 then
+	-- Set the '+' register for clipboard operations
+	opt.clipboard:append("unnamedplus")
+end
