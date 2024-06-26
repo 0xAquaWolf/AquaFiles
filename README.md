@@ -154,6 +154,7 @@ Streaming the creation of this repo and any other future projects on youtube.
 
 ## Todo List
 
+- [x] add links for apps i use
 - [ ] yabai setup
 - [ ] fish setup
 - [ ] neovim setup
@@ -161,4 +162,3 @@ Streaming the creation of this repo and any other future projects on youtube.
 - [ ] git setup
 - [ ] skhd setup
 - [ ] karabiners setup
-- [ ] add links for apps i use
