@@ -24,7 +24,7 @@ suggestion, improvement or question, please open an issue or PR!
 Streaming the creation of this repo and any other future projects on youtube.
 <br />
 <br />
-[0xAquaWolf YouTube Channel](https://www.youtube.com/channel/UCkwRYP1J1hjRXwo5lyBRWdQ)
+[0xAquaWolf YouTube Channel](https://youtube.com/playlist?list=PLwbt1uBf9iqArccoEXrIB_ZO0d86rECgc&si=GRBhNj0w_ZW4XwIt)
 
 ## Screenshots
 
