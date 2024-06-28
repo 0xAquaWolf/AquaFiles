@@ -372,6 +372,7 @@ function start-stream
 
     echo "# $date Streaming checklist
 
+- [ ] Create a task list for stream
 - [ ] Create Title
 - [ ] Create Description
 - [ ] Create Thumbnail
