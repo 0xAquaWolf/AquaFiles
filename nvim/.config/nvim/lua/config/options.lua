@@ -7,7 +7,6 @@ local opt = vim.opt
 opt.ignorecase = true
 
 -- pandoc related
-
 opt.spell = false
 opt.foldmethod = "manual"
 opt.foldenable = false

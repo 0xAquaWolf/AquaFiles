@@ -182,7 +182,7 @@ return {
 
 		vim.api.nvim_create_user_command("DeleteObsidianFile", delete_current_file, {})
 
-		local function move_current_file()
+		local function move_current_file() -- TODO: test this out
 			-- Get the full path of the current file
 			local current_file = vim.fn.expand("%:p")
 
@@ -230,7 +230,7 @@ return {
 
 		require("obsidian").setup({
 			workspaces = opts.workspaces,
-			follow_url_func = function(url) -- TODO: test this out
+			follow_url_func = function(url)
 				vim.fn.jobstart({ "open", url })
 			end,
 			attachments = {
