@@ -72,8 +72,8 @@ Streaming the creation of this repo and any other future projects on youtube.
 - [Obsidian](https://obsidian.md/) - Sync through iCloud
 - [Yabai](https://github.com/koekeishiya/yabai) - Window Manager
 - [SKHD](https://github.com/koekeishiya/skhd) - Keyboard Shortcut Manager
-- [Karabiner-Elements](https://karabiner-elements.pqrs.org/) - Hypermod and sublayers
-- [ShortCat](https://shortcatapp.com/) - Vim for the desktop
+- [Karabiner Elements](https://karabiner-elements.pqrs.org/) - Hypermod and sublayers
+- [Shortcat](https://shortcatapp.com/) - Vim for the desktop
 - [Homebrew](https://brew.sh/) - Package manager
 - [KeyCastr](https://github.com/keycastr/keycastr) - For keyboard casting of shortcuts
 
@@ -92,8 +92,7 @@ Streaming the creation of this repo and any other future projects on youtube.
 - [Ableton Live 11](https://www.ableton.com/en/live/) - DAW
 - [Affinity Photo](https://affinity.serif.com/en-us/photo/)
 - [Android File Transfer](https://www.android.com/filetransfer/)
-- [Binaural](https://apps.apple.com/us/app/binaural-beats-generator/id1487743559) - App Store: Binaural beats
-- [CleanMyMac X](https://macpaw.com/cleanmymac)
+- [Binaural](https://apps.apple.com/us/app/binaural-beats-generator/id1487743559) - Binaural beats
 - [LuLu](https://objective-see.org/products/lulu.html) - Security and network traffic blocker
 - [CleanShot X](https://cleanshot.com/)
 - [Pika](https://superhighfives.com/pika) - for designing and color picking
