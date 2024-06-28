@@ -157,7 +157,6 @@ return {
 
 			-- Prompt for confirmation before deleting
 			vim.fn.inputsave()
-			vim.api.nvim_feedkeys("i", "n", true)
 			local confirm = vim.fn.input("Delete file " .. file_name .. "? (y/n): ")
 			vim.fn.inputrestore()
 
@@ -182,48 +181,69 @@ return {
 
 		vim.api.nvim_create_user_command("DeleteObsidianFile", delete_current_file, {})
 
-		local function move_current_file() -- TODO: test this out
+		local function move_current_file()
 			-- Get the full path of the current file
 			local current_file = vim.fn.expand("%:p")
-
 			-- Check if the file exists
 			if vim.fn.filereadable(current_file) ~= 1 then
 				vim.notify("File does not exist or is not readable", vim.log.levels.ERROR)
 				return
 			end
 
-			vim.api.nvim_feedkeys("i", "n", true)
-			-- Prompt for the new directory path
-			vim.ui.input({ prompt = "Enter new directory path: " }, function(new_dir)
-				if new_dir and new_dir ~= "" then
-					-- Ensure the new directory ends with a slash
-					if not new_dir:match("[/\\]$") then
-						new_dir = new_dir .. "/"
-					end
+			-- Use vim.fn.systemlist to run the ripgrep command
+			local command = "eza -d */ | grep -Ev '^(99-Attachments)' | sed 's#/$##'"
+			local directories = vim.fn.systemlist(command)
 
-					-- Construct the new file path
-					local file_name = vim.fn.fnamemodify(current_file, ":t")
-					local new_file_path = new_dir .. file_name
+			require("telescope.pickers")
+				.new({}, {
+					prompt_title = "Move file to directory",
+					finder = require("telescope.finders").new_table({
+						results = directories,
+						entry_maker = function(entry)
+							return {
+								value = entry,
+								display = vim.fn.fnamemodify(entry, ":~:."),
+								ordinal = entry,
+							}
+						end,
+					}),
+					sorter = require("telescope.config").values.generic_sorter({}),
+					attach_mappings = function(prompt_bufnr, map)
+						local actions = require("telescope.actions")
+						actions.select_default:replace(function()
+							actions.close(prompt_bufnr)
+							local selection = require("telescope.actions.state").get_selected_entry()
+							local new_dir = selection.value
 
-					-- Attempt to move the file
-					local success, err = os.rename(current_file, new_file_path)
-					if not success then
-						vim.notify("Failed to move file: " .. err, vim.log.levels.ERROR)
-						return
-					end
+							-- Ensure the new directory ends with a slash
+							if not new_dir:match("[/\\]$") then
+								new_dir = new_dir .. "/"
+							end
 
-					-- Close the buffer associated with the moved file
-					vim.cmd("bd! " .. vim.fn.fnameescape(current_file))
+							-- Construct the new file path
+							local file_name = vim.fn.fnamemodify(current_file, ":t")
+							local new_file_path = new_dir .. file_name
 
-					-- Notify and print success message
-					vim.notify("File moved successfully to: " .. new_file_path)
+							-- Attempt to move the file
+							local success, err = os.rename(current_file, new_file_path)
+							if not success then
+								vim.notify("Failed to move file: " .. err, vim.log.levels.ERROR)
+								return
+							end
 
-					-- Open the moved file for editing
-					vim.cmd("edit " .. new_file_path)
-				else
-					vim.notify("Invalid or empty directory path", vim.log.levels.ERROR)
-				end
-			end)
+							-- Close the buffer associated with the moved file
+							vim.cmd("bd! " .. vim.fn.fnameescape(current_file))
+							local short_path = new_dir .. file_name
+							-- Notify and print success message
+							vim.notify("File moved successfully to: " .. short_path)
+
+							-- Open the moved file for editing
+							vim.cmd("edit " .. new_file_path)
+						end)
+						return true
+					end,
+				})
+				:find()
 		end
 
 		vim.api.nvim_create_user_command("MoveObsidianFile", move_current_file, {})
