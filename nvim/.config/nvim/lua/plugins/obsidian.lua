@@ -40,10 +40,33 @@ return {
 
 			require("telescope.builtin").find_files({
 				previewer = false,
-				prompt_title = "Select Inbox Folder",
+				prompt_title = "Select Folder",
 				cwd = vim.g.obsidian_vault_path,
 				hidden = true,
-				find_command = { "find", ".", "-type", "d" },
+				-- Using ripgrep (rg) to list directories two levels deep, excluding hidden directories and .git
+				find_command = {
+					"find",
+					".",
+					"-maxdepth",
+					"1",
+					"-mindepth",
+					"1",
+					"!",
+					"-path",
+					"./.*",
+					"!",
+					"-path",
+					"./.git*",
+					"!",
+					"-path",
+					"./99-Attachments",
+					"-type",
+					"d",
+					"-exec",
+					"basename",
+					"{}",
+					";",
+				},
 				attach_mappings = function(_, map)
 					map("i", "<CR>", function(prompt_bufnr)
 						local current_picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
@@ -134,9 +157,8 @@ return {
 
 					-- Close the buffer of the old file without deleting the file
 					vim.cmd("bd! " .. vim.fn.fnameescape(current_file))
-
 					-- Notify and print success message
-					vim.notify("File renamed successfully to " .. new_file_path)
+					vim.notify("File renamed successfully to " .. input)
 				end
 			end)
 		end
@@ -263,6 +285,12 @@ return {
 			completion = {
 				nvim_cmp = true,
 				min_chars = 2,
+			},
+			ui = {
+				checkboxes = {
+					[" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+					["x"] = { char = "", hl_group = "ObsidianDone" },
+				},
 			},
 			mappings = {
 				["<cr>"] = {

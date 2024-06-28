@@ -60,6 +60,41 @@ return {
 				desc = "Toggle Markdown Task (Insert Mode)",
 				mode = "i",
 			},
+			{
+				"<C-l>",
+				function()
+					-- Get the start and end lines of the visual selection
+					-- local start_line, _ = unpack(vim.fn.getpos("'<"), 2, 3)
+					-- local end_line, _ = unpack(vim.fn.getpos("'>"), 2, 3)
+					-- local lines = vim.fn.getline(start_line, end_line)
+					vim.cmd("ObsidianToggleCheckbox")
+					-- for i, line in ipairs(lines) do
+					-- 	local new_line = line
+					-- 	if line:match("^%s*-%s*%[x%]") then
+					-- 		new_line = line:gsub("^%s*-%s*%[x%]%s*", "", 1)
+					-- 	elseif line:match("^%s*-%s*%[ %]") then
+					-- 		new_line = line:gsub("%[ %]", "[x]", 1)
+					-- 	elseif line:match("^%s*$") or not line:match("^%s*-%s*") then
+					-- 		new_line = "- [ ] " .. line:gsub("^%s*", "")
+					-- 	else
+					-- 		new_line = line:gsub("^(%s*-)%s*", "%1 [ ] ", 1)
+					-- 	end
+					-- 	lines[i] = new_line
+					-- end
+					--
+					-- -- Ensure `lines` is a table before setting it back
+					-- if type(lines) == "table" then
+					-- 	vim.fn.setline(start_line, lines)
+					-- else
+					-- 	vim.api.nvim_err_writeln("Error: 'lines' is not a table")
+					-- end
+					--
+					-- -- Reset cursor position to the end of the selection
+					-- vim.fn.setpos(".", { 0, end_line, 0, 0 })
+				end,
+				desc = "Toggle Markdown Task (Visual Mode)",
+				mode = "v",
+			},
 		},
 	},
 }
