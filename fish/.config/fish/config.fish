@@ -132,6 +132,9 @@ alias bi "brew install"
 alias bs "brew search"
 alias bi "brew info"
 
+# |======  python  ======|
+alias venv "uv venv && source .venv/bin/activate.fish"
+
 # |======  Functions ======|
 
 function mcd
@@ -373,6 +376,7 @@ function start-stream
     echo "# $date Streaming checklist
 
 - [ ] Create a task list for stream
+- [ ] Create a list of things we did last stream
 - [ ] Create Title
 - [ ] Create Description
 - [ ] Create Thumbnail
@@ -417,9 +421,9 @@ URL: $video_url
 [Add your thoughts and insights about the video here]
 
 ## Key Points
-- 
-- 
-- 
+-
+-
+-
 
 ## Action Items
 - [ ] 
