@@ -31,6 +31,8 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
+-- Obsidian keymaps
+keymap.set("n", "<leader>o", "", { desc = "+obsidian" })
 keymap.set("n", "<leader>oc", "<cmd>CreateObsidianFile<cr>", { desc = "Create Obsidian File" })
 keymap.set("n", "<leader>or", "<cmd>RenameObsidianFile<cr>", { desc = "Rename Obsidian File" })
 keymap.set("n", "<leader>od", "<cmd>DeleteObsidianFile<cr>", { desc = "Delete Obsidian File" })
