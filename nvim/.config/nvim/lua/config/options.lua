@@ -22,5 +22,5 @@ if vim.fn.has("clipboard") == 1 then
 	opt.clipboard:append("unnamedplus")
 end
 
-vim.g.lazyvim_python_lsp = "pyright"
-vim.g.lazyvim_python_ruff = "ruff_lsp"
+-- vim.g.lazyvim_python_lsp = "pyright"
+-- vim.g.lazyvim_python_ruff = "ruff_lsp"
