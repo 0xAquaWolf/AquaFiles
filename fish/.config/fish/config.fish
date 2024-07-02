@@ -386,6 +386,7 @@ function start-stream
 - [ ] Speed test
 - [ ] Create Broadcast
 - [ ] Go Live
+- [ ] Copy Chat link
 " >$full_path
 
     echo "Stream checklist created: $full_path"
