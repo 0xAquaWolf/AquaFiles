@@ -381,12 +381,13 @@ function start-stream
 - [ ] Create Description
 - [ ] Create Thumbnail
 - [ ] Setup up mic
-- [ ] Setup Music
+- [ ] Setup Music Instrumental
+- [ ] Setup Atomosphere
 - [ ] Test video
 - [ ] Speed test
-- [ ] Create Broadcast
+- [ ] Create Broadcast (low latency)
+- [ ] Setup Chat Link
 - [ ] Go Live
-- [ ] Copy Chat link
 " >$full_path
 
     echo "Stream checklist created: $full_path"
