@@ -8,8 +8,8 @@ end
 
 config.enable_tab_bar = false -- remove tab bar
 config.window_decorations = "RESIZE" -- remove window decorations
-config.window_background_opacity = 0.95
-config.macos_window_background_blur = 22
+config.window_background_opacity = 0.85
+config.macos_window_background_blur = 13
 
 config.color_scheme = "Catppuccin Mocha"
 
