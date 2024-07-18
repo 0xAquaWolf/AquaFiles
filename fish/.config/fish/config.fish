@@ -103,7 +103,7 @@ alias zshrc "vim ~/.config/.zshrc"
 alias gl gorilla
 alias btop bpytop
 alias nf neofetch
-alias ff "fastfetch -l arch2"
+alias ff fastfetch
 alias cat bat
 alias lg lazygit
 alias ct cointop
