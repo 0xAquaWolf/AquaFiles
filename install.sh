@@ -47,15 +47,14 @@ mailhog \
 gorilla-cli \
 git-delta
 
+# make sure to install your dotfile in the root of the user ~/
+# if not GNU Stow will not work corrently
+git clone https://github.com/0xAquaWolf/AquaFiles.git $HOME
 
 # add fish to /etc/shells -> /usr/local/bin/fish
 sudo echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
 
-chsh -s /usr/local/bin/fish # change default terminal shell
-
-git clone https://github.com/0xAquaWolf/AquaFiles.git $HOME
-# make sure to install your dotfile in the root of the user ~/
-# if not GNU Stow will not work corrently
+chsh -s /opt/homebrew/bin/fish # change default terminal shell
 
 # Run this before Stowing Dotfiles
 rm -rf ~/.config/fish/config.fish
