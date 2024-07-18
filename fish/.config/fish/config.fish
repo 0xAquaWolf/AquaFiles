@@ -5,7 +5,7 @@ if not set -q SSH_AUTH_SOCK
     set -Ux SSH_AGENT_PID $SSH_AGENT_PID
 end
 
-ssh-add -q ~/.ssh/0xAquaWolf
+# ssh-add -q ~/.ssh/0xAquaWolf
 
 eval (/opt/homebrew/bin/brew shellenv)
 
