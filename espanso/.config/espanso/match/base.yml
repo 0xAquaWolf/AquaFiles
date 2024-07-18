@@ -9,8 +9,8 @@
 # it gets replaced by the "replace" string.
 matches:
   # Simple text replacement
-  - trigger: ":ngm"
-    replace: "neoneon2888@gmail.com"
+  - trigger: ":agm"
+    replace: "aquawolf369@gmail.com"
 
   # But matches can also be dynamic:
 
@@ -31,4 +31,3 @@ matches:
         type: shell
         params:
           cmd: "echo 'Hello from your shell'"
-
