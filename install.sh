@@ -47,6 +47,9 @@ mailhog \
 gorilla-cli \
 git-delta
 
+# Install fnm
+curl -fsSL https://fnm.vercel.app/install | bash
+
 # make sure to install your dotfile in the root of the user ~/
 # if not GNU Stow will not work corrently
 git clone https://github.com/0xAquaWolf/AquaFiles.git $HOME
