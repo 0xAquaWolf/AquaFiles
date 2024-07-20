@@ -5,17 +5,18 @@ if not set -q SSH_AUTH_SOCK
     set -Ux SSH_AGENT_PID $SSH_AGENT_PID
 end
 
-# ssh-add -q ~/.ssh/0xAquaWolf
-
 eval (/opt/homebrew/bin/brew shellenv)
 
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
 fnm env --use-on-cd | source # "Schniz/fnm"
 
-# paths
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
 set fish_greeting ""
-set fish_key_bindings fish_vi_key_bindings
+set fish_key_bindings fish_vi_key_bindings #set vim keybinding on fish shell
 
 # paths
 fish_add_path /bin
@@ -42,6 +43,7 @@ set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -gx XDG_CONFIG_HOME ~/.config
 set -gx BAT_THEME "Catppuccin Mocha"
 set -gx BUN_INSTALL "$HOME/.bun"
+set -Ux BASE_PATH "/Users/aquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/vaults/SecondBrain"
 
 # FZF Config
 set -g FZF_DEFAULT_COMMAND "fd -H -E '.git'"
@@ -85,7 +87,7 @@ alias lt "eza -lAh --icons=always --git --tree --level=4 --long --ignore-glob='n
 
 # |======  Config App  ======|
 alias nrc "vim ~/.config/nvim/lua/"
-alias orc "vim /Users/0xaquawolf/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain/.obsidian.vimrc"
+alias orc "vim $BASE_PATH/.obsidian.vimrc"
 alias frc "vim ~/.config/fish/config.fish" # fish shell rc
 alias erc "vim ~/.config/espanso/"
 alias sfs "source ~/.config/fish/config.fish" # source fish shell
@@ -125,7 +127,7 @@ alias bp "bun run build && bun run preview"
 alias bb "bun run build"
 
 # |======  Obsidian ======|
-alias sb "cd /Users/0xaquawolf/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain && vim ."
+alias sb 'cd "$BASE_PATH" && vim .'
 
 # |======  HomeBrew ======|
 alias bi "brew install"
@@ -269,7 +271,7 @@ end
 function crd # create daily jouraal note
     set today_date (date +"%d-%m-%Y")
     set timestamp (date +"%H-%M-%S")
-    set base_path "/Users/0xaquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain/3-Resources/journals/daily"
+    set base_path "$BASE_PATH/3-Resources/journals/daily"
 
     if test (count $argv) -gt 0
         set filename "$base_path/$today_date-$argv[1].md"
@@ -296,7 +298,7 @@ function crd # create daily jouraal note
 end
 
 function in
-    set base_path "/Users/0xaquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain/0-Inbox"
+    set base_path "$BASE_PATH/SecondBrain/0-Inbox"
 
     if test (count $argv) -eq 0
         set file_name ""
@@ -332,7 +334,7 @@ function in
 end
 
 function start-stream
-    set base_path "/Users/0xaquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain/0-Inbox"
+    set base_path "$BASE_PATH/0-Inbox"
 
     if test (count $argv) -eq 0
         set file_name ""
@@ -368,7 +370,7 @@ function start-stream
 end
 
 function start-stream
-    set base_path "/Users/0xaquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain/3-Resources/youtube-stream"
+    set base_path "$BASE_PATH/3-Resources/youtube-stream"
     set date (date +"%Y-%m-%d")
     set filename "$date-stream-checklist.md"
     set full_path "$base_path/$filename"
@@ -397,7 +399,7 @@ function start-stream
 end
 
 function yt-sum
-    set base_path "/Users/0xaquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/NeoDocs/SecondBrain/3-Resources/video-summaries"
+    set base_path "$BASE_PATH/3-Resources/video-summaries"
     set date (date +"%Y-%m-%d")
 
     # Prompt for video title and URL
@@ -442,6 +444,23 @@ URL: $video_url
     nvim $full_path
 end
 
+function killport
+    if test (count $argv) -eq 0
+        echo "Usage: killport <port_number>"
+        return 1
+    end
+
+    set port $argv[1]
+    set pid (lsof -ti :$port)
+
+    if test -z "$pid"
+        echo "No process found running on port $port"
+        return 1
+    else
+        kill -9 $pid
+        echo "Process $pid running on port $port has been killed"
+    end
+end
 
 # This is a code snippet so that i know how to detect which OS i'm currently on and execute different scripts
 

@@ -8,9 +8,13 @@
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  # Simple text replacement
+  # aquawolf369
   - trigger: ":agm"
     replace: "aquawolf369@gmail.com"
+
+  # Start Stream Text
+  - trigger: ":wstream"
+    replace: "Wholeness & balanced Vibrations! Welcome to stream 🙌"
 
   # But matches can also be dynamic:
 
@@ -21,7 +25,7 @@ matches:
       - name: mydate
         type: date
         params:
-          format: "%m/%d/%Y"
+          format: "%m-%d-%Y"
 
   # Print the output of a shell command
   - trigger: ":shell"

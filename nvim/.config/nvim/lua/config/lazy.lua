@@ -26,6 +26,11 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.lang.python" },
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
+		{
+			"microsoft/vscode-js-debug",
+			build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mkdir -p ~/.config/vscode-js-debug/out && mv dist/* ~/.config/vscode-js-debug/out/",
+			lazy = true,
+		},
 		-- import/override with your plugins
 		{ import = "plugins" },
 		-- { import = "lazyvim.plugins.extras.ui.mini-animate" },
