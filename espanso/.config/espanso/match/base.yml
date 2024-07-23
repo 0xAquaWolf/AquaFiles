@@ -8,13 +8,17 @@
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  # aquawolf369
-  - trigger: ":agm"
-    replace: "aquawolf369@gmail.com"
-
   # Start Stream Text
   - trigger: ":wstream"
     replace: "Wholeness & balanced Vibrations! Welcome to stream 🙌"
+
+  # Start Stream Text
+  - trigger: ":aquafiles"
+    replace: "https://github.com/0xAquaWolf/AquaFiles"
+
+  # Start Stream Text
+  - trigger: ":discord"
+    replace: "https://discord.gg/wzPBjEcn87"
 
   # But matches can also be dynamic:
 
@@ -26,6 +30,15 @@ matches:
         type: date
         params:
           format: "%m-%d-%Y"
+
+  # Print the current date
+  - trigger: ":time"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%H:%M"
 
   # Print the output of a shell command
   - trigger: ":shell"
