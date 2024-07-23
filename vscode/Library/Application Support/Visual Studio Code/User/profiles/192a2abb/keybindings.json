@@ -26,6 +26,11 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
+    "key": "space o",
+    "command": "workbench.action.showAllSymbols",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
     "key": "space e",
     "command": "runCommands",
     "args": {
