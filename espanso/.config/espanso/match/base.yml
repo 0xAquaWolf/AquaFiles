@@ -9,6 +9,10 @@
 # it gets replaced by the "replace" string.
 matches:
   # Start Stream Text
+  #
+  - trigger: ":agm"
+    replace: "aquawolf369@gmail.com"
+
   - trigger: ":wstream"
     replace: "Wholeness & balanced Vibrations! Welcome to stream 🙌"
 
