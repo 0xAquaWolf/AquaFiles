@@ -26,6 +26,11 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
+    "key": "space f",
+    "command": "editor.action.formatDocument",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
     "key": "cmd-t",
     "command": "workbench.action.terminal.toggleTerminal",
   },
@@ -39,6 +44,27 @@
     "command": "code-runner.run",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
+  {
+    "key": "space d r",
+    "command": "workbench.action.debug.start",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space d b",
+    "command": "editor.debug.action.toggleBreakpoint",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  // {
+  //   "key": "space d",
+  //   "command": "runCommands",
+  //   "args": {
+  //     "commands": [
+  //       "workbench.action.toggleSidebarVisibility",
+  //       "workbench.view.debug",
+  //     ]
+  //   },
+  //   "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
+  // },
   {
     "key": "space e",
     "command": "runCommands",
