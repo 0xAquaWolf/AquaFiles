@@ -7,24 +7,21 @@ My primary operating system is macOS, but I do use Linux sometimes... (arch, btw
 **Feel free to try out my dotfiles or use them as inspiration!** If you have a
 suggestion, improvement or question, please open an issue or PR!
 
+<!-- ## Demo Video (coming soon) -->
+
 ## Design Principles
 
-- Open-Source
+Design Principles
+
+- [Open-Source](https://opensource.org/osd)
 - [Flow State](<https://en.wikipedia.org/wiki/Flow_(psychology)>)
-- Minimalisim
-- Keyboard Homerow Centric
-- Design & astetics
-- Productivity (minimize distractions)
-- Form & Function (beauty and action)
-- Portable
-- Bleeding Edge
-
-## Follow the Journey
-
-Streaming the creation of this repo and any other future projects on youtube.
-<br />
-<br />
-[0xAquaWolf YouTube Channel](https://youtube.com/playlist?list=PLwbt1uBf9iqArccoEXrIB_ZO0d86rECgc&si=GRBhNj0w_ZW4XwIt)
+- [Minimalism](https://en.wikipedia.org/wiki/Minimalism)
+- [Keyboard Home Row Centric](https://en.wikipedia.org/wiki/Touch_typing#Home_row)
+- [Design & Aesthetics](https://en.wikipedia.org/wiki/Design)
+- [Productivity (minimize distractions)](https://en.wikipedia.org/wiki/Productivity#Productivity_improving_technologies)
+- [Form & Function (beauty and action)](https://en.wikipedia.org/wiki/Form_follows_function)
+- [Portable](https://en.wikipedia.org/wiki/Portable_computing)
+- [Bleeding Edge](https://en.wikipedia.org/wiki/Bleeding_edge_technology)
 
 ## Screenshots
 
@@ -63,64 +60,9 @@ Streaming the creation of this repo and any other future projects on youtube.
   </tr>
 </table>
 
-## Apps i use
-
-### MacOS (Content creation, Writing, Programming)
-
-- [Wezterm](https://wezfurlong.org/wezterm/) - Terminal
-- [Raycast](https://www.raycast.com/) - App Launcher
-- [Obsidian](https://obsidian.md/) - Sync through iCloud
-- [Yabai](https://github.com/koekeishiya/yabai) - Window Manager
-- [SKHD](https://github.com/koekeishiya/skhd) - Keyboard Shortcut Manager
-- [Karabiner Elements](https://karabiner-elements.pqrs.org/) - Hypermod and sublayers
-- [Shortcat](https://shortcatapp.com/) - Vim for the desktop
-- [Homebrew](https://brew.sh/) - Package manager
-- [KeyCastr](https://github.com/keycastr/keycastr) - For keyboard casting of shortcuts
-
-### Chrome Extensions
-
-- [Wappalyzer](https://www.wappalyzer.com/)
-- [Dark Reader](https://darkreader.org/) - with Catppuccin Mocha theme
-- [uBlock Origin](https://ublockorigin.com/)
-- [Vimium](https://vimium.github.io/)
-- [1Password](https://1password.com/)
-- [Undistracted](https://undistracted.app/)
-- [Bypass Paywalls](https://github.com/iamadamdev/bypass-paywalls-chrome)
-
-### Desktop Apps
-
-- [Ableton Live 11](https://www.ableton.com/en/live/) - DAW
-- [Affinity Photo](https://affinity.serif.com/en-us/photo/)
-- [Android File Transfer](https://www.android.com/filetransfer/)
-- [Binaural](https://apps.apple.com/us/app/binaural-beats-generator/id1487743559) - Binaural beats
-- [LuLu](https://objective-see.org/products/lulu.html) - Security and network traffic blocker
-- [CleanShot X](https://cleanshot.com/)
-- [Pika](https://superhighfives.com/pika) - for designing and color picking
-- [Gestimer](http://maddin.io/gestimer/)
-- [IINA](https://iina.io/) - Video player
-- [KeyboardCleanTool](https://folivora.ai/keyboardcleantool)
-- [Audio Hijack](https://rogueamoeba.com/audiohijack/)
-- [Memory Clean 3](https://fiplab.com/apps/memory-clean-for-mac)
-- [Parallels](https://www.parallels.com/)
-- [Rize](https://rize.io/) - Productivity tracker for macOS
-- [Screen Studio](https://www.screen.studio/)
-- [ScreenFlow](https://www.telestream.net/screenflow/)
-- [TablePlus](https://tableplus.com/) - Database manager
-- [The Unarchiver](https://theunarchiver.com/)
-- [Wondershare Recoverit](https://recoverit.wondershare.com/)
-- [xScope](https://xscopeapp.com/) - A set of tools for UI/UX Designers
-- [Hidden Bar](https://github.com/dwarvesf/hidden)
-
-## Contents
-
-- Neovim config
-- zellij config
-- git config
-- fish config
-- yabai config
-
 ### Requirements
 
+- [Deno](https://deno.land)
 - Neovim >= **0.9.0** (needs to be built with **LuaJIT**)
 - Git >= **2.19.0** (for partial clones support)
 - [LazyVim](https://www.lazyvim.org/)
@@ -139,27 +81,139 @@ Streaming the creation of this repo and any other future projects on youtube.
 
 ### Neovim setup
 
-### yabai Setup
+- Backup previous config
 
-### fish Setup
+```bash
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+```
 
-### neovim Setup
+- Install LazyVim
 
-### Zellij Setup
+```
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+```
 
-### skhd Setup
+- Remove the .git folder, so you can add it to your own repo later
 
-### git Setup
+```bash
+rm -rf ~/.config/nvim/.git
+```
 
-### karabiners Setup
+- install deno for peek.nvim
+
+```bash
+curl -fsSL https://deno.land/install.sh | sh
+```
+
+<!-- ### fish setup -->
+<!---->
+<!-- ### Zellij setup -->
+<!---->
+<!-- ### yabai setup -->
+<!---->
+<!-- ### skhd setup -->
+<!---->
+<!-- ### git setup -->
+<!-- ### karabiner elements setup -->
+
+## Streaming Live Daily on YouTube
+
+Chronicling my journey of continuous learning and exploration in cutting-edge technologies including:
+
+- Web3
+- AI/ML
+- Cybersecurity
+- Algo Trading
+
+Join me as I document my growth, share insights, and delve into the ever-evolving world of tech innovation.
+<br />
+<br />
+[0xAquaWolf YouTube Channel](https://youtube.com/playlist?list=PLwbt1uBf9iqArccoEXrIB_ZO0d86rECgc&si=GRBhNj0w_ZW4XwIt)
+
+<!-- Add an image that is clickable that links to my channel -->
+
+## Apps i use
+
+### MacOS (Content creation, Writing, Programming)
+
+- [Wezterm](https://wezfurlong.org/wezterm/) - Terminal
+- [Homebrew](https://brew.sh/) - Package manager
+- [Raycast](https://www.raycast.com/) - App Launcher
+- [Obsidian](https://obsidian.md/) - Sync through iCloud
+- [Yabai](https://github.com/koekeishiya/yabai) - Window Manager
+- [SKHD](https://github.com/koekeishiya/skhd) - Keyboard Shortcut Manager
+- [Karabiner Elements](https://karabiner-elements.pqrs.org/) - Hypermod and sublayers
+- [Shortcat](https://shortcatapp.com/) - Vim for the desktop
+- [KeyCastr](https://github.com/keycastr/keycastr) - For keyboard casting of shortcuts
+- Visual Studio code (with vim link settings)
+  - Vim (Vim motions FTW!!!!)
+  - Catppuccin for VSCode
+  - Catppuccin Icons for VSCode
+  - Clock (Hide ENV Variables on stream)
+  - Code Runner
+  - DotENV
+  - Python
+  - Python Debugger
+  - Ruff (NextGen Python Linter & Formatter)
+  - TODO Highlight
+
+### Chrome Extensions
+
+- [Vimium](https://vimium.github.io/)
+- [Wappalyzer](https://www.wappalyzer.com/)
+- [Dark Reader](https://darkreader.org/) - with Catppuccin Mocha theme
+- [uBlock Origin](https://ublockorigin.com/)
+- [1Password](https://1password.com/)
+- [Undistracted](https://undistracted.app/)
+- [Bypass Paywalls](https://github.com/iamadamdev/bypass-paywalls-chrome)
+
+### Desktop Apps
+
+- [Ableton Live 12](https://www.ableton.com/en/live/) - DAW
+- [Affinity Photo](https://affinity.serif.com/en-us/photo/)
+- [Android File Transfer](https://www.android.com/filetransfer/)
+- [Binaural](https://apps.apple.com/us/app/binaural-beats-generator/id1487743559) - Binaural beats
+- [LuLu](https://objective-see.org/products/lulu.html) - Security and network traffic blocker
+- [CleanShot X](https://cleanshot.com/)
+- [Gestimer](http://maddin.io/gestimer/)
+- [IINA](https://iina.io/) - Video player
+- [KeyboardCleanTool](https://folivora.ai/keyboardcleantool)
+- [Audio Hijack](https://rogueamoeba.com/audiohijack/)
+- [Memory Clean 3](https://fiplab.com/apps/memory-clean-for-mac)
+- [Parallels](https://www.parallels.com/)
+- CrossOver
+- [Rize](https://rize.io/) - Productivity tracker for macOS
+- [Screen Studio](https://www.screen.studio/)
+- [ScreenFlow](https://www.telestream.net/screenflow/)
+- [TablePlus](https://tableplus.com/) - Database manager
+- [The Unarchiver](https://theunarchiver.com/)
+- [xScope](https://xscopeapp.com/) - A set of tools for UI/UX Designers
+- Bartender 5 (macOS Menubar management)
+- Keka (compression and uncompression)
+- Voicemod
+- OBS
+- Kaleidoscope (File Diff)
+- AlDente (macOS Batter Manager)
+- Dynamic Wallpaper
+- ColorSlurp (Color Picker)
+- Elgato Stream Deck
+- Farrago (Soundboard)
+- iTubeGo (YouTube Downloader)
+
+## Join the Community on Discord
+
+AquaWolf Academy: https://discord.gg/wzPBjEcn87
 
 ## Todo List
 
 - [x] add links for apps i use
-- [ ] yabai setup
+- [x] neovim setup
+- [ ] add a quick start guide
+- [ ] add a video showing how to bootstrap the install and using the config
 - [ ] fish setup
-- [ ] neovim setup
-- [ ] Zellij setup
 - [ ] git setup
+- [ ] Zellij setup
+- [ ] yabai setup
 - [ ] skhd setup
 - [ ] karabiners setup
