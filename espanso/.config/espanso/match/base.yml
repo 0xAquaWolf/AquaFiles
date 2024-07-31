@@ -17,7 +17,7 @@ matches:
     replace: "Wholeness & balanced Vibrations! Welcome to stream 🙌"
 
   # Start Stream Text
-  - trigger: ":aquafiles"
+  - trigger: ":dotfiles"
     replace: "https://github.com/0xAquaWolf/AquaFiles"
 
   # Start Stream Text
