@@ -91,6 +91,7 @@ yabai -m rule --add app="^OBS Studio$" title="^Chat$" manage=off
 yabai -m rule --add app="^Stardew Valley$" manage=off
 yabai -m rule --add app="^LuLu$" manage=off
 yabai -m rule --add app="^Zoom.us$" manage=off
+yabai -m rule --add app="^Farrago$" title="^Editing:.*$" manage=off
 # yabai -m rule --add app="^Godot$" manage=off
 # use this config to always float and position a specific app like our floating todolist
 # yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2
