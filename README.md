@@ -11,8 +11,6 @@ suggestion, improvement or question, please open an issue or PR!
 
 ## Design Principles
 
-Design Principles
-
 - [Open-Source](https://opensource.org/osd)
 - [Flow State](<https://en.wikipedia.org/wiki/Flow_(psychology)>)
 - [Minimalism](https://en.wikipedia.org/wiki/Minimalism)
