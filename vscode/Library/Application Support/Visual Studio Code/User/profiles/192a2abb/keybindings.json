@@ -235,5 +235,5 @@
   {
     "key": "ctrl+alt+n",
     "command": "-code-runner.run"
-  }
+  },
 ]
