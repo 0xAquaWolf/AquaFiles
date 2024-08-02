@@ -127,6 +127,12 @@ stow wezterm
 
 ### Neovim setup
 
+- install deno for (peek.nvim)
+
+```bash
+curl -fsSL https://deno.land/install.sh | sh
+```
+
 - Backup previous config
 
 ```bash
