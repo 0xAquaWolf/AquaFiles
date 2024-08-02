@@ -77,6 +77,54 @@ suggestion, improvement or question, please open an issue or PR!
   - [iterm2](https://iterm2.com/) **_(Macos)_**
 - [Operator Mono](https://github.com/0xAquaWolf/AquaFiles/tree/main/fonts)
 
+<!-- ### macOS setup -->
+
+### Fish Shell Setup
+
+- install fish shell through homebrew
+
+```bash
+brew install fish
+```
+
+- delete config folder
+
+```bash
+rm -rf ~/.config/fish
+```
+
+- `cd` into AquaFiles
+
+```bash
+cd ~/AquaFiles/
+```
+
+- stow the config
+
+```bash
+stow wezterm
+```
+
+### WezTerm Setup
+
+install wezterm through homebrew
+
+```bash
+brew install --cask wezterm
+```
+
+- `cd` into AquaFiles
+
+```bash
+cd ~/AquaFiles/
+```
+
+- stow the config
+
+```bash
+stow wezterm
+```
+
 ### Neovim setup
 
 - Backup previous config
@@ -104,16 +152,52 @@ rm -rf ~/.config/nvim/.git
 curl -fsSL https://deno.land/install.sh | sh
 ```
 
-<!-- ### fish setup -->
-<!---->
-<!-- ### Zellij setup -->
-<!---->
-<!-- ### yabai setup -->
-<!---->
-<!-- ### skhd setup -->
-<!---->
-<!-- ### git setup -->
-<!-- ### karabiner elements setup -->
+- clone dotfiles _(needs to be cloned in root directory for GNU Stow work)_
+
+```bash
+git clone https://github.com/0xAquaWolf/AquaFiles ~/
+```
+
+- delete lua directory in nvim
+
+```bash
+rm -rf ~/.config/nvim/lua/*
+```
+
+- `cd` into AquaFiles
+
+```bash
+cd ~/AquaFiles/
+```
+
+- if on macOS (you might need to delete DS_Store files)
+
+```bash
+dir="${1:-.}" && echo "Removing .DS_STORE files from $dir" && find "$dir" -type f -name .DS_STORE -delete && echo "ALL .DS_STORE files have been removed from $dir"
+```
+
+- stow lazyvim
+
+```bash
+stow nvim
+```
+
+- startup neovim
+
+```bash
+nvim
+```
+
+- sit back and enjoy the installation
+  <!---->
+  <!-- ### Zellij setup -->
+  <!---->
+  <!-- ### yabai setup -->
+  <!---->
+  <!-- ### skhd setup -->
+  <!---->
+  <!-- ### git setup -->
+  <!-- ### karabiner elements setup -->
 
 ## Streaming Live Daily on YouTube
 
@@ -207,11 +291,11 @@ AquaWolf Academy: https://discord.gg/wzPBjEcn87
 
 - [x] add links for apps i use
 - [x] neovim setup
-- [ ] add a quick start guide
-- [ ] add a video showing how to bootstrap the install and using the config
 - [ ] fish setup
 - [ ] git setup
 - [ ] Zellij setup
 - [ ] yabai setup
 - [ ] skhd setup
 - [ ] karabiners setup
+- [ ] add a quick start guide (use this for video)
+- [ ] add a video showing how to bootstrap the install and using the config
