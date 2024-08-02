@@ -34,5 +34,6 @@
       "after": ["<", "g", "v"]
     },
 
-  ]
+  ],
+  "explorer.confirmDragAndDrop": false
 }
