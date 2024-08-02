@@ -24,8 +24,13 @@ matches:
   - trigger: ":discord"
     replace: "https://discord.gg/wzPBjEcn87"
 
+  - trigger: ":lesson"
+    replace: |
+      # Lesson
+      # Lecture
+      # Materials
+      # Resources
   # But matches can also be dynamic:
-
   # Print the current date
   - trigger: ":date"
     replace: "{{mydate}}"
