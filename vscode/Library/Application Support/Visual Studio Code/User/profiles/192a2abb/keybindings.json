@@ -54,17 +54,6 @@
     "command": "editor.debug.action.toggleBreakpoint",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-  // {
-  //   "key": "space d",
-  //   "command": "runCommands",
-  //   "args": {
-  //     "commands": [
-  //       "workbench.action.toggleSidebarVisibility",
-  //       "workbench.view.debug",
-  //     ]
-  //   },
-  //   "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
-  // },
   {
     "key": "space e",
     "command": "runCommands",
@@ -74,12 +63,7 @@
         "workbench.action.focusActiveEditorGroup"
       ]
     },
-    "when": "sideBarFocus && !inputFocus"
-  },
-  {
-    "key": "space e",
-    "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
   },
   {
     "key": "shift-L",
