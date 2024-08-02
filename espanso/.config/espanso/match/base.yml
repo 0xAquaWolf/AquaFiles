@@ -27,8 +27,8 @@ matches:
   - trigger: ":lesson"
     replace: |
       # Lesson
-      # Lecture
       # Materials
+      # Lecture
       # Resources
   # But matches can also be dynamic:
   # Print the current date
