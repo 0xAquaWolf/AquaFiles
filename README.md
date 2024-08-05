@@ -79,6 +79,26 @@ suggestion, improvement or question, please open an issue or PR!
 
 <!-- ### macOS setup -->
 
+### WezTerm Setup
+
+install wezterm through homebrew
+
+```bash
+brew install --cask wezterm
+```
+
+- `cd` into AquaFiles
+
+```bash
+cd ~/AquaFiles/
+```
+
+- stow the config
+
+```bash
+stow wezterm
+```
+
 ### Fish Shell Setup
 
 - install fish shell through homebrew
@@ -102,30 +122,10 @@ cd ~/AquaFiles/
 - stow the config
 
 ```bash
-stow wezterm
+stow fish
 ```
 
 **Troubleshooting**: if you don't see a recently added path in the $PATH make sure to delete `~/.config/fish/fish_variables`, and exit the terminal and restart to clear the cache
-
-### WezTerm Setup
-
-install wezterm through homebrew
-
-```bash
-brew install --cask wezterm
-```
-
-- `cd` into AquaFiles
-
-```bash
-cd ~/AquaFiles/
-```
-
-- stow the config
-
-```bash
-stow wezterm
-```
 
 ### Neovim setup
 
@@ -197,15 +197,50 @@ nvim
 ```
 
 - sit back and enjoy the installation
-  <!---->
-  <!-- ### Zellij setup -->
-  <!---->
+
+### Git setup
+
+- `cd` into AquaFiles
+
+```bash
+cd ~/AquaFiles/
+```
+
+- `stow` git
+
+```bash
+stow git
+```
+
+### Zellij setup
+
+- `cd` into AquaFiles
+
+```bash
+cd ~/AquaFiles/
+```
+
+- `stow` zellij
+
+```bash
+stow zellij
+```
+
+### skhd setup
+
+- `cd` into AquaFiles
+
+```bash
+cd ~/AquaFiles/
+```
+
+- `stow` zellij
+
+```bash
+stow skhd
+```
+
   <!-- ### yabai setup -->
-  <!---->
-  <!-- ### skhd setup -->
-  <!---->
-  <!-- ### git setup -->
-  <!-- ### karabiner elements setup -->
 
 ## Streaming Live Daily on YouTube
 
@@ -301,12 +336,13 @@ AquaWolf Academy: https://discord.gg/wzPBjEcn87
 
 - [x] add links for apps i use
 - [x] neovim setup
-- [ ] document how to use GNU Stow with dotfiles
-- [ ] fish setup
-- [ ] git setup
-- [ ] Zellij setup
+- [x] fish setup
+- [x] git setup
+- [x] Zellij setup
+- [x] skhd setup
 - [ ] yabai setup
-- [ ] skhd setup
-- [ ] karabiners setup
+- [ ] obsidian setup & config
+- [ ] document how to use GNU Stow with my dotfiles
 - [ ] add a quick start guide (use this for video)
 - [ ] add a video showing how to bootstrap the install and using the config
+<!-- - [ ] karabiners setup -->
