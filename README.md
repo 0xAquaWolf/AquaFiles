@@ -105,6 +105,8 @@ cd ~/AquaFiles/
 stow wezterm
 ```
 
+**Troubleshooting**: if you don't see a recently added path in the $PATH make sure to delete `~/.config/fish/fish_variables`, and exit the terminal and restart to clear the cache
+
 ### WezTerm Setup
 
 install wezterm through homebrew
@@ -295,8 +297,11 @@ AquaWolf Academy: https://discord.gg/wzPBjEcn87
 
 ## Todo List
 
+<!-- Explain that i'm using GNU Stow for my dotfiles and how it works -->
+
 - [x] add links for apps i use
 - [x] neovim setup
+- [ ] document how to use GNU Stow with dotfiles
 - [ ] fish setup
 - [ ] git setup
 - [ ] Zellij setup
