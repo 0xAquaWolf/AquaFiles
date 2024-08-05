@@ -24,6 +24,10 @@ matches:
   - trigger: ":discord"
     replace: "https://discord.gg/wzPBjEcn87"
 
+  # Start Stream Text
+  - trigger: ":psqlc"
+    replace: "\\! clear"
+
   - trigger: ":lesson"
     replace: |
       # Lesson
