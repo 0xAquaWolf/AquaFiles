@@ -25,7 +25,7 @@ fish_add_path ~/scripts
 fish_add_path ~/go/bin
 fish_add_path ~/.bun/bin
 fish_add_path ~/.deno/bin
-fish_add_path /Users/Shared/DBngin/postgresql/16.2/bin
+fish_add_path /opt/homebrew/postgresql@16/bin
 
 # pnpm
 set -gx PNPM_HOME /Users/0xaquawolf/Library/pnpm
