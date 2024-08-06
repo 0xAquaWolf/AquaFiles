@@ -107,6 +107,32 @@ stow wezterm
 brew install fish
 ```
 
+- Add fish to the list of allowed shells by appending its path to /etc/shells
+
+```bash
+echo $(which fish) | sudo tee -a /etc/shells
+```
+
+- set fish shell to the default shell
+
+```bash
+chsh -s /opt/homebrew/bin/fish
+```
+
+- exit the current terminal
+
+```bash
+exit
+```
+
+- check if fish shell is set as the default shell
+
+```bash
+echo $SHELL
+# expected output:
+# /opt/homebrew/bin/fish (if on macOS)
+```
+
 - delete config folder
 
 ```bash
