@@ -16,18 +16,31 @@ matches:
   - trigger: ":wstream"
     replace: "Wholeness & balanced Vibrations! Welcome to stream 🙌"
 
-  # Start Stream Text
+  # Dotfiles
   - trigger: ":dotfiles"
     replace: "https://github.com/0xAquaWolf/AquaFiles"
 
-  # Start Stream Text
+  # youtube link
+  - trigger: ":aquayt"
+    replace: "https://www.youtube.com/@0xAquaWolf"
+
+  # twitter
+  - trigger: ":aquax"
+    replace: "https://www.x.com/@0xAquaWolf"
+
+  # discord
   - trigger: ":discord"
     replace: "https://discord.gg/wzPBjEcn87"
 
-  # Start Stream Text
+  # clear psql terminal
   - trigger: ":psqlc"
     replace: "\\! clear"
 
+  - trigger: :trackvid
+    replace: |
+      - [ ] Recording Now
+      Finished Recording
+      Compressed
   - trigger: ":lesson"
     replace: |
       # Lesson
