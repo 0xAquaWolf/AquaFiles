@@ -10,6 +10,16 @@ eval (/opt/homebrew/bin/brew shellenv)
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
 fnm env --use-on-cd | source # "Schniz/fnm"
+# source /opt/homebrew/opt/asdf/libexec/asdf.fish
+
+## Setup Pyenv
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+set -Ux PIPENV_PYTHON $PYENV_ROOT/shims/python
+
+if command -v pyenv 1>/dev/null 2>&1
+    pyenv init - | source
+end
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
@@ -70,7 +80,7 @@ alias sf "fzf | xargs nvim"
 alias rm "rm -i"
 alias cp "cp -i"
 alias mkdir "mkdir -p"
-alias h history
+alias hf "history | fzf"
 alias pp "string split ':' $PATH | fzf"
 alias skv "skhd --stop-service && skhd -V"
 alias awi "yabai -m query --windows | fx"
@@ -139,7 +149,7 @@ alias bi "brew info"
 alias venv "uv venv && source .venv/bin/activate.fish"
 
 # |======  VS Code  ======|
-alias code codium
+# alias code codium
 # |======  Functions ======|
 
 function mcd
