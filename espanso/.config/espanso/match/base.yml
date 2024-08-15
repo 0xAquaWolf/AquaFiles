@@ -32,6 +32,13 @@ matches:
   - trigger: ":discord"
     replace: "https://discord.gg/wzPBjEcn87"
 
+  # send i'm live alert on discord
+  - trigger: ":live"
+    replace: "@everyone 🚨 I am live 🚨: {{clipboard}}"
+    vars:
+      - name: clipboard
+        type: clipboard
+
   # clear psql terminal
   - trigger: ":psqlc"
     replace: "\\! clear"
