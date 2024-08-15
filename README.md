@@ -309,6 +309,8 @@ Join me as I document my growth, share insights, and delve into the ever-evolvin
   - Rainbow CSV
   - Data Wrangler
   - Even Better TOML
+  - Markdown Preview Enhanced
+  - Markdown Checkboxes
   - Python Dev Env
     - Python Debugger
     - Pylance (LSP)
