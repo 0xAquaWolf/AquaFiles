@@ -48,5 +48,7 @@
   "explorer.confirmDragAndDrop": false,
   "workbench.editorAssociations": {
     "file:/**/*.csv": "jupyter-data-wrangler"
-  }
+  },
+  "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+  "markdown-preview-enhanced.enablePreviewZenMode": false
 }
