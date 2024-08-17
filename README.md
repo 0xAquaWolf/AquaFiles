@@ -71,7 +71,7 @@ suggestion, improvement or question, please open an issue or PR!
   - **live grep**: [ripgrep](https://github.com/BurntSushi/ripgrep)
   - **find files**: [fd](https://github.com/sharkdp/fd)
 - a terminal that support true color and *undercurl*:
-- [wezterm](https://github.com/wez/wezterm) **_(Linux, Macos & Windows)_**
+  - [wezterm](https://github.com/wez/wezterm) **_(Linux, Macos & Windows)_**
   - [kitty](https://github.com/kovidgoyal/kitty) **_(Linux & Macos)_**
 - [Patched Operator Mono](https://github.com/0xAquaWolf/AquaFiles/tree/main/fonts)
   - Added Nerd Fonts
