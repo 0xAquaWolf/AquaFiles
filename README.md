@@ -60,7 +60,7 @@ suggestion, improvement or question, please open an issue or PR!
 
 ### Requirements
 
-- [Deno](https://deno.land)
+- [Deno](https://deno.land) - For peek.nvim
 - Neovim >= **0.9.0** (needs to be built with **LuaJIT**)
 - Git >= **2.19.0** (for partial clones support)
 - [LazyVim](https://www.lazyvim.org/)
