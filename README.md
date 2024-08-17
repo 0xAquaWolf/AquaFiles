@@ -3,6 +3,7 @@
 > Plain text configs for bootstrapping my (PDE) Personal Development Enviroment.
 
 My primary operating system is macOS, but I do use Linux sometimes... (arch, btw!)
+> Also Ubuntu Server in the cloud
 
 **Feel free to try out my dotfiles or use them as inspiration!** If you have a
 suggestion, improvement or question, please open an issue or PR!
@@ -403,7 +404,7 @@ stow skhd
 
   <!-- ### yabai setup -->
 
-## Live Streaming on YouTube
+# Live Streaming on YouTube
 
 Chronicling my journey of continuous learning and exploration in cutting-edge technologies including:
 
@@ -413,14 +414,14 @@ Chronicling my journey of continuous learning and exploration in cutting-edge te
 
 Join me as I document my growth, share insights, and delve into the ever-evolving world of tech innovation.
 <br />
-<br />
 [0xAquaWolf YouTube Channel](https://youtube.com/playlist?list=PLwbt1uBf9iqArccoEXrIB_ZO0d86rECgc&si=GRBhNj0w_ZW4XwIt)
 
 <!-- Add an image that is clickable that links to my channel -->
 
-## Apps i use
+# Apps i use
 
-### MacOS (Content creation, Writing, Programming)
+## MacOS 
+_(Programming, Content creation, Writing)_
 
 - [Wezterm](https://wezfurlong.org/wezterm/) - Terminal
 - [Homebrew](https://brew.sh/) - Package manager
@@ -455,7 +456,7 @@ Join me as I document my growth, share insights, and delve into the ever-evolvin
       - [Jupyter Notebook Renderers](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-renderers)
       - [Jupyter Slide Show](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-slideshow)
 
-### Chrome Extensions
+## Chrome Extensions
 
 - [Vimium](https://vimium.github.io/)
 - [Wappalyzer](https://www.wappalyzer.com/)
@@ -465,7 +466,7 @@ Join me as I document my growth, share insights, and delve into the ever-evolvin
 - [Undistracted](https://undistracted.app/)
 - [Bypass Paywalls](https://github.com/iamadamdev/bypass-paywalls-chrome)
 
-### Desktop Apps
+## Desktop Apps
 
 - [Ableton Live 12](https://www.ableton.com/en/live/) - DAW
 - [Affinity Photo](https://affinity.serif.com/en-us/photo/) - Professional image editing software
@@ -498,6 +499,7 @@ Join me as I document my growth, share insights, and delve into the ever-evolvin
 - [Farrago](https://rogueamoeba.com/farrago/) - Soundboard for macOS
 - [iTubeGo](https://itubego.com/) - YouTube video downloader
 
+# Footer
 ## Join the Community on Discord
 
 AquaWolf Academy: https://discord.gg/wzPBjEcn87
@@ -517,4 +519,3 @@ AquaWolf Academy: https://discord.gg/wzPBjEcn87
 - [ ] document how to use GNU Stow with my dotfiles
 - [ ] add a quick start guide (use this for video)
 - [ ] add a video showing how to bootstrap the install and using the config
-<!-- - [ ] karabiners setup -->
