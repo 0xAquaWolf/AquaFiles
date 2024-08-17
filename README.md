@@ -399,7 +399,7 @@ yabai --start-service
 
 ### skhd setup
 
-- Install SKHD
+- Install skhd
 ```bash
 brew install koekeishiya/formulae/skhd
 ```
