@@ -252,7 +252,140 @@ cd ~/AquaFiles/
 stow zellij
 ```
 
+### Yabai Setup
+
+#### Disable System Integrity Protection
+
+1. Turn off your device
+2. **Intel [(apple docs)](https://support.apple.com/en-gb/guide/mac-help/mchl338cf9a8/12.0/mac/12.0):**  
+   Hold down <kbd>command ⌘</kbd>+<kbd>R</kbd> while booting your device.
+   **Apple Silicon [(apple docs)](https://support.apple.com/en-gb/guide/mac-help/mchl82829c17/12.0/mac/12.0):**  
+   Press and hold the power button on your Mac until “Loading startup options” appears.  
+   Click Options, then click Continue.
+3. In the menu bar, choose `Utilities`, then `Terminal`
+4. Disable System Integrity Protection
+
+```bash
+#
+# APPLE SILICON
+#
+
+# If you're on Apple Silicon macOS 13.x.x OR newer
+# Requires Filesystem Protections, Debugging Restrictions and NVRAM Protection to be disabled
+# (printed warning can be safely ignored)
+csrutil enable --without fs --without debug --without nvram
+
+# If you're on Apple Silicon macOS 12.x.x
+# Requires Filesystem Protections, Debugging Restrictions and NVRAM Protection to be disabled
+# (printed warning can be safely ignored)
+csrutil disable --with kext --with dtrace --with basesystem
+
+#
+# INTEL
+#
+
+# If you're on Intel macOS 11.x.x OR newer
+# Requires Filesystem Protections and Debugging Restrictions to be disabled (workaround because --without debug does not work)
+# (printed warning can be safely ignored)
+csrutil disable --with kext --with dtrace --with nvram --with basesystem
+```
+
+5. Reboot
+6. For Apple Silicon; enable non-Apple-signed arm64e binaries
+
+```
+# Open a terminal and run the below command, then reboot
+sudo nvram boot-args=-arm64e_preview_abi
+```
+
+7. You can verify that System Integrity Protection is turned off by running `csrutil status`, which returns `System Integrity Protection status: disabled.` if it is turned off (it may show `unknown` for newer versions of macOS when disabling SIP partially).
+
+If you ever want to re–enable System Integrity Protection after uninstalling yabai; repeat the steps above, but run `csrutil enable` instead at step 4.
+
+#### Configure Scripting Additions
+
+_Why do you need scripting additions?_
+
+**yabai** uses the macOS Mach APIs to inject code into Dock.app; this requires elevated (root) privileges.
+You can configure your user to execute _yabai --load-sa_ as the root user without having to enter a password.
+To do this, we add a new configuration entry that is loaded by _/etc/sudoers_.
+
+```bash
+# create a new file for writing - visudo uses the vim editor by default.
+# go read about this if you have no idea what is going on.
+
+sudo visudo -f /private/etc/sudoers.d/yabai
+
+# input the line below into the file you are editing.
+#  replace <yabai> with the path to the yabai binary (output of: which yabai).
+#  replace <user> with your username (output of: whoami).
+#  replace <hash> with the sha256 hash of the yabai binary (output of: shasum -a 256 $(which yabai)).
+#   this hash must be updated manually after upgrading yabai.
+
+<user> ALL=(root) NOPASSWD: sha256:<hash> <yabai> --load-sa
+```
+
+If you know what you are doing, the following one-liner can be used to update the sudoers file correctly:
+
+```bash
+echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai
+```
+
+After the above edit has been made, add the command to load the scripting addition at the top of your yabairc config file
+
+```bash
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+```
+
+lastly make sure to uncomment the last line from the sudoers file
+
+`sudo visudo -f /private/etc/sudoers`
+
+it should read
+
+`#includedir /private/etc/sudoers.d` (sometimes it has 2 ## it should only have 1)
+
+finnaly _**reboot**_ your mac
+
+#### Test Scripting Additions
+
+```bash
+yabai -m space --focus recent
+```
+
+_the intented result should be that you change your window focus, if not you did not correctly add the scripting additions_
+
+#### stow config
+
+- `cd` into AquaFiles
+
+```bash
+cd ~/AquaFiles/
+```
+
+- `stow` yabai
+
+```bash
+stow yabai
+```
+
+- `start` yabai service
+
+```bash
+yabai --start-service
+```
+
 ### skhd setup
+
+- `start` service
+
+```bash
+skhd --start-service
+```
 
 - `cd` into AquaFiles
 
@@ -268,14 +401,13 @@ stow skhd
 
   <!-- ### yabai setup -->
 
-## Streaming Live Daily on YouTube
+## Live Streaming on YouTube
 
 Chronicling my journey of continuous learning and exploration in cutting-edge technologies including:
 
+- Algo Trading
 - Web3
 - AI/ML
-- Cybersecurity
-- Algo Trading
 
 Join me as I document my growth, share insights, and delve into the ever-evolving world of tech innovation.
 <br />
@@ -297,29 +429,29 @@ Join me as I document my growth, share insights, and delve into the ever-evolvin
 - [Karabiner Elements](https://karabiner-elements.pqrs.org/) - Hypermod and sublayers
 - [Shortcat](https://shortcatapp.com/) - Vim for the desktop
 - [KeyCastr](https://github.com/keycastr/keycastr) - For keyboard casting of shortcuts
-- Visual Studio code (with vim link settings)
-  - Vim (Vim motions FTW!!!!)
-  - Catppuccin for VSCode
-  - Catppuccin Icons for VSCode
-  - Clock (Hide ENV Variables on stream)
-  - Code Runner
-  - DotENV
-  - Cloak (HIDE ENV for streaming)
-  - TODO Highlight
-  - Rainbow CSV
-  - Data Wrangler
-  - Even Better TOML
-  - Markdown Preview Enhanced
-  - Markdown Checkboxes
+- Visual Studio Code (with vim like settings, check the repo)
+  - [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) (Vim motions FTW!!!!)
+  - [Catppuccin for VSCode](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc)
+  - [Catppuccin Icons for VSCode](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc-icons)
+  - [Clock in status bar](https://marketplace.visualstudio.com/items?itemName=compulim.vscode-clock) (Hide ENV Variables on stream)
+  - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+  - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
+  - [Cloak](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-cloak) (HIDE ENV for streaming)
+  - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
+  - [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
+  - [Data Wrangler](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.datawrangler)
+  - [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)
+  - [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
+  - [Markdown Checkboxes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-checkbox)
   - Python Dev Env
-    - Python Debugger
-    - Pylance (LSP)
-    - Black (Code Formater)
-    - Jupyter Notebook
-      - Jupyter Cell Tags
-      - Jupyter Keymap
-      - Jupyter Notebook Renders
-      - Jupyter Slide Show
+    - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) (Includes Python Debugger)
+    - [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) (LSP)
+    - [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter)
+    - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) (Includes Jupyter Notebook support)
+      - [Jupyter Cell Tags](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-cell-tags)
+      - [Jupyter Keymap](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-keymap)
+      - [Jupyter Notebook Renderers](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-renderers)
+      - [Jupyter Slide Show](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-slideshow)
 
 ### Chrome Extensions
 
@@ -334,35 +466,35 @@ Join me as I document my growth, share insights, and delve into the ever-evolvin
 ### Desktop Apps
 
 - [Ableton Live 12](https://www.ableton.com/en/live/) - DAW
-- [Affinity Photo](https://affinity.serif.com/en-us/photo/)
-- [Android File Transfer](https://www.android.com/filetransfer/)
-- [Binaural](https://apps.apple.com/us/app/binaural-beats-generator/id1487743559) - Binaural beats
+- [Affinity Photo](https://affinity.serif.com/en-us/photo/) - Professional image editing software
+- [Android File Transfer](https://www.android.com/filetransfer/) - File transfer tool for Android devices
+- [Binaural](https://apps.apple.com/us/app/binaural-beats-generator/id1487743559) - Binaural beats generator
 - [LuLu](https://objective-see.org/products/lulu.html) - Security and network traffic blocker
-- [CleanShot X](https://cleanshot.com/)
-- [Gestimer](http://maddin.io/gestimer/)
-- [IINA](https://iina.io/) - Video player
-- [KeyboardCleanTool](https://folivora.ai/keyboardcleantool)
-- [Audio Hijack](https://rogueamoeba.com/audiohijack/)
-- [Memory Clean 3](https://fiplab.com/apps/memory-clean-for-mac)
-- [Parallels](https://www.parallels.com/)
-- CrossOver
+- [CleanShot X](https://cleanshot.com/) - Advanced screenshot and screen recording tool
+- [Gestimer](http://maddin.io/gestimer/) - Simple menubar timer
+- [IINA](https://iina.io/) - Modern video player
+- [KeyboardCleanTool](https://folivora.ai/keyboardcleantool) - Tool to clean your keyboard
+- [Audio Hijack](https://rogueamoeba.com/audiohijack/) - Advanced audio recording software
+- [Memory Clean 3](https://fiplab.com/apps/memory-clean-for-mac) - Memory optimization tool
+- [Parallels](https://www.parallels.com/) - Virtual machine software
+- [CrossOver](https://www.codeweavers.com/crossover) - Run Windows applications on macOS
 - [Rize](https://rize.io/) - Productivity tracker for macOS
-- [Screen Studio](https://www.screen.studio/)
-- [ScreenFlow](https://www.telestream.net/screenflow/)
+- [Screen Studio](https://www.screen.studio/) - Screen recording and editing tool
+- [ScreenFlow](https://www.telestream.net/screenflow/) - Screen recording and video editing software
 - [TablePlus](https://tableplus.com/) - Database manager
-- [The Unarchiver](https://theunarchiver.com/)
-- [xScope](https://xscopeapp.com/) - A set of tools for UI/UX Designers
-- Bartender 5 (macOS Menubar management)
-- Keka (compression and uncompression)
-- Voicemod
-- OBS
-- Kaleidoscope (File Diff)
-- AlDente (macOS Batter Manager)
-- Dynamic Wallpaper
-- ColorSlurp (Color Picker)
-- Elgato Stream Deck
-- Farrago (Soundboard)
-- iTubeGo (YouTube Downloader)
+- [The Unarchiver](https://theunarchiver.com/) - File extraction utility
+- [xScope](https://xscopeapp.com/) - Set of tools for UI/UX Designers
+- [Bartender 5](https://www.macbartender.com/) - macOS Menubar management
+- [Keka](https://www.keka.io/) - File compression and extraction
+- [Voicemod](https://www.voicemod.net/) - Real-time voice changer
+- [OBS](https://obsproject.com/) - Open source video recording and live streaming
+- [Kaleidoscope](https://kaleidoscope.app/) - File and image comparison tool
+- [AlDente](https://github.com/davidwernhart/AlDente) - macOS Battery Manager
+- [Dynamic Wallpaper](https://apps.apple.com/us/app/dynamic-wallpaper/id1453504509) - Wallpaper changer for macOS
+- [ColorSlurp](https://colorslurp.com/) - Color picker and organizer
+- [Elgato Stream Deck](https://www.elgato.com/en/stream-deck) - Customizable control panel
+- [Farrago](https://rogueamoeba.com/farrago/) - Soundboard for macOS
+- [iTubeGo](https://itubego.com/) - YouTube video downloader
 
 ## Join the Community on Discord
 
@@ -378,7 +510,7 @@ AquaWolf Academy: https://discord.gg/wzPBjEcn87
 - [x] git setup
 - [x] Zellij setup
 - [x] skhd setup
-- [ ] yabai setup
+- [x] yabai setup
 - [ ] obsidian setup & config
 - [ ] document how to use GNU Stow with my dotfiles
 - [ ] add a quick start guide (use this for video)
