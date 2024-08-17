@@ -183,12 +183,6 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 ```
 
-- install deno for peek.nvim
-
-```bash
-curl -fsSL https://deno.land/install.sh | sh
-```
-
 - clone dotfiles _(needs to be cloned in root directory for GNU Stow work)_
 
 ```bash
