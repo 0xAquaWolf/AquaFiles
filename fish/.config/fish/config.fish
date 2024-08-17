@@ -148,6 +148,7 @@ alias bi "brew info"
 # |======  python  ======|
 alias venv "uv venv && source .venv/bin/activate.fish"
 alias plf "uv pip list | fzf" # pip list fzf
+alias pfz "uv pip freeze > requirements.txt"
 
 # |======  VS Code  ======|
 # alias code codium
