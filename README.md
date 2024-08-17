@@ -158,6 +158,12 @@ stow fish
 
 ### Neovim setup
 
+- Install neovim
+
+```bash
+brew install neovim # make sure you have the latest version
+```
+
 - install deno for (peek.nvim)
 
 ```bash
@@ -223,6 +229,11 @@ nvim
 
 ### Git setup
 
+```bash
+xcode-select --install
+git --version # check to make sure you have git installed
+```
+
 - `cd` into AquaFiles
 
 ```bash
@@ -237,6 +248,11 @@ stow git
 
 ### Zellij setup
 
+- Install Zellij
+```bash
+brew install zellij
+```
+
 - `cd` into AquaFiles
 
 ```bash
@@ -250,6 +266,11 @@ stow zellij
 ```
 
 ### Yabai Setup
+
+- Install Yabai
+```bash
+brew install koekeishiya/formulae/yabai
+```
 
 #### Disable System Integrity Protection
 
@@ -377,6 +398,11 @@ yabai --start-service
 ```
 
 ### skhd setup
+
+- Install SKHD
+```bash
+brew install koekeishiya/formulae/skhd
+```
 
 - `start` service
 
