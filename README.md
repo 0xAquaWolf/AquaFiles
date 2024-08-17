@@ -21,7 +21,7 @@ suggestion, improvement or question, please open an issue or PR!
 - [Portable](https://en.wikipedia.org/wiki/Portable_computing)
 - [Bleeding Edge](https://en.wikipedia.org/wiki/Bleeding_edge_technology)
 
-## Screenshots
+### Screenshots
 
 > Lazyvim Welcome screen
 
