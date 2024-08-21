@@ -3,6 +3,7 @@
 > Plain text configs for bootstrapping my (PDE) Personal Development Enviroment.
 
 My primary operating system is macOS, but I do use Linux sometimes... (arch, btw!)
+
 > Also Ubuntu Server in the cloud
 
 **Feel free to try out my dotfiles or use them as inspiration!** If you have a
@@ -83,12 +84,13 @@ suggestion, improvement or question, please open an issue or PR!
 <!-- ### macOS setup -->
 
 ### Enable Key repeat for macOS
+
 ```bash
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false              # For VS Code
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false      # For VS Code Insider
 defaults write com.vscodium ApplePressAndHoldEnabled -bool false                      # For VS Codium
 defaults write com.microsoft.VSCodeExploration ApplePressAndHoldEnabled -bool false   # For VS Codium Exploration users
-defaults delete -g ApplePressAndHoldEnabled   
+defaults delete -g ApplePressAndHoldEnabled
 ```
 
 I also recommend increasing Key Repeat and Delay Until Repeat settings in System Preferences -> Keyboard.
@@ -260,6 +262,7 @@ stow git
 ### Zellij setup
 
 - Install Zellij
+
 ```bash
 brew install zellij
 ```
@@ -279,6 +282,7 @@ stow zellij
 ### Yabai Setup
 
 - Install Yabai
+
 ```bash
 brew install koekeishiya/formulae/yabai
 ```
@@ -411,6 +415,7 @@ yabai --start-service
 ### skhd setup
 
 - Install skhd
+
 ```bash
 brew install koekeishiya/formulae/skhd
 ```
@@ -451,7 +456,8 @@ Join me as I document my growth, share insights, and delve into the ever-evolvin
 
 # Apps i use
 
-## MacOS 
+## MacOS
+
 _(Programming, Content creation, Writing)_
 
 - [Wezterm](https://wezfurlong.org/wezterm/) - Terminal
@@ -463,6 +469,7 @@ _(Programming, Content creation, Writing)_
 - [Karabiner Elements](https://karabiner-elements.pqrs.org/) - Hypermod and sublayers
 - [Shortcat](https://shortcatapp.com/) - Vim for the desktop
 - [KeyCastr](https://github.com/keycastr/keycastr) - For keyboard casting of shortcuts
+- [Cursor](https://www.cursor.com/) - AI Code Editor | Built to make you extraordinarily productive, Cursor is the best way to code with AI.
 - Visual Studio Code (with vim like settings, check the repo)
   - [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) (Vim motions FTW!!!!)
   - [Catppuccin for VSCode](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc)
@@ -531,6 +538,7 @@ _(Programming, Content creation, Writing)_
 - [iTubeGo](https://itubego.com/) - YouTube video downloader
 
 # Footer
+
 ## Join the Community on Discord
 
 AquaWolf Academy: https://discord.gg/wzPBjEcn87
@@ -551,3 +559,4 @@ AquaWolf Academy: https://discord.gg/wzPBjEcn87
 - [ ] document how to use GNU Stow with my dotfiles
 - [ ] add a quick start guide (use this for video)
 - [ ] add a video showing how to bootstrap the install and using the config
+
