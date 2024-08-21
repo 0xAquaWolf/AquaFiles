@@ -13,13 +13,13 @@ fnm env --use-on-cd | source # "Schniz/fnm"
 # source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
 ## Setup Pyenv
-set -Ux PYENV_ROOT $HOME/.pyenv
-fish_add_path $PYENV_ROOT/bin
-set -Ux PIPENV_PYTHON $PYENV_ROOT/shims/python
-
-if command -v pyenv 1>/dev/null 2>&1
-    pyenv init - | source
-end
+# set -Ux PYENV_ROOT $HOME/.pyenv
+# fish_add_path $PYENV_ROOT/bin
+# set -Ux PIPENV_PYTHON $PYENV_ROOT/shims/python
+#
+# if command -v pyenv 1>/dev/null 2>&1
+#     pyenv init - | source
+# end
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
@@ -36,6 +36,9 @@ fish_add_path ~/go/bin
 fish_add_path ~/.bun/bin
 fish_add_path ~/.deno/bin
 fish_add_path /opt/homebrew/postgresql@16/bin
+fish_add_path /opt/homebrew/opt/llvm/bin
+fish_add_path /opt/homebrew/bin/conda
+fish_add_path /opt/homebrew/bin/mamba
 
 # pnpm
 set -gx PNPM_HOME /Users/0xaquawolf/Library/pnpm
@@ -55,6 +58,8 @@ set -gx XDG_CONFIG_HOME ~/.config
 set -gx BAT_THEME "Catppuccin Mocha"
 set -gx BUN_INSTALL "$HOME/.bun"
 set -Ux BASE_PATH "/Users/aquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/vaults/SecondBrain"
+set -gx LDFLAGS -L/opt/homebrew/opt/llvm/lib
+set -gx CPPFLAGS -I/opt/homebrew/opt/llvm/include
 
 # FZF Config
 set -g FZF_DEFAULT_COMMAND "fd -H -E '.git'"
@@ -492,3 +497,16 @@ end
 # if test -f $LOCAL_CONFIG
 # end
 #   source $LOCAL_CONFIG
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
+    eval /opt/homebrew/Caskroom/miniforge/base/bin/conda "shell.fish" hook $argv | source
+else
+    if test -f "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
+        . "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH /opt/homebrew/Caskroom/miniforge/base/bin $PATH
+    end
+end
+# <<< conda initialize <<<
