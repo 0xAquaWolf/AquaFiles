@@ -13,10 +13,10 @@
       }
     ]
   },
-  "python.defaultInterpreterPath": ".venv/bin/python",
   "python.terminal.activateEnvironment": true,
   "code-runner.executorMap": {
-    "python": ".venv/bin/python -u",
+    "python": "py",
+    "javascript": "bun $fullFileName"
   },
   "code-runner.runInTerminal": true,
   "editor.minimap.enabled": false,
@@ -25,6 +25,9 @@
   "notebook.codeActionsOnSave": {
     "notebook.source.fixAll": "explicit",
     "notebook.source.organizeImports": "explicit"
+  },
+  "[rust]": {
+    "editor.semanticHighlighting.enabled": false
   },
   "[python]": {
     "editor.formatOnSave": true,
@@ -46,12 +49,13 @@
 
   ],
   "explorer.confirmDragAndDrop": false,
-  // "workbench.editorAssociations": {
-  //   "file:/**/*.csv": "jupyter-data-wrangler"
-  // },
-  "markdown-preview-enhanced.previewTheme": "atom-dark.css",
-  "markdown-preview-enhanced.enablePreviewZenMode": false,
   "workbench.editorAssociations": {
     "file:/**/*.csv": "jupyter-data-wrangler"
+  },
+  "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+  "markdown-preview-enhanced.enablePreviewZenMode": false,
+  "terminal.integrated.inheritEnv": false,
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
   }
 }
