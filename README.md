@@ -82,6 +82,17 @@ suggestion, improvement or question, please open an issue or PR!
 
 <!-- ### macOS setup -->
 
+### Enable Key repeat for macOS
+```bash
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false              # For VS Code
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false      # For VS Code Insider
+defaults write com.vscodium ApplePressAndHoldEnabled -bool false                      # For VS Codium
+defaults write com.microsoft.VSCodeExploration ApplePressAndHoldEnabled -bool false   # For VS Codium Exploration users
+defaults delete -g ApplePressAndHoldEnabled   
+```
+
+I also recommend increasing Key Repeat and Delay Until Repeat settings in System Preferences -> Keyboard.
+
 ### WezTerm Setup
 
 install wezterm through homebrew
