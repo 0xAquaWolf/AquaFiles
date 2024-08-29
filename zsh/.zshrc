@@ -46,8 +46,8 @@ export PNPM_HOME="/Users/no1/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 # |====== Yarn  ======|
-export YARN_GLOBAL_FOLDER="$FNM_MULTISHELL_PATH/yarn-global"
-export YARN_PREFIX="$FNM_MULTISHELL_PATH"
+# export YARN_GLOBAL_FOLDER="$FNM_MULTISHELL_PATH/yarn-global"
+# export YARN_PREFIX="$FNM_MULTISHELL_PATH"
 
 # |====== Bun Config  ======|
 [ -s "/Users/no1/.bun/_bun" ] && source "/Users/no1/.bun/_bun"
@@ -242,7 +242,7 @@ alias sf="fd --type f --hidden --exclude .git | fzf | xargs nvim"
 # |====== Eval ======|
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 
-eval "$(fnm env --use-on-cd)"
+# eval "$(fnm env --use-on-cd)"
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 # eval "$(starship init zsh)"
