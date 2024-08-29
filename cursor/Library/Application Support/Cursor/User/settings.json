@@ -2,6 +2,7 @@
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "catppuccin-mocha",
   "editor.fontFamily": "OperatorMonoSSmLig Nerd Font",
+  "files.associations": {"*.scss": "postcss"},
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -29,13 +30,14 @@
   "[rust]": {
     "editor.semanticHighlighting.enabled": false
   },
+  "editor.formatOnSave": true,
   "[python]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
       "source.organizeImports": "explicit"
     },
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    // "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -57,5 +59,16 @@
   "terminal.integrated.inheritEnv": false,
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
+  },
+  "cursor.cmdk.useThemedDiffBackground": true,
+  "tailwind-fold.autoFold": false,
+  "[xml]": {
+    "editor.defaultFormatter": "fabianlauer.vs-code-xml-format"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
