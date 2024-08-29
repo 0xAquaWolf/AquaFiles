@@ -545,7 +545,13 @@ AquaWolf Academy: https://discord.gg/wzPBjEcn87
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=0xAquaWolf/AquaFiles&type=Date)](https://star-history.com/#0xAquaWolf/AquaFiles&Date)
+<a href="https://star-history.com/#0xAquaWolf/AquaFiles&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=0xAquaWolf/AquaFiles&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=0xAquaWolf/AquaFiles&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=0xAquaWolf/AquaFiles&type=Date" />
+ </picture>
+</a>
 
 ## Todo List
 
