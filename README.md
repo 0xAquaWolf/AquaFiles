@@ -563,3 +563,4 @@ AquaWolf Academy: https://discord.gg/wzPBjEcn87
 - [ ] document how to use GNU Stow with my dotfiles
 - [ ] add a quick start guide (use this for video)
 - [ ] add a video showing how to bootstrap the install and using the config
+- [ ] update screenshots with new tools that i'm using and display them
