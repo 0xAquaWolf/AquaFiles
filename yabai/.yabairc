@@ -92,7 +92,57 @@ yabai -m rule --add app="^Stardew Valley$" manage=off
 yabai -m rule --add app="^LuLu$" manage=off
 yabai -m rule --add app="^Zoom.us$" manage=off
 yabai -m rule --add app="^Farrago$" title="^Editing:.*$" manage=off
+yabai -m rule --add app="^Finder$" title="^(Copy|Moving)*$" manage=off
 yabai -m rule --add app="^SocialStream$" manage=off
+yabai -m rule --add app="^Herd$" manage=off
+yabai -m rule --add app="^Clean My Mac X$" manage=off
+
+# Settings space labels
+yabai -m space 1 --label browser
+yabai -m space 2 --label code
+yabai -m space 3 --label notes
+yabai -m space 4 --label social
+yabai -m space 5 --label design
+yabai -m space 6 --label terminal
+yabai -m space 7 --label research
+yabai -m space 8 --label misc
+yabai -m space 9 --label telegram
+yabai -m space 10 --label obs
+
+# window rules
+yabai -m rule --add app="^Arc$" space=browser
+yabai -m rule --add app="^Cursor$" space=code
+yabai -m rule --add app="^Obsidian$" space=notes
+yabai -m rule --add app="^Discord$" space=social
+yabai -m rule --add app="^Figma$" space=design
+yabai -m rule --add app="^WezTerm$" space=terminal
+yabai -m rule --add app="^Telegram$" space=telegram
+yabai -m rule --add app="^Obs$" space=obs
+
+
+# window signal events
+yabai -m signal --add event=window_created app="^Arc$" action="yabai -m space --focus browser"
+yabai -m signal --add event=window_created app="^Cursor$" action="yabai -m space --focus code"
+yabai -m signal --add event=window_created app="^Obsidian$" action="yabai -m space --focus notes"
+yabai -m signal --add event=window_created app="^Discord$" action="yabai -m space --focus social"
+yabai -m signal --add event=window_created app="^Figma$" action="yabai -m space --focus design"
+yabai -m signal --add event=window_created app="^WezTerm$" action="yabai -m space --focus terminal"
+yabai -m signal --add event=window_created app="^Telegram$" action="yabai -m space --focus telegram"
+yabai -m signal --add event=window_created app="^Obs$" action="yabai -m space --focus obs"
+
+# yabai -m rule --add app="^Cursor$" space=code
+# yabai -m rule --add app="^Cursor$" space=code
+# yabai -m rule --add app="^Cursor$" space=code
+# yabai -m rule --add app="^Cursor$" space=code
+
+# window rules
+# yabai -m rule --add app="^Safari$" space=web
+# yabai -m rule --add app="^Brave Browser$" space=web
+#
+# yabai -m signal --add event=window_created app="^Safari$" action="yabai -m space --focus web"
+# yabai -m signal --add event=window_created app="^Brave Browser$" action="yabai -m space --focus web"
+
+# yabai -m rule --add app="^Cursor$" manage=off
 # yabai -m rule --add app="^Godot$" manage=off
 # use this config to always float and position a specific app like our floating todolist
 # yabai -m rule --add app="^mpv$" manage=off border=off sticky=on layer=above opacity=1.0 grid=8:8:6:0:2:2
@@ -106,6 +156,25 @@ yabai -m rule --add app="^SocialStream$" manage=off
 # signals
 # yabai -m signal --add event=window_destroyed active=yes action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse &> /dev/null || yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id) &> /dev/null"
 # yabai -m signal --add event=window_minimized active=yes action="if \$(yabai -m query --windows --window \$YABAI_WINDOW_ID | jq -r '.\"is-floating\"'); then yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse &> /dev/null || yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id) &> /dev/null; fi"
+
+# mission-control desktop labels
+# yabai -m space 1 --label code
+# yabai -m space 2 --label mail
+# yabai -m space 3 --label web
+# yabai -m space 4 --label notes
+# yabai -m space 5 --label re
+# yabai -m space 6 --label media
+# yabai -m space 7 --label social
+# yabai -m space 8 --label games
 #
+# # window rules
+# yabai -m rule --add app="^Mail$" space=mail
+# yabai -m rule --add app="^Safari$" space=web
+# yabai -m rule --add app="^Notes$" space=notes
+# yabai -m rule --add app="^ida64$" space=re
+# yabai -m rule --add app="^Transmission$" space=media
+# yabai -m rule --add app="^Spotify$" space=media
+# yabai -m rule --add app="^Discord$" space=social grid=1:1:0:0:1:1 manage=off
+# yabai -m rule --add app="^Steam$" space=games manage=off
 
 echo "yabai configuration loaded.."
