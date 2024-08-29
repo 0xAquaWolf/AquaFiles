@@ -543,6 +543,10 @@ _(Programming, Content creation, Writing)_
 
 AquaWolf Academy: https://discord.gg/wzPBjEcn87
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=0xAquaWolf/AquaFiles&type=Date)](https://star-history.com/#0xAquaWolf/AquaFiles&Date)
+
 ## Todo List
 
 <!-- Explain that i'm using GNU Stow for my dotfiles and how it works -->
@@ -559,4 +563,3 @@ AquaWolf Academy: https://discord.gg/wzPBjEcn87
 - [ ] document how to use GNU Stow with my dotfiles
 - [ ] add a quick start guide (use this for video)
 - [ ] add a video showing how to bootstrap the install and using the config
-
