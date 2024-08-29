@@ -9,7 +9,7 @@ eval (/opt/homebrew/bin/brew shellenv)
 
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
-fnm env --use-on-cd | source # "Schniz/fnm"
+# fnm env --use-on-cd | source # "Schniz/fnm"
 # source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
 ## Setup Pyenv
@@ -39,7 +39,7 @@ fish_add_path /opt/homebrew/postgresql@16/bin
 fish_add_path /opt/homebrew/opt/llvm/bin
 fish_add_path /opt/homebrew/bin/conda
 fish_add_path /opt/homebrew/bin/mamba
-
+fish_add_path -U $HOME/Library/Application\ Support/Herd/bin/
 # pnpm
 set -gx PNPM_HOME /Users/0xaquawolf/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
@@ -60,6 +60,7 @@ set -gx BUN_INSTALL "$HOME/.bun"
 set -Ux BASE_PATH "/Users/aquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/vaults/SecondBrain"
 set -gx LDFLAGS -L/opt/homebrew/opt/llvm/lib
 set -gx CPPFLAGS -I/opt/homebrew/opt/llvm/include
+set -gx NVM_DIR "$HOME/.config/nvm"
 
 # FZF Config
 set -g FZF_DEFAULT_COMMAND "fd -H -E '.git'"
@@ -156,7 +157,7 @@ alias plf "uv pip list | fzf" # pip list fzf
 alias pfz "uv pip freeze > requirements.txt"
 
 # |======  VS Code  ======|
-# alias code codium
+alias code cursor
 # |======  Functions ======|
 
 function mcd
@@ -482,6 +483,11 @@ function killport
     end
 end
 
+if test -s "$NVM_DIR/nvm.sh"
+    function nvm
+        bass source "$NVM_DIR/nvm.sh" --no-use ';' nvm $argv
+    end
+end
 # This is a code snippet so that i know how to detect which OS i'm currently on and execute different scripts
 
 # switch (uname)
