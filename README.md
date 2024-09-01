@@ -442,11 +442,17 @@ stow skhd
 
 # Live Streaming on YouTube
 
-Chronicling my journey of continuous learning and exploration in cutting-edge technologies including:
+Documenting my journey of continuous learning and exploration in cutting-edge technologies including:
 
-- Algo Trading
-- Web3
 - AI/ML
+  - AI Agents
+  - Gen AI
+- Indie Hacking
+- Building in Public
+- UI/UX Design
+- Next.js
+- Typescript
+- Python
 
 Join me as I document my growth, share insights, and delve into the ever-evolving world of tech innovation.
 <br />
@@ -469,8 +475,7 @@ _(Programming, Content creation, Writing)_
 - [Karabiner Elements](https://karabiner-elements.pqrs.org/) - Hypermod and sublayers
 - [Shortcat](https://shortcatapp.com/) - Vim for the desktop
 - [KeyCastr](https://github.com/keycastr/keycastr) - For keyboard casting of shortcuts
-- [Cursor](https://www.cursor.com/) - AI Code Editor | Built to make you extraordinarily productive, Cursor is the best way to code with AI.
-- Visual Studio Code (with vim like settings, check the repo)
+- [Cursor AI](https://www.cursor.com/) - AI Code Editor | Built to make you extraordinarily productive, Cursor is the best way to code with AI.
   - [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) (Vim motions FTW!!!!)
   - [Catppuccin for VSCode](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc)
   - [Catppuccin Icons for VSCode](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc-icons)
@@ -503,6 +508,22 @@ _(Programming, Content creation, Writing)_
 - [1Password](https://1password.com/)
 - [Undistracted](https://undistracted.app/)
 - [Bypass Paywalls](https://github.com/iamadamdev/bypass-paywalls-chrome)
+- [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb)
+  - Mobile responsive viewer for web development
+- [Return YouTube Dislike](https://chrome.google.com/webstore/detail/return-youtube-dislike/gebbhagfogifgggkldgodflihgfeippi)
+  - Shows dislikes on YouTube videos
+- [WhatFont](https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm)
+  - Identifies fonts used on web pages
+- [FireShot](https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg)
+  - Captures full screenshots of web pages
+- [MetaMask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn)
+  - Ethereum wallet and gateway to blockchain apps
+- [View Stats](https://chrome.google.com/webstore/detail/view-stats/nngijdkfmlclajkjchdiofmachjcbice)
+  - Shows view count for YouTube videos
+- [Google Search Location Changer](https://chrome.google.com/webstore/detail/google-search-location-ch/hgpnhiajcdppfbogcpfdgcceepgkhdmk)
+  - Changes your Google search location
+- [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+  - Debugging tools for React applications
 
 ## Desktop Apps
 
