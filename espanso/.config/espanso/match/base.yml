@@ -8,8 +8,6 @@
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  # Start Stream Text
-  #
   - trigger: ":agm"
     replace: "aquawolf369@gmail.com"
 
@@ -21,16 +19,20 @@ matches:
     replace: "https://github.com/0xAquaWolf/AquaFiles"
 
   # youtube link
-  - trigger: ":aquayt"
+  - trigger: ":yt"
     replace: "https://www.youtube.com/@0xAquaWolf"
 
   # twitter
-  - trigger: ":aquax"
+  - trigger: ":x"
     replace: "https://www.x.com/@0xAquaWolf"
 
   # discord
   - trigger: ":discord"
     replace: "https://discord.gg/wzPBjEcn87"
+
+  # fire
+  - trigger: ":fire"
+    replace: "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
 
   # send i'm live alert on discord
   - trigger: ":live"
