@@ -2,7 +2,8 @@
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "catppuccin-mocha",
   "editor.fontFamily": "OperatorMonoSSmLig Nerd Font",
-  "files.associations": {"*.scss": "postcss"},
+  "editor.fontLigatures": true, // Enable ligature support
+  "files.associations": { "*.scss": "postcss" },
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -14,7 +15,7 @@
       }
     ]
   },
-  "python.terminal.activateEnvironment": true,
+  // "python.terminal.activateEnvironment": true,
   "code-runner.executorMap": {
     "python": "py",
     "javascript": "bun $fullFileName"
@@ -36,7 +37,7 @@
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
       "source.organizeImports": "explicit"
-    },
+    }
     // "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -47,20 +48,19 @@
     {
       "before": ["<"],
       "after": ["<", "g", "v"]
-    },
-
+    }
   ],
+  "vim.useSystemClipboard": true,
   "explorer.confirmDragAndDrop": false,
-  "workbench.editorAssociations": {
-    "file:/**/*.csv": "jupyter-data-wrangler"
-  },
+  // "workbench.editorAssociations": {
+  //   "file:/**/*.csv": "jupyter-data-wrangler"
+  // },
   "markdown-preview-enhanced.previewTheme": "atom-dark.css",
   "markdown-preview-enhanced.enablePreviewZenMode": false,
   "terminal.integrated.inheritEnv": false,
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
   },
-  "cursor.cmdk.useThemedDiffBackground": true,
   "tailwind-fold.autoFold": false,
   "[xml]": {
     "editor.defaultFormatter": "fabianlauer.vs-code-xml-format"
@@ -71,8 +71,14 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 13,
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
+  // "supermaven.enable": {
+  //   "*": false
+  // }
 }
