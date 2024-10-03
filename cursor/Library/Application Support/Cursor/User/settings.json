@@ -1,84 +1,66 @@
 {
-  "workbench.colorTheme": "Catppuccin Mocha",
-  "workbench.iconTheme": "catppuccin-mocha",
-  "editor.fontFamily": "OperatorMonoSSmLig Nerd Font",
-  "editor.fontLigatures": true, // Enable ligature support
-  "files.associations": { "*.scss": "postcss" },
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "name": "envKeys",
-        "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
-        "settings": {
-          "foreground": "#19354900"
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "editor.fontFamily": "OperatorMonoSSmLig Nerd Font",
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "name": "envKeys",
+          "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
+          "settings": {
+            "foreground": "#19354900"
+          }
         }
-      }
-    ]
-  },
-  // "python.terminal.activateEnvironment": true,
-  "code-runner.executorMap": {
-    "python": "py",
-    "javascript": "bun $fullFileName"
-  },
-  "code-runner.runInTerminal": true,
-  "editor.minimap.enabled": false,
-  "python.languageServer": "Default",
-  "notebook.formatOnSave.enabled": true,
-  "notebook.codeActionsOnSave": {
-    "notebook.source.fixAll": "explicit",
-    "notebook.source.organizeImports": "explicit"
-  },
-  "[rust]": {
-    "editor.semanticHighlighting.enabled": false
-  },
-  "editor.formatOnSave": true,
-  "[python]": {
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll": "explicit",
-      "source.organizeImports": "explicit"
-    }
-    // "editor.defaultFormatter": "ms-python.black-formatter"
-  },
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": [">"],
-      "after": [">", "g", "v"]
+      ]
     },
-    {
-      "before": ["<"],
-      "after": ["<", "g", "v"]
-    }
-  ],
-  "vim.useSystemClipboard": true,
-  "explorer.confirmDragAndDrop": false,
-  // "workbench.editorAssociations": {
-  //   "file:/**/*.csv": "jupyter-data-wrangler"
-  // },
-  "markdown-preview-enhanced.previewTheme": "atom-dark.css",
-  "markdown-preview-enhanced.enablePreviewZenMode": false,
-  "terminal.integrated.inheritEnv": false,
-  "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
-  },
-  "tailwind-fold.autoFold": false,
-  "[xml]": {
-    "editor.defaultFormatter": "fabianlauer.vs-code-xml-format"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "terminal.integrated.fontSize": 13,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // "python.terminal.activateEnvironment": true,
+    // "code-runner.executorMap": {
+    //   "python": "py",
+    //   "javascript": "bun $fullFileName"
+    // },
+    // "code-runner.runInTerminal": true,
+    "editor.minimap.enabled": false,
+    // "python.languageServer": "Default",
+    "notebook.formatOnSave.enabled": true,
+    "notebook.codeActionsOnSave": {
+      "notebook.source.fixAll": "explicit",
+      "notebook.source.organizeImports": "explicit"
+    },
+    // "[rust]": {
+    //   "editor.semanticHighlighting.enabled": false
+    // },
+    // "[python]": {
+    //   "editor.formatOnSave": true,
+    //   "editor.codeActionsOnSave": {
+    //     "source.fixAll": "explicit",
+    //     "source.organizeImports": "explicit"
+    //   },
+    //   "editor.defaultFormatter": "ms-python.black-formatter"
+    // },
+    "vim.visualModeKeyBindingsNonRecursive": [
+      {
+        "before": [">"],
+        "after": [">", "g", "v"]
+      },
+      {
+        "before": ["<"],
+        "after": ["<", "g", "v"]
+      },
+  
+    ],
+    "explorer.confirmDragAndDrop": false,
+    // "workbench.editorAssociations": {
+    //   "file:/**/*.csv": "jupyter-data-wrangler"
+    // },
+    // "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+    // "markdown-preview-enhanced.enablePreviewZenMode": false,
+    "terminal.integrated.inheritEnv": false,
+    "extensions.experimental.affinity": {
+      "vscodevim.vim": 1
+    },
+    "editor.fontSize": 14,
+    "debug.console.fontSize": 14,
+    "chat.editor.fontSize": 14,
+    "terminal.external.osxExec": "WezTerm.app",
+    "terminal.integrated.fontSize": 14
   }
-  // "supermaven.enable": {
-  //   "*": false
-  // }
-}

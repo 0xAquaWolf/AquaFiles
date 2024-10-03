@@ -81,6 +81,12 @@ suggestion, improvement or question, please open an issue or PR!
   - Added Nerd Fonts
   - Added Ligatures
 
+### System Settings setup
+
+```bash
+defaults write -g ApplePressAndHoldEnabled -bool false
+```
+
 ### WezTerm Setup
 
 install wezterm through homebrew
