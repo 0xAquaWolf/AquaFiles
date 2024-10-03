@@ -9,7 +9,7 @@ eval (/opt/homebrew/bin/brew shellenv)
 
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
-# fnm env --use-on-cd | source # "Schniz/fnm"
+fnm env --use-on-cd | source # "Schniz/fnm"
 # source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
 ## Setup Pyenv
@@ -60,7 +60,7 @@ set -gx BUN_INSTALL "$HOME/.bun"
 set -Ux BASE_PATH "/Users/aquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/vaults/SecondBrain"
 set -gx LDFLAGS -L/opt/homebrew/opt/llvm/lib
 set -gx CPPFLAGS -I/opt/homebrew/opt/llvm/include
-set -gx NVM_DIR "$HOME/.config/nvm"
+# set -gx NVM_DIR "$HOME/.config/nvm"
 
 # FZF Config
 set -g FZF_DEFAULT_COMMAND "fd -H -E '.git'"
@@ -483,11 +483,11 @@ function killport
     end
 end
 
-if test -s "$NVM_DIR/nvm.sh"
-    function nvm
-        bass source "$NVM_DIR/nvm.sh" --no-use ';' nvm $argv
-    end
-end
+# if test -s "$NVM_DIR/nvm.sh"
+#     function nvm
+#         bass source "$NVM_DIR/nvm.sh" --no-use ';' nvm $argv
+#     end
+# end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
