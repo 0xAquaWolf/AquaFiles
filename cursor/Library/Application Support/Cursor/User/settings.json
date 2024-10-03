@@ -1,6 +1,6 @@
 {
+    "window.zoomLevel": 1,
     "workbench.colorTheme": "Catppuccin Macchiato",
-    "workbench.iconTheme": "catppuccin-macchiato",
     "editor.fontFamily": "OperatorMonoSSmLig Nerd Font",
     "editor.tokenColorCustomizations": {
       "textMateRules": [
@@ -62,5 +62,6 @@
     "debug.console.fontSize": 14,
     "chat.editor.fontSize": 14,
     "terminal.external.osxExec": "WezTerm.app",
-    "terminal.integrated.fontSize": 14
+    "terminal.integrated.fontSize": 14,
+    "workbench.iconTheme": "catppuccin-macchiato"
   }
