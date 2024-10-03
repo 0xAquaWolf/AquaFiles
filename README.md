@@ -81,20 +81,6 @@ suggestion, improvement or question, please open an issue or PR!
   - Added Nerd Fonts
   - Added Ligatures
 
-<!-- ### macOS setup -->
-
-### Enable Key repeat for macOS
-
-```bash
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false              # For VS Code
-defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false      # For VS Code Insider
-defaults write com.vscodium ApplePressAndHoldEnabled -bool false                      # For VS Codium
-defaults write com.microsoft.VSCodeExploration ApplePressAndHoldEnabled -bool false   # For VS Codium Exploration users
-defaults delete -g ApplePressAndHoldEnabled
-```
-
-I also recommend increasing Key Repeat and Delay Until Repeat settings in System Preferences -> Keyboard.
-
 ### WezTerm Setup
 
 install wezterm through homebrew
@@ -343,35 +329,14 @@ _Why do you need scripting additions?_
 You can configure your user to execute _yabai --load-sa_ as the root user without having to enter a password.
 To do this, we add a new configuration entry that is loaded by _/etc/sudoers_.
 
-```bash
-# create a new file for writing - visudo uses the vim editor by default.
-# go read about this if you have no idea what is going on.
-
-sudo visudo -f /private/etc/sudoers.d/yabai
-
-# input the line below into the file you are editing.
-#  replace <yabai> with the path to the yabai binary (output of: which yabai).
-#  replace <user> with your username (output of: whoami).
-#  replace <hash> with the sha256 hash of the yabai binary (output of: shasum -a 256 $(which yabai)).
-#   this hash must be updated manually after upgrading yabai.
-
-<user> ALL=(root) NOPASSWD: sha256:<hash> <yabai> --load-sa
-```
-
 If you know what you are doing, the following one-liner can be used to update the sudoers file correctly:
 
 ```bash
 echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai
-```
 
-After the above edit has been made, add the command to load the scripting addition at the top of your yabairc config file
 
-```bash
-# for this to work you must configure sudo such that
-# it will be able to run the command without password
-
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-sudo yabai --load-sa
+# Verify that it worked
+sudo visudo -f /private/etc/sudoers.d/yabai
 ```
 
 lastly make sure to uncomment the last line from the sudoers file
@@ -382,7 +347,7 @@ it should read
 
 `#includedir /private/etc/sudoers.d` (sometimes it has 2 ## it should only have 1)
 
-finnaly _**reboot**_ your mac
+finaly _**reboot**_ your mac
 
 #### Test Scripting Additions
 
