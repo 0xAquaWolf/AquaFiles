@@ -210,7 +210,7 @@ install_rust
 
 # Install essential tools
 echo "Installing essential tools..."
-tools="neovim zellij stow wezterm lazygit ripgrep fd vivid fx bpytop fastfetch eza bat delta"
+tools="neovim zellij stow wezterm lazygit ripgrep fd pipx go  vivid fx bpytop fastfetch eza bat delta fnm oven-sh/bun/bun"
 for tool in $tools; do
   if brew list "$tool" &>/dev/null; then
     echo "$tool is already installed."
@@ -219,8 +219,24 @@ for tool in $tools; do
   fi
 done
 
-brew tap FelixKratz/formulae
-brew install borders
+# Check if borders is installed
+if ! brew list borders &>/dev/null; then
+  brew tap FelixKratz/formulae
+  brew install borders
+else
+  echo "borders is already installed."
+fi
+
+# Check if fnm is installed and if version 20.18 is available
+if command -v fnm &>/dev/null; then
+  if ! fnm list | grep -q "v20.18"; then
+    fnm install 20.18
+  else
+    echo "Node.js version 20.18 is already installed."
+  fi
+else
+  echo "fnm is not installed. Please install fnm first."
+fi
 
 # Install zoxide and starship with Cargo
 for tool in zoxide starship; do
