@@ -488,21 +488,6 @@ if test -s "$NVM_DIR/nvm.sh"
         bass source "$NVM_DIR/nvm.sh" --no-use ';' nvm $argv
     end
 end
-# This is a code snippet so that i know how to detect which OS i'm currently on and execute different scripts
-
-# switch (uname)
-#   case Darwin
-#     source (dirname (status --current-filename))/config-osx.fish
-#   case Linux
-#     source (dirname (status --current-filename))/config-linux.fish
-#   case '*'
-#     source (dirname (status --current-filename))/config-windows.fish
-# end
-#
-# set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
-# if test -f $LOCAL_CONFIG
-# end
-#   source $LOCAL_CONFIG
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -521,9 +506,3 @@ end
 if test -d "$HOME/.cargo"
     set -x PATH "$HOME/.cargo/bin" $PATH
 end
-
-# Source Rust environment if it exists
-if test -f "/Users/0xaquawolf/.cargo/env"
-    source "/Users/0xaquawolf/.cargo/env"
-end
-
