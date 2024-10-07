@@ -92,7 +92,7 @@ stow_configs() {
     fi
 
     echo "Stowing $config configuration..."
-    if stow "$config"; then
+    if stow --adopt "$config"; then
       echo "$config configuration successfully stowed."
     else
       error "Failed to stow $config configuration"
@@ -198,7 +198,7 @@ export HOMEBREW_NO_ENV_HINTS=1
 
 # Install applications
 echo "Installing applications..."
-cask_apps="onepassword obsidian raycast arc cleanshot discord telegram whatsapp figma chromium keycastr obs elgato-stream-deck"
+cask_apps="onepassword obsidian raycast arc cleanshot iina stremio discord telegram whatsapp figma marta chromium keycastr obs elgato-stream-deck"
 
 for cask in $cask_apps; do
   display_name=$(get_display_name "$cask")
@@ -210,7 +210,7 @@ install_rust
 
 # Install essential tools
 echo "Installing essential tools..."
-tools="neovim zellij stow wezterm lazygit ripgrep fd pipx go  vivid fx bpytop fastfetch eza bat delta fnm oven-sh/bun/bun"
+tools="neovim zellij stow wezterm lazygit ripgrep fd pipx go espanso ffmpeg yt-dlp vivid blackhole-16ch fx bpytop fastfetch eza bat delta fnm oven-sh/bun/bun"
 for tool in $tools; do
   if brew list "$tool" &>/dev/null; then
     echo "$tool is already installed."
@@ -284,7 +284,7 @@ setup_neovim
 
 # Stow other configurations
 echo "Stowing other configurations..."
-stow_configs "fish" "git" "zellij" "yabai" "skhd" "wezterm" "bat"
+stow_configs "fish" "git" "zellij" "yabai" "skhd" "wezterm" "bat" "espanso"
 
 bat cache --clear
 bat cache --build
