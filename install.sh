@@ -210,7 +210,7 @@ install_rust
 
 # Install essential tools
 echo "Installing essential tools..."
-tools="neovim zellij stow wezterm lazygit ripgrep fd pipx go espanso ffmpeg yt-dlp vivid blackhole-16ch fx bpytop fastfetch eza bat delta fnm oven-sh/bun/bun"
+tools="neovim zellij stow fzf wezterm lazygit ripgrep fd pipx go espanso ffmpeg yt-dlp vivid blackhole-16ch fx bpytop fastfetch eza bat delta fnm oven-sh/bun/bun"
 for tool in $tools; do
   if brew list "$tool" &>/dev/null; then
     echo "$tool is already installed."
