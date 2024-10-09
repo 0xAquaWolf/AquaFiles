@@ -40,6 +40,10 @@ fish_add_path /opt/homebrew/opt/llvm/bin
 fish_add_path /opt/homebrew/bin/conda
 fish_add_path /opt/homebrew/bin/mamba
 fish_add_path -U $HOME/Library/Application\ Support/Herd/bin/
+fish_add_path -U $ANDROID_HOME/emulator
+fish_add_path -U $ANDROID_HOME/platform-tools
+
+
 # pnpm
 set -gx PNPM_HOME /Users/0xaquawolf/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
@@ -60,7 +64,10 @@ set -gx BUN_INSTALL "$HOME/.bun"
 set -Ux BASE_PATH "/Users/aquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/vaults/SecondBrain"
 set -gx LDFLAGS -L/opt/homebrew/opt/llvm/lib
 set -gx CPPFLAGS -I/opt/homebrew/opt/llvm/include
-# set -gx NVM_DIR "$HOME/.config/nvm"
+set -x JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+set -gx NVM_DIR "$HOME/.config/nvm"
+set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
+
 
 # FZF Config
 set -g FZF_DEFAULT_COMMAND "fd -H -E '.git'"
@@ -90,6 +97,8 @@ alias hf "history | fzf"
 alias pp "string split ':' $PATH | fzf"
 alias skv "skhd --stop-service && skhd -V"
 alias awi "yabai -m query --windows | fx"
+alias yt-mp3 "yt-dlp -x --audio-format mp3 --audio-quality 0"
+alias yt-1080p 'yt-dlp -f "bestvideo[height=1080]+bestaudio/best"'
 
 alias .. "cd .."
 alias ... "cd ../.."
@@ -483,11 +492,11 @@ function killport
     end
 end
 
-# if test -s "$NVM_DIR/nvm.sh"
-#     function nvm
-#         bass source "$NVM_DIR/nvm.sh" --no-use ';' nvm $argv
-#     end
-# end
+if test -s "$NVM_DIR/nvm.sh"
+    function nvm
+        bass source "$NVM_DIR/nvm.sh" --no-use ';' nvm $argv
+    end
+end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

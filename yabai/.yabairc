@@ -96,6 +96,7 @@ yabai -m rule --add app="^Finder$" title="^(Copy|Moving)*$" manage=off
 yabai -m rule --add app="^SocialStream$" manage=off
 yabai -m rule --add app="^Herd$" manage=off
 yabai -m rule --add app="^Clean My Mac X$" manage=off
+yabai -m rule --add app="^Simulator$" manage=off
 
 # Settings space labels
 yabai -m space 1 --label browser
