@@ -26,6 +26,7 @@
       "notebook.source.fixAll": "explicit",
       "notebook.source.organizeImports": "explicit"
     },
+    "editor.formatOnSave": true,
     // "[rust]": {
     //   "editor.semanticHighlighting.enabled": false
     // },
@@ -63,5 +64,9 @@
     "chat.editor.fontSize": 14,
     "terminal.external.osxExec": "WezTerm.app",
     "terminal.integrated.fontSize": 14,
-    "workbench.iconTheme": "catppuccin-macchiato"
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "redhat.telemetry.enabled": true,
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
   }
