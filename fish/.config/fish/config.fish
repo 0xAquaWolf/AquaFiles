@@ -42,6 +42,8 @@ fish_add_path /opt/homebrew/bin/mamba
 fish_add_path -U $HOME/Library/Application\ Support/Herd/bin/
 fish_add_path -U $ANDROID_HOME/emulator
 fish_add_path -U $ANDROID_HOME/platform-tools
+fish_add_path -U $HOME/.config/composer/vendor/bin
+
 
 
 # pnpm
@@ -495,6 +497,23 @@ end
 if test -s "$NVM_DIR/nvm.sh"
     function nvm
         bass source "$NVM_DIR/nvm.sh" --no-use ';' nvm $argv
+    end
+end
+
+function heic2jpg
+    if test (count $argv) -eq 0
+        echo "Usage: heic2jpg <file1.HEIC> [file2.HEIC] ..."
+        return 1
+    end
+
+    for file in $argv
+        set filename (basename $file .HEIC)
+        if test -f $file
+            sips -s format jpeg $file --out $filename.jpg
+            echo "Converted $file to $filename.jpg"
+        else
+            echo "File not found: $file"
+        end
     end
 end
 
