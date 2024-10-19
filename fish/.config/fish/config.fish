@@ -69,6 +69,7 @@ set -gx CPPFLAGS -I/opt/homebrew/opt/llvm/include
 set -x JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 set -gx NVM_DIR "$HOME/.config/nvm"
 set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
+set -Ux CONDA_SUBDIR osx-arm64
 
 
 # FZF Config
