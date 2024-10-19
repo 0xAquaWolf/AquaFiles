@@ -6,10 +6,14 @@
 # that will be available in every application when using espanso.
 
 # Matches are substitution rules: when you type the "trigger" string
+# qqquantumself@gmail.com
 # it gets replaced by the "replace" string.
 matches:
   - trigger: ":agm"
     replace: "aquawolf369@gmail.com"
+
+  - trigger: ":qgm"
+    replace: "qqquantumself@gmail.com"
 
   - trigger: ":wstream"
     replace: "Wholeness & balanced Vibrations! Welcome to stream 🙌"
