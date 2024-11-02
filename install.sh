@@ -103,22 +103,38 @@ stow_configs() {
 }
 
 setup_neovim() {
-  echo "Setting up Neovim configuration..."
+  echo "Checking Neovim installation and configuration..."
+
+  # Check if Neovim is installed
+  if ! command -v nvim &>/dev/null; then
+    echo "Neovim is not installed. Installing..."
+    brew install neovim || error "Failed to install Neovim"
+  fi
+
+  # Check specifically for LazyVim installation
   nvim_config_dir="$HOME/.config/nvim"
+  lazy_plugin_dir="$HOME/.local/share/nvim/lazy"
+
+  # Check if LazyVim is installed by looking for the lazy.nvim plugin and LazyVim plugin
+  if [ -d "$lazy_plugin_dir/lazy.nvim" ] && [ -d "$lazy_plugin_dir/LazyVim" ]; then
+    echo "LazyVim is already installed and configured. Skipping setup..."
+    return 0
+  fi
+
+  echo "Setting up LazyVim..."
+
   # Backup existing Neovim files
-  if [ -d "$nvim_config_dir" ]; then
-    echo "Backing up existing Neovim configuration..."
-    mv "$nvim_config_dir" "${nvim_config_dir}.bak"
-  fi
-  if [ -d "$HOME/.local/share/nvim" ]; then
-    mv "$HOME/.local/share/nvim" "$HOME/.local/share/nvim.bak"
-  fi
-  if [ -d "$HOME/.local/state/nvim" ]; then
-    mv "$HOME/.local/state/nvim" "$HOME/.local/state/nvim.bak"
-  fi
-  if [ -d "$HOME/.cache/nvim" ]; then
-    mv "$HOME/.cache/nvim" "$HOME/.cache/nvim.bak"
-  fi
+  for dir in "$nvim_config_dir" "$HOME/.local/share/nvim" "$HOME/.local/state/nvim" "$HOME/.cache/nvim"; do
+    if [ -d "$dir" ]; then
+      echo "Backing up existing Neovim directory: $dir"
+      if [ -d "${dir}.bak" ]; then
+        echo "Removing old backup at ${dir}.bak"
+        rm -rf "${dir}.bak"
+      fi
+      mv "$dir" "${dir}.bak"
+    fi
+  done
+
   echo "Setting up LazyVim..."
   git clone https://github.com/LazyVim/starter "$nvim_config_dir"
   echo "Running Neovim to install LazyVim dependencies..."
@@ -210,7 +226,7 @@ install_rust
 
 # Install cli tools
 echo "Installing essential tools..."
-tools="neovim zellij stow fzf wezterm lazygit ripgrep fd pipx go espanso ffmpeg yt-dlp vivid blackhole-16ch fx bpytop fastfetch eza bat delta fnm oven-sh/bun/bun"
+tools="neovim zellij stow fzf wezterm lazygit ripgrep fd pipx go espanso ffmpeg yt-dlp vivid blackhole-16ch fx bpytop fastfetch eza bat delta oven-sh/bun/bun"
 for tool in $tools; do
   if brew list "$tool" &>/dev/null; then
     echo "$tool is already installed."
@@ -219,23 +235,80 @@ for tool in $tools; do
   fi
 done
 
+setup_nvm() {
+  echo "Checking NVM setup..."
+
+  # Function to check if fish plugin is installed
+  check_fish_plugin() {
+    local plugin_name="$1"
+    local plugin_path="$2"
+    if [ -d "$plugin_path" ]; then
+      echo "$plugin_name is already installed"
+      return 0
+    fi
+    return 1
+  }
+
+  # Check NVM installation
+  if [ -d "$HOME/.nvm" ] && command -v nvm &>/dev/null; then
+    echo "NVM is already installed and configured"
+  else
+    echo "Installing NVM..."
+    brew install nvm || error "Failed to install NVM"
+  fi
+
+  # Check Oh-My-Fish installation
+  if [ -d "$HOME/.local/share/omf" ]; then
+    echo "Oh-My-Fish is already installed"
+  else
+    echo "Installing Oh-My-Fish..."
+    curl -L https://get.oh-my.fish | fish || error "Failed to install Oh-My-Fish"
+  fi
+
+  # Check Fisher installation
+  if command -v fisher &>/dev/null; then
+    echo "Fisher is already installed"
+  else
+    echo "Installing Fisher..."
+    brew install fisher || error "Failed to install Fisher"
+  fi
+
+  # Check NVM plugins
+  echo "Checking NVM plugins for Fish..."
+
+  # Check Oh-My-Fish NVM plugin
+  if ! check_fish_plugin "Oh-My-Fish NVM plugin" "$HOME/.local/share/omf/pkg/nvm"; then
+    echo "Installing NVM plugin for Oh-My-Fish..."
+    fish -c "omf install nvm"
+  fi
+
+  # Check Fisher NVM plugin
+  if ! check_fish_plugin "Fisher NVM plugin" "$HOME/.config/fish/conf.d/nvm.fish"; then
+    echo "Installing NVM plugin for Fisher..."
+    fish -c "fisher install jorgebucaran/nvm.fish"
+  fi
+
+  # Check NVM directory configuration in Fish config
+  local fish_config="$HOME/.config/fish/config.fish"
+  if grep -q "set -gx NVM_DIR" "$fish_config"; then
+    echo "NVM configuration already exists in Fish config"
+  else
+    echo "Adding NVM configuration to Fish config..."
+    echo "
+# NVM configuration
+set -gx NVM_DIR (brew --prefix nvm)
+" >>"$fish_config"
+  fi
+
+  echo "NVM setup check completed"
+}
+
 # Check if borders is installed
 if ! brew list borders &>/dev/null; then
   brew tap FelixKratz/formulae
   brew install borders
 else
   echo "borders is already installed."
-fi
-
-# Check if fnm is installed and if version 20.18 is available
-if command -v fnm &>/dev/null; then
-  if ! fnm list | grep -q "v20.18"; then
-    fnm install 20.18
-  else
-    echo "Node.js version 20.18 is already installed."
-  fi
-else
-  echo "fnm is not installed. Please install fnm first."
 fi
 
 # Install zoxide and starship with Cargo
@@ -281,6 +354,8 @@ fi
 
 # Call the Neovim setup function
 setup_neovim
+
+setup_nvm
 
 # Stow other configurations
 echo "Stowing other configurations..."
@@ -328,7 +403,7 @@ echo "6. Install a Nerd Font (v3.0 or greater) for proper icon display"
 echo "7. Install a C compiler for nvim-treesitter (Xcode should provide this)"
 echo "8. Set up Obsidian (sync through iCloud)"
 echo "9. Consider setting up Karabiner Elements for key remapping"
-echo "10. Install the Patched Operator Mono font if desired"
+echo "10. Set up Node.js version using 'nvm install <version>' and 'nvm use <version>'"
 echo
 echo "Please restart your terminal or run 'source ~/.config/fish/config.fish' to apply the new fish configuration."
 echo "For more detailed setup instructions and customization options, refer to the README in your AquaFiles repository."

@@ -318,3 +318,9 @@ end
 if test -d "$HOME/.cargo"
     set -x PATH "$HOME/.cargo/bin" $PATH
 end
+
+# Source Rust environment if it exists
+if test -f "/Users/0xaquawolf/.cargo/env"
+    source "/Users/0xaquawolf/.cargo/env"
+end
+
