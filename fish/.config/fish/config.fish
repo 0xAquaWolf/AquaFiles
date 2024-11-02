@@ -9,17 +9,6 @@ eval (/opt/homebrew/bin/brew shellenv)
 
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
-# fnm env --use-on-cd | source # "Schniz/fnm"
-# source /opt/homebrew/opt/asdf/libexec/asdf.fish
-
-## Setup Pyenv
-# set -Ux PYENV_ROOT $HOME/.pyenv
-# fish_add_path $PYENV_ROOT/bin
-# set -Ux PIPENV_PYTHON $PYENV_ROOT/shims/python
-#
-# if command -v pyenv 1>/dev/null 2>&1
-#     pyenv init - | source
-# end
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
@@ -43,8 +32,6 @@ fish_add_path -U $HOME/Library/Application\ Support/Herd/bin/
 fish_add_path -U $ANDROID_HOME/emulator
 fish_add_path -U $ANDROID_HOME/platform-tools
 fish_add_path -U $HOME/.config/composer/vendor/bin
-
-
 
 # pnpm
 set -gx PNPM_HOME /Users/0xaquawolf/Library/pnpm
@@ -287,12 +274,6 @@ function extract_word
     echo $word
 end
 
-function ff_logo
-    set selected_logo (fastfetch --list-logos | fzf)
-    set clean_word (extract_word $selected_logo)
-    fastfetch --logo $clean_word
-end
-
 function yy
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
@@ -300,182 +281,6 @@ function yy
         cd -- "$cwd"
     end
     rm -f -- "$tmp"
-end
-
-function crd # create daily jouraal note
-    set today_date (date +"%d-%m-%Y")
-    set timestamp (date +"%H-%M-%S")
-    set base_path "$BASE_PATH/3-Resources/journals/daily"
-
-    if test (count $argv) -gt 0
-        set filename "$base_path/$today_date-$argv[1].md"
-    else
-        set filename "$base_path/$today_date.md"
-    end
-
-    echo "# $today_date
-
-## How I'm feeling?:
-
-## Graditude:
-
-## Today's goals:
-
-## Brain Dump:
-
-" >$filename
-
-    echo "Journal entry created: $filename"
-
-    # Open the file in Neovim
-    nvim $filename
-end
-
-function in
-    set base_path "$BASE_PATH/SecondBrain/0-Inbox"
-
-    if test (count $argv) -eq 0
-        set file_name ""
-    else
-        set file_name (string join " " $argv)
-    end
-
-    # Prompt for filename if it's empty
-    while test -z "$file_name"
-        read -P "Enter the name for your new note: " file_name
-        if test -z "$file_name"
-            echo "Filename cannot be empty. Please try again."
-        end
-    end
-
-    # Ensure the file name ends with .md
-    if not string match -q "*.md" $file_name
-        set file_name "$file_name.md"
-    end
-
-    # Replace spaces with underscores in the filename
-    set safe_file_name (string replace -a " " "-" $file_name)
-
-    set full_path "$base_path/$safe_file_name"
-
-    # Create an empty file
-    touch $full_path
-
-    echo "New note created: $full_path"
-
-    # Open the file in Neovim
-    nvim $full_path
-end
-
-function start-stream
-    set base_path "$BASE_PATH/0-Inbox"
-
-    if test (count $argv) -eq 0
-        set file_name ""
-    else
-        set file_name (string join " " $argv)
-    end
-
-    # Prompt for filename if it's empty
-    while test -z "$file_name"
-        read -P "Enter the name for your new note: " file_name
-        if test -z "$file_name"
-            echo "Filename cannot be empty. Please try again."
-        end
-    end
-
-    # Ensure the file name ends with .md
-    if not string match -q "*.md" $file_name
-        set file_name "$file_name.md"
-    end
-
-    # Replace spaces with underscores in the filename
-    set safe_file_name (string replace -a " " "-" $file_name)
-
-    set full_path "$base_path/$safe_file_name"
-
-    # Create an empty file
-    touch $full_path
-
-    echo "New note created: $full_path"
-
-    # Open the file in Neovim
-    nvim $full_path
-end
-
-function start-stream
-    set base_path "$BASE_PATH/3-Resources/youtube-stream"
-    set date (date +"%Y-%m-%d")
-    set filename "$date-stream-checklist.md"
-    set full_path "$base_path/$filename"
-
-    echo "# $date Streaming checklist
-
-- [ ] Create a task list for stream
-- [ ] Create a list of things we did last stream
-- [ ] Create Title
-- [ ] Create Description
-- [ ] Create Thumbnail
-- [ ] Setup up mic
-- [ ] Setup Music Instrumental
-- [ ] Setup Atomosphere
-- [ ] Test video
-- [ ] Speed test
-- [ ] Create Broadcast (low latency)
-- [ ] Setup Chat Link
-- [ ] Go Live
-" >$full_path
-
-    echo "Stream checklist created: $full_path"
-
-    # Open the file in Neovim
-    nvim $full_path
-end
-
-function yt-sum
-    set base_path "$BASE_PATH/3-Resources/video-summaries"
-    set date (date +"%Y-%m-%d")
-
-    # Prompt for video title and URL
-    read -P "Enter the YouTube video title: " video_title
-    read -P "Enter the YouTube video URL: " video_url
-
-    # Create filename based on date and video title
-    set safe_title (string replace -a " " "-" $video_title | string lower)
-    set filename "$date-$safe_title.md"
-    set full_path "$base_path/$filename"
-
-    # Create the file with initial content
-    echo "# $video_title
-
-Date: $date
-
-URL: $video_url
-
-## Summary
-[Paste the video summary here]
-
-## My Thoughts
-[Add your thoughts and insights about the video here]
-
-## Key Points
--
--
--
-
-## Action Items
-- [ ] 
-- [ ] 
-- [ ] 
-
-## Related Topics
-- 
-- 
-" >$full_path
-
-    echo "Video summary template created: $full_path"
-    # Open the file in Neovim
-    nvim $full_path
 end
 
 function killport
@@ -496,29 +301,6 @@ function killport
     end
 end
 
-# if test -s "$NVM_DIR/nvm.sh"
-#     function nvm
-#         bass source "$NVM_DIR/nvm.sh" --no-use ';' nvm $argv
-#     end
-# end
-#
-# function heic2jpg
-#     if test (count $argv) -eq 0
-#         echo "Usage: heic2jpg <file1.HEIC> [file2.HEIC] ..."
-#         return 1
-#     end
-#
-#     for file in $argv
-#         set filename (basename $file .HEIC)
-#         if test -f $file
-#             sips -s format jpeg $file --out $filename.jpg
-#             echo "Converted $file to $filename.jpg"
-#         else
-#             echo "File not found: $file"
-#         end
-#     end
-# end
-#
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
