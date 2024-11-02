@@ -19,18 +19,13 @@ require("lazy").setup({
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		-- add LazyVim and import its plugins
 		-- import any extras modules here
-		{ import = "lazyvim.plugins.extras.dap.core" },
+		-- { import = "lazyvim.plugins.extras.dap.core" },
 		{ import = "lazyvim.plugins.extras.editor.telescope" },
 		{ import = "lazyvim.plugins.extras.coding.mini-comment" }, -- TODO: verifiy if i'm using this
 		{ import = "lazyvim.plugins.extras.formatting.prettier" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.lang.python" },
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
-		{
-			"microsoft/vscode-js-debug",
-			build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mkdir -p ~/.config/vscode-js-debug/out && mv dist/* ~/.config/vscode-js-debug/out/",
-			lazy = true,
-		},
 		-- import/override with your plugins
 		{ import = "plugins" },
 		-- { import = "lazyvim.plugins.extras.ui.mini-animate" },
