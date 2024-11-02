@@ -19,9 +19,16 @@ confirm() {
 }
 
 update_command_line_tools() {
-  echo "Updating Command Line Tools..."
-  sudo softwareupdate -i "Command Line Tools for Xcode" --verbose
-  echo "Command Line Tools update completed."
+  echo "Checking Command Line Tools..."
+  # Check if xcode-select is installed and working
+  if xcode-select -p &>/dev/null; then
+    echo "Command Line Tools are already installed."
+    return 0
+  else
+    echo "Installing Command Line Tools..."
+    xcode-select --install || error "Failed to install Command Line Tools"
+    echo "Command Line Tools installation completed."
+  fi
 }
 
 is_app_installed() {
@@ -71,23 +78,19 @@ stow_configs() {
     local config_path="$HOME/.config/$config"
     local stow_source="$AQUAFILES_DIR/$config/.config/$config"
 
-    # Remove old backup if it exists
-    if [ -e "${config_path}.bak" ]; then
-      echo "Removing old backup of $config configuration..."
-      rm -rf "${config_path}.bak"
+    if [ -L "$config_path" ]; then
+      if [ "$(readlink "$config_path")" = "$stow_source" ]; then
+        echo "$config configuration is already correctly stowed."
+        continue
+      fi
     fi
 
-    if [ -e "$config_path" ]; then
-      if [ -L "$config_path" ]; then
-        # It's a symlink, check if it's pointing to the correct location
-        if [ "$(readlink "$config_path")" = "$stow_source" ]; then
-          echo "$config configuration is already correctly stowed."
-          continue
-        fi
-      fi
-
-      # Existing configuration is different, back it up
+    if [ -d "$config_path" ]; then
       echo "Backing up existing $config configuration..."
+      if [ -d "${config_path}.bak" ]; then
+        echo "Removing old backup of $config configuration..."
+        rm -rf "${config_path}.bak"
+      fi
       mv "$config_path" "${config_path}.bak"
     fi
 
@@ -238,19 +241,8 @@ done
 setup_nvm() {
   echo "Checking NVM setup..."
 
-  # Function to check if fish plugin is installed
-  check_fish_plugin() {
-    local plugin_name="$1"
-    local plugin_path="$2"
-    if [ -d "$plugin_path" ]; then
-      echo "$plugin_name is already installed"
-      return 0
-    fi
-    return 1
-  }
-
-  # Check NVM installation
-  if [ -d "$HOME/.nvm" ] && command -v nvm &>/dev/null; then
+  # Check for NVM installation more thoroughly
+  if [ -d "$HOME/.nvm" ] && brew list nvm &>/dev/null; then
     echo "NVM is already installed and configured"
   else
     echo "Installing NVM..."
@@ -265,30 +257,41 @@ setup_nvm() {
     curl -L https://get.oh-my.fish | fish || error "Failed to install Oh-My-Fish"
   fi
 
-  # Check Fisher installation
-  if command -v fisher &>/dev/null; then
+  # Check Fisher installation properly
+  if [ -f "$HOME/.config/fish/functions/fisher.fish" ]; then
     echo "Fisher is already installed"
   else
     echo "Installing Fisher..."
-    brew install fisher || error "Failed to install Fisher"
+    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
   fi
 
-  # Check NVM plugins
+  # Check NVM plugins with better detection
   echo "Checking NVM plugins for Fish..."
 
   # Check Oh-My-Fish NVM plugin
-  if ! check_fish_plugin "Oh-My-Fish NVM plugin" "$HOME/.local/share/omf/pkg/nvm"; then
+  if [ -d "$HOME/.local/share/omf/pkg/nvm" ]; then
+    echo "Oh-My-Fish NVM plugin is already installed"
+  else
     echo "Installing NVM plugin for Oh-My-Fish..."
     fish -c "omf install nvm"
   fi
 
-  # Check Fisher NVM plugin
-  if ! check_fish_plugin "Fisher NVM plugin" "$HOME/.config/fish/conf.d/nvm.fish"; then
+  # Check Fisher NVM plugin files
+  if [ -f "$HOME/.config/fish/conf.d/nvm.fish" ] &&
+    [ -f "$HOME/.config/fish/functions/nvm.fish" ] &&
+    [ -f "$HOME/.config/fish/completions/nvm.fish" ]; then
+    echo "Fisher NVM plugin is already installed"
+  else
     echo "Installing NVM plugin for Fisher..."
+    # Clean up any partial installations first
+    rm -rf "$HOME/.config/fish/functions/_nvm_*.fish" \
+      "$HOME/.config/fish/functions/nvm.fish" \
+      "$HOME/.config/fish/conf.d/nvm.fish" \
+      "$HOME/.config/fish/completions/nvm.fish"
     fish -c "fisher install jorgebucaran/nvm.fish"
   fi
 
-  # Check NVM directory configuration in Fish config
+  # Check and configure NVM in Fish
   local fish_config="$HOME/.config/fish/config.fish"
   if grep -q "set -gx NVM_DIR" "$fish_config"; then
     echo "NVM configuration already exists in Fish config"
