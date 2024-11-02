@@ -9,7 +9,7 @@ eval (/opt/homebrew/bin/brew shellenv)
 
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
-fnm env --use-on-cd | source # "Schniz/fnm"
+# fnm env --use-on-cd | source # "Schniz/fnm"
 # source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
 ## Setup Pyenv
@@ -67,7 +67,8 @@ set -Ux BASE_PATH "/Users/aquawolf/Library/Mobile Documents/iCloud~md~obsidian/D
 set -gx LDFLAGS -L/opt/homebrew/opt/llvm/lib
 set -gx CPPFLAGS -I/opt/homebrew/opt/llvm/include
 set -x JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
-set -gx NVM_DIR "$HOME/.config/nvm"
+# set -gx NVM_DIR "$HOME/.config/nvm"
+set -gx NVM_DIR (brew --prefix nvm)
 set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
 set -Ux CONDA_SUBDIR osx-arm64
 
@@ -495,29 +496,29 @@ function killport
     end
 end
 
-if test -s "$NVM_DIR/nvm.sh"
-    function nvm
-        bass source "$NVM_DIR/nvm.sh" --no-use ';' nvm $argv
-    end
-end
-
-function heic2jpg
-    if test (count $argv) -eq 0
-        echo "Usage: heic2jpg <file1.HEIC> [file2.HEIC] ..."
-        return 1
-    end
-
-    for file in $argv
-        set filename (basename $file .HEIC)
-        if test -f $file
-            sips -s format jpeg $file --out $filename.jpg
-            echo "Converted $file to $filename.jpg"
-        else
-            echo "File not found: $file"
-        end
-    end
-end
-
+# if test -s "$NVM_DIR/nvm.sh"
+#     function nvm
+#         bass source "$NVM_DIR/nvm.sh" --no-use ';' nvm $argv
+#     end
+# end
+#
+# function heic2jpg
+#     if test (count $argv) -eq 0
+#         echo "Usage: heic2jpg <file1.HEIC> [file2.HEIC] ..."
+#         return 1
+#     end
+#
+#     for file in $argv
+#         set filename (basename $file .HEIC)
+#         if test -f $file
+#             sips -s format jpeg $file --out $filename.jpg
+#             echo "Converted $file to $filename.jpg"
+#         else
+#             echo "File not found: $file"
+#         end
+#     end
+# end
+#
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
