@@ -19,9 +19,8 @@ require("lazy").setup({
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		-- add LazyVim and import its plugins
 		-- import any extras modules here
-		-- { import = "lazyvim.plugins.extras.dap.core" },
 		{ import = "lazyvim.plugins.extras.editor.telescope" },
-		{ import = "lazyvim.plugins.extras.coding.mini-comment" }, -- TODO: verifiy if i'm using this
+		{ import = "lazyvim.plugins.extras.coding.mini-comment" },
 		{ import = "lazyvim.plugins.extras.formatting.prettier" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.lang.python" },
