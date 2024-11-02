@@ -20,15 +20,19 @@ confirm() {
 
 update_command_line_tools() {
   echo "Checking Command Line Tools..."
-  # Check if xcode-select is installed and working
+  # Single check using xcode-select
   if xcode-select -p &>/dev/null; then
-    echo "Command Line Tools are already installed."
+    echo "Command Line Tools are installed."
     return 0
-  else
-    echo "Installing Command Line Tools..."
-    xcode-select --install || error "Failed to install Command Line Tools"
-    echo "Command Line Tools installation completed."
   fi
+
+  echo "Installing Command Line Tools..."
+  xcode-select --install || error "Failed to install Command Line Tools"
+  echo "Waiting for Command Line Tools installation to complete..."
+  until xcode-select -p &>/dev/null; do
+    sleep 1
+  done
+  echo "Command Line Tools installation completed."
 }
 
 is_app_installed() {
@@ -78,6 +82,8 @@ stow_configs() {
     local config_path="$HOME/.config/$config"
     local stow_source="$AQUAFILES_DIR/$config/.config/$config"
 
+    echo "Processing $config configuration..."
+
     if [ -L "$config_path" ]; then
       if [ "$(readlink "$config_path")" = "$stow_source" ]; then
         echo "$config configuration is already correctly stowed."
@@ -85,16 +91,12 @@ stow_configs() {
       fi
     fi
 
+    # Handle existing configuration with less verbose output
     if [ -d "$config_path" ]; then
-      echo "Backing up existing $config configuration..."
-      if [ -d "${config_path}.bak" ]; then
-        echo "Removing old backup of $config configuration..."
-        rm -rf "${config_path}.bak"
-      fi
+      [ -d "${config_path}.bak" ] && rm -rf "${config_path}.bak"
       mv "$config_path" "${config_path}.bak"
     fi
 
-    echo "Stowing $config configuration..."
     if stow --adopt "$config"; then
       echo "$config configuration successfully stowed."
     else
@@ -165,20 +167,6 @@ install_rust() {
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
     source "$HOME/.cargo/env"
   fi
-}
-
-update_fish_config() {
-  local fish_config="$HOME/.config/fish/config.fish"
-  echo "Updating Fish configuration..."
-  cat <<EOF >>"$fish_config"
-
-# Source Rust environment if it exists
-if test -f "$HOME/.cargo/env"
-    source "$HOME/.cargo/env"
-end
-
-EOF
-  echo "Fish configuration updated."
 }
 
 echo "Welcome to the AquaFiles bootstrap script!"
@@ -391,22 +379,25 @@ else
   echo "skhd is not installed. Skipping service start."
 fi
 
-echo "Bootstrap process completed successfully!"
-echo
-echo "Note: Existing configurations have been backed up with a .bak extension in their respective directories."
-echo "If you need to revert any changes, you can find these backups in your .config directory."
-echo
-echo "Remember to complete the following steps:"
-echo "1. Set up Neovim (LazyVim)"
-echo "2. Configure Yabai's scripting additions (see README for instructions)"
-echo "3. Install and configure additional tools mentioned in the README"
-echo "4. Set up WezTerm (configuration already stowed)"
-echo "5. Consider installing recommended apps and Chrome extensions"
-echo "6. Install a Nerd Font (v3.0 or greater) for proper icon display"
-echo "7. Install a C compiler for nvim-treesitter (Xcode should provide this)"
-echo "8. Set up Obsidian (sync through iCloud)"
-echo "9. Consider setting up Karabiner Elements for key remapping"
-echo "10. Set up Node.js version using 'nvm install <version>' and 'nvm use <version>'"
-echo
-echo "Please restart your terminal or run 'source ~/.config/fish/config.fish' to apply the new fish configuration."
-echo "For more detailed setup instructions and customization options, refer to the README in your AquaFiles repository."
+print_final_instructions() {
+  echo
+  echo "Bootstrap process completed successfully!"
+  echo
+  echo "Note: Existing configurations have been backed up with a .bak extension in their respective directories."
+  echo "If you need to revert any changes, you can find these backups in your .config directory."
+  echo
+  echo "Remember to complete the following steps:"
+  echo "1. Configure Yabai's scripting additions (see README for instructions)"
+  echo "2. Install and configure additional tools mentioned in the README"
+  echo "3. Set up WezTerm (configuration already stowed)"
+  echo "4. Consider installing recommended apps and Chrome extensions"
+  echo "5. Install a Nerd Font (v3.0 or greater) for proper icon display"
+  echo "6. Set up Obsidian (sync through iCloud)"
+  echo "7. Consider setting up Karabiner Elements for key remapping"
+  echo "8. Set up Node.js version using 'nvm install <version>' and 'nvm use <version>'"
+  echo
+  echo "Please restart your terminal or run 'source ~/.config/fish/config.fish' to apply the new fish configuration."
+  echo "For more detailed setup instructions and customization options, refer to the README in your AquaFiles repository."
+}
+
+print_final_instructions
