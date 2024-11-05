@@ -53,3 +53,8 @@
 		bold yellow => syntax "#544f4e"
 	# Should match the name of the bat theme
 	syntax-theme = "Catppuccin Mocha"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
