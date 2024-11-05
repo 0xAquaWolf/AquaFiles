@@ -100,26 +100,28 @@ yabai -m rule --add app="^Clean My Mac X$" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
 yabai -m rule --add app="^Telegram$" manage=off
 yabai -m rule --add app="^Nucleo$" manage=off
+yabai -m rule --add app="^Unity$" manage=off
 
 # Settings space labels
 yabai -m space 1 --label browser
 yabai -m space 2 --label code
 yabai -m space 3 --label notes
-yabai -m space 4 --label social
+yabai -m space 4 --label unity
 yabai -m space 5 --label design
 yabai -m space 6 --label terminal
 yabai -m space 7 --label research
-yabai -m space 8 --label misc
+yabai -m space 8 --label discord
 yabai -m space 9 --label telegram
 yabai -m space 10 --label obs
 
 # window rules
 yabai -m rule --add app="^Arc$" space=browser
-yabai -m rule --add app="^Cursor$" space=code
+yabai -m rule --add app="^Code$" space=code
 yabai -m rule --add app="^Obsidian$" space=notes
-yabai -m rule --add app="^Discord$" space=social
+yabai -m rule --add app="^Unity$" space=unity
 yabai -m rule --add app="^Figma$" space=design
 yabai -m rule --add app="^WezTerm$" space=terminal
+yabai -m rule --add app="^Discord$" space=discord
 yabai -m rule --add app="^Telegram$" space=telegram
 yabai -m rule --add app="^Obs$" space=obs
 
