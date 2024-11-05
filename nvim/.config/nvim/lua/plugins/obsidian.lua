@@ -11,7 +11,7 @@ return {
 		workspaces = {
 			{
 				name = "secondBrain",
-				path = "/Users/aquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/vaults/SecondBrain",
+				path = "/Users/0xaquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/SecondBrain/",
 			},
 		},
 	},
