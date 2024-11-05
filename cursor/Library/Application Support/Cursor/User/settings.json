@@ -3,15 +3,7 @@
   "workbench.colorTheme": "Catppuccin Macchiato",
   "editor.fontFamily": "OperatorMonoSSmLig Nerd Font",
   "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "name": "envKeys",
-        "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
-        "settings": {
-          "foreground": "#19354900"
-        }
-      }
-    ]
+    "textMateRules": []
   },
   "editor.minimap.enabled": false,
   "notebook.formatOnSave.enabled": true,
