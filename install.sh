@@ -205,7 +205,7 @@ export HOMEBREW_NO_ENV_HINTS=1
 
 # Install cask applications
 echo "Installing applications..."
-cask_apps="onepassword keyboardcleantool obsidian raycast arc cleanshot iina stremio discord telegram whatsapp figma marta chromium keycastr obs elgato-stream-deck"
+cask_apps="onepassword unity-hub tiled daisydisk docker keyboardcleantool obsidian raycast arc cleanshot iina stremio discord telegram whatsapp figma marta chromium keycastr obs elgato-stream-deck"
 
 for cask in $cask_apps; do
   display_name=$(get_display_name "$cask")
@@ -217,7 +217,7 @@ install_rust
 
 # Install cli tools
 echo "Installing essential tools..."
-tools="neovim zellij stow fzf wezterm lazygit ripgrep fd pipx go espanso ffmpeg yt-dlp vivid blackhole-16ch fx bpytop fastfetch eza bat delta oven-sh/bun/bun"
+tools="neovim git-lfs docker-compose zellij stow fzf wezterm lazygit ripgrep fd pipx go espanso ffmpeg yt-dlp vivid blackhole-16ch fx bpytop fastfetch eza bat delta oven-sh/bun/bun"
 for tool in $tools; do
   if brew list "$tool" &>/dev/null; then
     echo "$tool is already installed."
