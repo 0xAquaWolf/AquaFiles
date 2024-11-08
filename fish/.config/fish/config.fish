@@ -157,7 +157,7 @@ alias plf "uv pip list | fzf" # pip list fzf
 alias pfz "uv pip freeze > requirements.txt"
 
 # |======  VS Code  ======|
-alias code cursor
+# alias code cursor
 # |======  Functions ======|
 
 function mcd
@@ -298,6 +298,47 @@ function killport
     else
         kill -9 $pid
         echo "Process $pid running on port $port has been killed"
+    end
+end
+
+function heic2jpg --description 'Convert HEIC images to JPEG format'
+    # Check if sips is available (should be on macOS by default)
+    if not command -sq sips
+        echo "Error: sips command not found. This function requires macOS."
+        return 1
+    end
+
+    # Check if arguments were provided
+    if test (count $argv) -eq 0
+        echo "Usage: heic2jpg <file.HEIC> [more files...]"
+        return 1
+    end
+
+    # Process each file
+    for file in $argv
+        # Check if file exists
+        if not test -f $file
+            echo "Error: File '$file' not found"
+            continue
+        end
+
+        # Check if file is HEIC
+        if not string match -q -i "*.HEIC" $file
+            echo "Error: '$file' is not a HEIC file"
+            continue
+        end
+
+        # Create output filename by replacing HEIC with jpg
+        set output_file (string replace -i '.HEIC' '.jpg' $file)
+
+        # Convert the file
+        sips -s format jpeg $file --out $output_file
+
+        if test $status -eq 0
+            echo "Successfully converted '$file' to '$output_file'"
+        else
+            echo "Error converting '$file'"
+        end
     end
 end
 
