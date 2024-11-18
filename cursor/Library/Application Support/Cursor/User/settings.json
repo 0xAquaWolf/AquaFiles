@@ -1,4 +1,9 @@
 {
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  "python.condaPath": "/opt/homebrew/Caskroom/miniforge/base/envs/algo-trading/bin/python",
+  "python.terminal.activateEnvironment": true,
   "window.zoomLevel": 1,
   "workbench.colorTheme": "Catppuccin Macchiato",
   "editor.fontFamily": "OperatorMonoSSmLig Nerd Font",
@@ -45,12 +50,13 @@
   "terminal.external.osxExec": "WezTerm.app",
   "terminal.integrated.fontSize": 14,
   "workbench.iconTheme": "catppuccin-macchiato",
-  "redhat.telemetry.enabled": true,
-  // "[php]": {
-  //   "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-  // },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
   "files.associations": {
-    "*.php": "php"
+    "*.php": "php",
+    "*.csv": "plaintext"
   },
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
@@ -66,18 +72,16 @@
     "*.sdb": "${capture}.${extname}-*",
     "*.s3db": "${capture}.${extname}-*"
   },
-  "sqltools.useNodeRuntime": true,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "dataWrangler.enabledFileTypes": {
+    "csv": false
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "omnisharp.useModernNet": false,
-  "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current",
-  "godotTools.editorPath.godot4": "/Applications/Godot.app/Contents/MacOS/godot",
-  "godotTools.lsp.serverPort": 6005,
+  // "[typescriptreact]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[typescript]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[javascript]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
 }
