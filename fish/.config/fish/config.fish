@@ -152,9 +152,14 @@ alias bs "brew search"
 alias bi "brew info"
 
 # |======  python  ======|
-alias venv "uv venv && source .venv/bin/activate.fish"
-alias plf "uv pip list | fzf" # pip list fzf
-alias pfz "uv pip freeze > requirements.txt"
+# alias venv "uv venv && source .venv/bin/activate.fish"
+# alias plf "uv pip list | fzf" # pip list fzf
+# alias pfz "uv pip freeze > requirements.txt"
+
+alias plf "pip list | fzf"
+alias clf "conda list | fzf"
+alias pfz "pip freeze > requirements.txt"
+alias zelalgo "conda activate algo-trading && zellij --layout ~/Projects/algo-trading/moondev-bootcamp/code/day-2/data-streams/crypto-data-streams.kdl"
 
 # |======  VS Code  ======|
 # alias code cursor
@@ -340,6 +345,33 @@ function heic2jpg --description 'Convert HEIC images to JPEG format'
             echo "Error converting '$file'"
         end
     end
+end
+
+function ghinit
+    # Check if repository name is provided
+    if test (count $argv) -ne 1
+        echo "Usage: github-init REPO_NAME"
+        return 1
+    end
+
+    set -l repo_name $argv[1]
+    set -l github_username (git config user.name)
+
+    # Initialize git repository
+    git init
+
+    # Create private GitHub repository
+    gh repo create --private $repo_name
+
+    # Add remote origin
+    git remote add origin git@github.com:$github_username/$repo_name.git
+
+    # Create initial commit
+    git add .
+    git commit -m init
+
+    # Push to main branch
+    git push -u origin main
 end
 
 # >>> conda initialize >>>
