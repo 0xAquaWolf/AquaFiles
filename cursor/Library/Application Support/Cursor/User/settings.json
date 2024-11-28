@@ -2,13 +2,21 @@
   "code-runner.clearPreviousOutput": true,
   "code-runner.runInTerminal": true,
   "code-runner.saveFileBeforeRun": true,
-  "python.condaPath": "/opt/homebrew/Caskroom/miniforge/base/envs/algo-trading/bin/python",
+  "python.condaPath": "/opt/homebrew/Caskroom/miniforge/base/envs/hyperliquid/bin/python",
   "python.terminal.activateEnvironment": true,
   "window.zoomLevel": 1,
   "workbench.colorTheme": "Catppuccin Macchiato",
   "editor.fontFamily": "OperatorMonoSSmLig Nerd Font",
   "editor.tokenColorCustomizations": {
-    "textMateRules": []
+    "textMateRules": [
+      {
+        "name": "envKeys",
+        "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
+        "settings": {
+          "foreground": "#19354900"
+        }
+      }
+    ]
   },
   "editor.minimap.enabled": false,
   "notebook.formatOnSave.enabled": true,
