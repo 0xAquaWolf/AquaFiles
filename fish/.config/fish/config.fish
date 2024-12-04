@@ -32,6 +32,7 @@ fish_add_path -U $HOME/Library/Application\ Support/Herd/bin/
 fish_add_path -U $ANDROID_HOME/emulator
 fish_add_path -U $ANDROID_HOME/platform-tools
 fish_add_path -U $HOME/.config/composer/vendor/bin
+fish_add_path /Users/0xaquawolf/.codeium/windsurf/bin
 
 # pnpm
 set -gx PNPM_HOME /Users/0xaquawolf/Library/pnpm
@@ -54,10 +55,10 @@ set -Ux BASE_PATH "/Users/aquawolf/Library/Mobile Documents/iCloud~md~obsidian/D
 set -gx LDFLAGS -L/opt/homebrew/opt/llvm/lib
 set -gx CPPFLAGS -I/opt/homebrew/opt/llvm/include
 set -x JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
-# set -gx NVM_DIR "$HOME/.config/nvm"
 set -gx NVM_DIR (brew --prefix nvm)
 set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
 set -Ux CONDA_SUBDIR osx-arm64
+set -U nvm_default_version 22.11
 
 
 # FZF Config
@@ -89,7 +90,10 @@ alias pp "string split ':' $PATH | fzf"
 alias skv "skhd --stop-service && skhd -V"
 alias awi "yabai -m query --windows | fx"
 alias yt-mp3 "yt-dlp -x --audio-format mp3 --audio-quality 0"
+alias dlbeat "cd ~/Music/yt-dls/instrumentals/ && yt-dlp -x --audio-format mp3 --audio-quality 0"
 alias yt-1080p 'yt-dlp -f "bestvideo[height=1080]+bestaudio/best"'
+alias create-evm-fish 'fish ~/scripts/create-evm-project.fish'
+alias create-evm 'sh ~/scripts/create-evm-project.sh'
 
 alias .. "cd .."
 alias ... "cd ../.."
@@ -163,6 +167,7 @@ alias zelalgo "conda activate algo-trading && zellij --layout ~/Projects/algo-tr
 
 # |======  VS Code  ======|
 # alias code cursor
+alias surf windsurf
 # |======  Functions ======|
 
 function mcd
