@@ -101,6 +101,11 @@ yabai -m rule --add app="^Simulator$" manage=off
 yabai -m rule --add app="^Telegram$" manage=off
 yabai -m rule --add app="^Nucleo$" manage=off
 yabai -m rule --add app="^Unity$" manage=off
+yabai -m rule --add app="^REAPER$" manage=off
+yabai -m rule --add app="^reaper_host_x86_64$" manage=off
+yabai -m rule --add app="^reaper_host_arm64$" manage=off
+yabai -m rule --add app="^FLARE Arcade v2.0 Utility$" manage=off
+yabai -m rule --add app="^OsxFL$" manage=off
 
 # Settings space labels
 yabai -m space 1 --label browser
