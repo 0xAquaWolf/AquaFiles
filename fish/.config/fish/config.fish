@@ -5,6 +5,8 @@ if not set -q SSH_AUTH_SOCK
     set -Ux SSH_AGENT_PID $SSH_AGENT_PID
 end
 
+ssh-add ~/.ssh/0xaquawolf
+
 eval (/opt/homebrew/bin/brew shellenv)
 
 starship init fish | source # https://starship.rs/
@@ -59,7 +61,7 @@ set -gx NVM_DIR (brew --prefix nvm)
 set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
 set -Ux CONDA_SUBDIR osx-arm64
 set -U nvm_default_version 22.11
-
+set -x C_INCLUDE_PATH $HOME/.local/share/nvm/v22.11.0/include/node $C_INCLUDE_PATH
 
 # FZF Config
 set -g FZF_DEFAULT_COMMAND "fd -H -E '.git'"
@@ -159,6 +161,7 @@ alias bi "brew info"
 # alias venv "uv venv && source .venv/bin/activate.fish"
 # alias plf "uv pip list | fzf" # pip list fzf
 # alias pfz "uv pip freeze > requirements.txt"
+# alias create-berserk python ~/scripts/manga-gen.py .
 
 alias plf "pip list | fzf"
 alias clf "conda list | fzf"
@@ -168,7 +171,21 @@ alias zelalgo "conda activate algo-trading && zellij --layout ~/Projects/algo-tr
 # |======  VS Code  ======|
 # alias code cursor
 alias surf windsurf
+
 # |======  Functions ======|
+function dkrs
+    if test -z $argv[1]
+        echo "Usage: dkrs <service_name>"
+        return 1
+    end
+
+    set service $argv[1]
+
+    echo "Restarting $service..."
+    docker-compose down -v
+    docker-compose rm -f $service
+    docker-compose -p n8n-local up -d
+end
 
 function mcd
     set dir $argv[1]
@@ -379,6 +396,74 @@ function ghinit
     git push -u origin main
 end
 
+function create_pdf
+    # Arguments: $argv[1] = optional output PDF file (default: final.pdf in the current folder)
+    set source_folder (pwd)
+    set output_pdf "final.pdf"
+
+    # If an argument is provided, use it as the output PDF path
+    if test (count $argv) -ge 1
+        set output_pdf $argv[1]
+    end
+
+    # Temporary file for storing the list of image paths
+    set temp_file (mktemp)
+
+    # Find image files recursively and sort them
+    echo "Gathering image files from $source_folder..."
+    find $source_folder -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) | sort >$temp_file
+
+    # Check if images were found
+    if test (wc -l < $temp_file) -eq 0
+        echo "No image files found in $source_folder!"
+        rm $temp_file
+        return 1
+    end
+
+    # Convert images to a PDF using `magick`
+    echo "Creating PDF at $output_pdf..."
+    magick convert @$temp_file $output_pdf
+
+    # Cleanup
+    rm $temp_file
+
+    echo "PDF created successfully: $output_pdf"
+end
+
+function ytmp3 --description "Download YouTube video as MP3 using yt-dlp"
+    # Check if URL is provided
+    if test (count $argv) -eq 0
+        echo "Please provide a YouTube URL"
+        return 1
+    end
+
+    # Check if yt-dlp is installed
+    if not command -v yt-dlp >/dev/null
+        echo "yt-dlp is not installed. Please install it first:"
+        echo "brew install yt-dlp    # For macOS"
+        echo "apt install yt-dlp     # For Ubuntu/Debian"
+        return 1
+    end
+
+    # Check if ffmpeg is installed (required for audio conversion)
+    if not command -v ffmpeg >/dev/null
+        echo "ffmpeg is not installed. Please install it first:"
+        echo "brew install ffmpeg    # For macOS"
+        echo "apt install ffmpeg     # For Ubuntu/Debian"
+        return 1
+    end
+
+    # Download and convert to MP3
+    yt-dlp \
+        --extract-audio \
+        --audio-format mp3 \
+        --audio-quality 0 \
+        --output "%(title)s.%(ext)s" \
+        --embed-thumbnail \
+        --add-metadata \
+        $argv[1]
+end
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
@@ -396,3 +481,6 @@ end
 if test -d "$HOME/.cargo"
     set -x PATH "$HOME/.cargo/bin" $PATH
 end
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/0xaquawolf/.lmstudio/bin

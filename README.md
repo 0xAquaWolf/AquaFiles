@@ -556,7 +556,7 @@ AquaWolf Academy: https://discord.gg/wzPBjEcn87
 - [x] Zellij setup
 - [x] skhd setup
 - [x] yabai setup
-- [ ] obsidian setup & config
+- [x] obsidian setup & config
 - [ ] vs code setup & config
 - [ ] document how to use GNU Stow with my dotfiles
 - [ ] add a quick start guide (use this for video)

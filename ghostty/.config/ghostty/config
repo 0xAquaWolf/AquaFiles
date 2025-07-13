@@ -1,0 +1,22 @@
+# Empty values reset the configuration to the default value
+font-family = "OperatorMonoSSmLig Nerd Font"
+theme = "catppuccin-macchiato"
+font-style = Regular
+font-size = 18
+font-thicken = true
+
+adjust-underline-position = 40%
+adjust-underline-thickness = -60%
+
+cursor-style = block
+cursor-style-blink = false
+
+shell-integration = fish
+shell-integration-features = no-cursor
+
+window-padding-x = 10
+
+confirm-close-surface = false
+clipboard-paste-protection = false
+unfocused-split-opacity = 1.0
+

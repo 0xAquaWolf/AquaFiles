@@ -9,30 +9,27 @@
 # qqquantumself@gmail.com
 # it gets replaced by the "replace" string.
 matches:
-  - trigger: ":agm"
-    replace: "aquawolf369@gmail.com"
-
-  - trigger: ":qgm"
-    replace: "qqquantumself@gmail.com"
+  - trigger: ":kgm"
+    replace: "kevinpereza369@gmail.com"
 
   - trigger: ":wstream"
-    replace: "Wholeness & balanced Vibrations! Welcome to stream 🙌"
+    replace: "Welcome to stream 🙌"
 
   # Dotfiles
   - trigger: ":dotfiles"
-    replace: "https://github.com/0xAquaWolf/AquaFiles"
+    replace: "https://github.com/kevinpereza369/Dotfiles"
 
   # youtube link
   - trigger: ":yt"
-    replace: "https://www.youtube.com/@0xAquaWolf"
+    replace: "https://www.youtube.com/@kevinpereza369"
 
   # twitter
   - trigger: ":x"
-    replace: "https://www.x.com/@0xAquaWolf"
+    replace: "https://www.x.com/@kevinpereza369"
 
   # discord
   - trigger: ":discord"
-    replace: "https://discord.gg/wzPBjEcn87"
+    replace: ""
 
   # fire
   - trigger: ":fire"
@@ -49,18 +46,6 @@ matches:
   - trigger: ":psqlc"
     replace: "\\! clear"
 
-  - trigger: :trackvid
-    replace: |
-      - [ ] Recording Now
-      Finished Recording
-      Compressed
-  - trigger: ":lesson"
-    replace: |
-      # Lesson
-      # Materials
-      # Lecture
-      # Resources
-  # But matches can also be dynamic:
   # Print the current date
   - trigger: ":date"
     replace: "{{mydate}}"

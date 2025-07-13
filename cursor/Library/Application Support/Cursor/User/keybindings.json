@@ -32,7 +32,7 @@
   },
   {
     "key": "cmd-t",
-    "command": "workbench.action.terminal.toggleTerminal",
+    "command": "workbench.action.terminal.toggleTerminal"
   },
   {
     "key": "space o",
@@ -82,12 +82,12 @@
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {
-    "key": "shift-L",
+    "key": "cmd+shift-L",
     "command": "workbench.action.nextEditorInGroup",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
   {
-    "key": "shift-H",
+    "key": "cmd+shift-H",
     "command": "workbench.action.previousEditorInGroup",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
@@ -101,11 +101,11 @@
     "command": "editor.action.moveLinesUpAction",
     "when": "vim.mode == 'VisualLine' && editorTextFocus"
   },
-  {
-    "key": "shift-k",
-    "command": "editor.action.showHover",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
+  // {
+  //   "key": "shift-k",
+  //   "command": "editor.action.showHover",
+  //   "when": "vim.mode == 'Normal' && editorTextFocus"
+  // },
   {
     "key": "space c a",
     "command": "editor.action.codeAction",
@@ -151,10 +151,7 @@
     "command": "runCommands",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
     "args": {
-      "commands": [
-        "workbench.view.scm",
-        "workbench.scm.focus"
-      ]
+      "commands": ["workbench.view.scm", "workbench.scm.focus"]
     }
   },
   {
@@ -260,4 +257,8 @@
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
   },
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
+  }
 ]
