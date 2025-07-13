@@ -16,6 +16,8 @@ opt.number = true
 opt.relativenumber = true
 opt.scrolloff = 8
 
+opt.cursorline = false
+
 -- Check if clipboard support is available
 if vim.fn.has("clipboard") == 1 then
 	-- Set the '+' register for clipboard operations

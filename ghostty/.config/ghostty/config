@@ -2,7 +2,7 @@
 font-family = "OperatorMonoSSmLig Nerd Font"
 theme = "catppuccin-macchiato"
 font-style = Regular
-font-size = 18
+font-size = 16
 font-thicken = true
 
 adjust-underline-position = 40%
@@ -14,9 +14,11 @@ cursor-style-blink = false
 shell-integration = fish
 shell-integration-features = no-cursor
 
-window-padding-x = 10
+window-padding-x = 14
 
 confirm-close-surface = false
 clipboard-paste-protection = false
 unfocused-split-opacity = 1.0
 
+background-opacity = 0.9
+background-blur= "true"
