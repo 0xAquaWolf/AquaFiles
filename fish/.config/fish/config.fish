@@ -91,9 +91,9 @@ alias hf "history | fzf"
 alias pp "string split ':' $PATH | fzf"
 alias skv "skhd --stop-service && skhd -V"
 alias awi "yabai -m query --windows | fx"
-alias yt-mp3 "yt-dlp -x --audio-format mp3 --audio-quality 0"
+alias yt-mp3 "yt-dlp -x --audio-format mp3 --audio-quality 0 --no-playlist"
 alias dlbeat "cd ~/Music/yt-dls/instrumentals/ && yt-dlp -x --audio-format mp3 --audio-quality 0"
-alias yt-1080p 'yt-dlp -f "bestvideo[height=1080]+bestaudio/best"'
+alias yt-1080p 'yt-dlp -f "bestvideo[height=1080]+bestaudio/best" --merge-output-format mp4'
 alias create-evm-fish 'fish ~/scripts/create-evm-project.fish'
 alias create-evm 'sh ~/scripts/create-evm-project.sh'
 
@@ -122,6 +122,7 @@ alias trc "vim ~/.tmux.conf"
 alias zelrc "vim ~/.config/zellij/config.kdl"
 alias yrc "vim ~/.yabairc"
 alias krc "vim ~/AquaFiles/gen-karabiner-config/rules.ts"
+alias grc "vim ~/AquaFiles/ghostty/.config/ghostty/config"
 alias zshrc "vim ~/.config/.zshrc"
 
 # |======  Applications  ======|
@@ -464,23 +465,68 @@ function ytmp3 --description "Download YouTube video as MP3 using yt-dlp"
         $argv[1]
 end
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
-    eval /opt/homebrew/Caskroom/miniforge/base/bin/conda "shell.fish" hook $argv | source
-else
-    if test -f "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
-        . "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH /opt/homebrew/Caskroom/miniforge/base/bin $PATH
+function extract_frames
+    if test (count $argv) -lt 1
+        echo "Usage: extract_frames <video_file> [fps]"
+        return 1
     end
+
+    set -l input $argv[1]
+    set -l fps 1
+
+    if test (count $argv) -ge 2
+        set fps $argv[2]
+    end
+
+    set -l name (basename $input .mkv)
+    set -l outdir frames/$name
+
+    mkdir -p $outdir
+
+    ffmpeg -i $input -vf "fps=$fps" -q:v 1 $outdir/frame_%04d.png
+
+    echo "✅ Frames saved to: $outdir"
 end
-# <<< conda initialize <<<
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/0xaquawolf/.lmstudio/bin
 
 # Set up Rust environment for Fish
 if test -d "$HOME/.cargo"
     set -x PATH "$HOME/.cargo/bin" $PATH
 end
 
-# Added by LM Studio CLI (lms)
-set -gx PATH $PATH /Users/0xaquawolf/.lmstudio/bin
+# >>> conda initialize >>>
+# Updated conda initialization for fish shell
+
+# Define conda base path - adjust this to your conda installation
+set -l conda_base /opt/homebrew/Caskroom/miniforge/base
+
+# Method 1: Try conda hook (preferred method)
+if test -f "$conda_base/bin/conda"
+    eval "$conda_base/bin/conda" "shell.fish" hook $argv | source
+    # Method 2: Try sourcing conda.fish configuration
+else if test -f "$conda_base/etc/fish/conf.d/conda.fish"
+    source "$conda_base/etc/fish/conf.d/conda.fish"
+    # Method 3: Fallback to adding conda to PATH
+else
+    # Only add to PATH if not already present
+    if not contains "$conda_base/bin" $PATH
+        set -gx PATH "$conda_base/bin" $PATH
+    end
+
+    # Try to find conda in common locations as fallback
+    for conda_path in /opt/homebrew/bin/conda /usr/local/bin/conda ~/miniconda3/bin/conda ~/anaconda3/bin/conda
+        if test -f "$conda_path"
+            eval "$conda_path" "shell.fish" hook $argv | source
+            break
+        end
+    end
+end
+
+# Optional: Set conda to not auto-activate base environment
+# Uncomment the line below if you don't want base environment to activate automatically
+# conda config --set auto_activate_base false
+# <<< conda initialize <<
+#
+clear

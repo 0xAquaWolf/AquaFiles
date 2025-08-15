@@ -4,19 +4,10 @@ SETUVAR --export --path BASE_PATH:/Users/aquawolf/Library/Mobile\x20Documents/iC
 SETUVAR --export CONDA_SUBDIR:osx\x2darm64
 SETUVAR --export EDITOR:nvim
 SETUVAR --export MANPAGER:sh\x20\x2dc\x20\x27col\x20\x2dbx\x20\x7c\x20bat\x20\x2dl\x20man\x20\x2dp\x27
-SETUVAR --export PIPENV_PYTHON:/Users/aquawolf/\x2epyenv/shims/python
-SETUVAR --export PYENV_ROOT:/Users/aquawolf/\x2epyenv
-SETUVAR --export SSH_AGENT_PID:22279
-SETUVAR --export SSH_AUTH_SOCK:/tmp/ssh\x2dedkrQc8wfTqO/agent\x2e22278
-SETUVAR __fish_initialized:3400
-SETUVAR _fisher_edc_2F_bass_files:\x7e/\x2econfig/fish/functions/__bass\x2epy\x1e\x7e/\x2econfig/fish/functions/bass\x2efish
-SETUVAR _fisher_fabioantunes_2F_fish_2D_nvm_files:\x7e/\x2econfig/fish/functions/__nvm_run\x2efish\x1e\x7e/\x2econfig/fish/functions/node\x2efish\x1e\x7e/\x2econfig/fish/functions/npm\x2efish\x1e\x7e/\x2econfig/fish/functions/npx\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm_alias_command\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm_alias_function\x2efish\x1e\x7e/\x2econfig/fish/functions/yarn\x2efish\x1e\x7e/\x2econfig/fish/completions/nvm\x2efish
-SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:\x7e/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_list\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e\x7e/\x2econfig/fish/completions/nvm\x2efish
-SETUVAR _fisher_plugins:fabioantunes/fish\x2dnvm\x1eedc/bass\x1ejorgebucaran/nvm\x2efish
-SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
-SETUVAR fish_color_command:blue
+SETUVAR fish_color_command:normal
 SETUVAR fish_color_comment:red
 SETUVAR fish_color_cwd:green
 SETUVAR fish_color_cwd_root:red
@@ -31,7 +22,7 @@ SETUVAR fish_color_operator:brcyan
 SETUVAR fish_color_param:cyan
 SETUVAR fish_color_quote:yellow
 SETUVAR fish_color_redirection:cyan\x1e\x2d\x2dbold
-SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
@@ -42,5 +33,5 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/Users/0xaquawolf/go/bin\x1e/Users/0xaquawolf/scripts\x1e/Users/0xaquawolf/\x2ecodeium/windsurf/bin\x1e/Users/0xaquawolf/\x2ebun/bin\x1e/Users/0xaquawolf/\x2econfig/composer/vendor/bin\x1e/Users/0xaquawolf/Library/Application\x20Support/Herd/bin\x1e/Users/0xaquawolf/Library/Android/sdk/platform\x2dtools\x1e/Users/0xaquawolf/Library/Android/sdk/emulator\x1e/Users/0xaquawolf/\x2edeno/bin\x1e/Users/aquawolf/Library/Application\x20Support/Herd/bin\x1e/opt/homebrew/opt/llvm/bin\x1e/opt/homebrew/opt/postgresql\x4016/bin\x1e/Users/aquawolf/\x2edeno/bin\x1e/Users/aquawolf/\x2ebun/bin\x1e/bin
+SETUVAR fish_user_paths:/Users/0xaquawolf/\x2ecodeium/windsurf/bin\x1e/Users/0xaquawolf/\x2econfig/composer/vendor/bin\x1e/Users/0xaquawolf/Library/Android/sdk/platform\x2dtools\x1e/Users/0xaquawolf/Library/Android/sdk/emulator\x1e/Users/0xaquawolf/Library/Application\x20Support/Herd/bin\x1e/Users/0xaquawolf/\x2edeno/bin\x1e/Users/0xaquawolf/\x2ebun/bin\x1e/Users/0xaquawolf/go/bin\x1e/Users/0xaquawolf/scripts\x1e/Users/0xaquawolf/\x2elocal/bin\x1e/bin
 SETUVAR nvm_default_version:22\x2e11
