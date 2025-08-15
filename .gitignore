@@ -32,3 +32,5 @@ target/
 vendor/
 
 obs/*.mp4
+
+espanso/.config/espanso/match/private/*

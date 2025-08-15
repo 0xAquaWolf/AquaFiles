@@ -8,6 +8,10 @@
 # Matches are substitution rules: when you type the "trigger" string
 # qqquantumself@gmail.com
 # it gets replaced by the "replace" string.
+#
+imports:
+  - "./private/sunnyside.yml"
+
 matches:
   - trigger: ":agm"
     replace: "aquawolf369@gmail.com"
