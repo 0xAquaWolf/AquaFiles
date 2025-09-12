@@ -136,6 +136,7 @@ alias mkdir "mkdir -p"
 alias sf "fzf | xargs nvim"
 alias hf "history | fzf"
 alias pp "string split ':' $PATH | fzf"
+alias btop "bpytop"
 
 # System management
 alias skv "skhd --stop-service && skhd -V"

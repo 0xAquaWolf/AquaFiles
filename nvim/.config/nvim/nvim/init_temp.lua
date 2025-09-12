@@ -1,1 +1,0 @@
-../../AquaFiles/nvim/.config/nvim/init_temp.lua

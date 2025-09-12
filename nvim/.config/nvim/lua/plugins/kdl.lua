@@ -1,3 +1,3 @@
 return {
-	{ "imsnif/kdl.vim" },
+  { "imsnif/kdl.vim" },
 }
