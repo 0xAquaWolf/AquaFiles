@@ -23,24 +23,94 @@ matches:
   - trigger: ":dotfiles"
     replace: "https://github.com/0xAquaWolf/AquaFiles"
 
+  - trigger: ":akit"
+    replace: "https://github.com/0xAquaWolf/AquaKit"
+
   - trigger: ":agh"
     replace: "https://github.com/0xAquaWolf/"
 
   # youtube link
-  - trigger: ":yt"
+  - trigger: ":ayt"
     replace: "https://www.youtube.com/@0xAquaWolf"
 
   # twitter
-  - trigger: ":x"
+  - trigger: ":ax"
     replace: "https://www.x.com/@0xAquaWolf"
 
   # discord
   - trigger: ":discord"
-    replace: "https://discord.gg/wzPBjEcn87"
+    replace: "https://discord.gg/Y5gvYaw2k5"
+
+  # convex
+  - trigger: ":convex"
+    replace: "https://convex.dev/referral/0XAQUA9256"
 
   # fire
   - trigger: ":fire"
     replace: "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
+
+  # --- Main: :dt (dash title via fish) -----------------------------------------
+  - trigger: ":dt"
+    replace: "{{slug}}"
+    vars:
+      - name: clip
+        type: clipboard
+      - name: slug
+        type: shell
+        params:
+          # Use absolute path to fish. On Apple Silicon it's usually /opt/homebrew/bin/fish.
+          # On Intel it's usually /usr/local/bin/fish.
+          cmd: /opt/homebrew/bin/fish
+          env:
+            CLIP: "{{clip}}"
+          args:
+            - -c
+            - 'source ~/.config/fish/functions/slugtitle.fish; slugtitle -- "$CLIP"'
+
+  # --- Debug: :dtcheck (shows length + slug) ---------------------------------
+  - trigger: ":dtcheck"
+    replace: "clip={{len}} chars | slug={{slug}}"
+    vars:
+      - name: clip
+        type: clipboard
+      - name: len
+        type: shell
+        params:
+          cmd: bash
+          env:
+            CLIP: "{{clip}}"
+          args:
+            - -lc
+            - |
+              printf "%s" "$CLIP" | wc -c | tr -d " "
+      - name: slug
+        type: shell
+        params:
+          cmd: bash
+          env:
+            CLIP: "{{clip}}"
+          args:
+            - -lc
+            - $HOME/.config/espanso/scripts/slugify_clipboard.sh
+
+  # --- Inline fallback (no external script): :dt_inline ----------------------
+  - trigger: ":dt_inline"
+    replace: "{{slug_inline}}"
+    vars:
+      - name: clip
+        type: clipboard
+      - name: slug_inline
+        type: shell
+        params:
+          cmd: bash
+          env:
+            CLIP: "{{clip}}"
+          args:
+            - -lc
+            - |
+              printf "%s" "$CLIP" \
+                | tr '[:upper:]' '[:lower:]' \
+                | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g'
 
   # send i'm live alert on discord
   - trigger: ":live"

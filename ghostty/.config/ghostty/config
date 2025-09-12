@@ -1,73 +1,54 @@
-# Empty values reset the configuration to the default value
+# =====================
+# FONT & THEME
+# =====================
 font-family = "OperatorMonoSSmLig Nerd Font"
 theme = "catppuccin-macchiato"
 font-style = Regular
-font-size = 16
+font-size = 24
 font-thicken = true
 font-feature = "liga"
 font-feature = "calt"
-
-
 adjust-underline-position = 40%
 adjust-underline-thickness = -60%
 
+# =====================
+# CURSOR
+# =====================
 cursor-style = block
 cursor-style-blink = false
 
+# =====================
+# SHELL
+# =====================
 shell-integration = fish
 shell-integration-features = no-cursor
 shell-integration-features = sudo
 
+# =====================
+# WINDOW
+# =====================
 window-padding-x = 14
-
+window-padding-balance = true
 confirm-close-surface = false
 clipboard-paste-protection = false
 unfocused-split-opacity = 1.0
-
 background-opacity = 0.9
-background-blur= "true"
-
+background-blur = "true"
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 2
 
-window-padding-balance = true 
+# =====================
+# KEYBINDINGS
+# =====================
 
-# keybindings
+# General
 keybind = cmd+s>r=reload_config
 keybind = cmd+s>x=close_surface
-
 keybind = cmd+s>n=new_window
 
-# tabs 
-keybind = cmd+s>c=new_tab
-keybind = cmd+s>shift+l=next_tab
-keybind = cmd+s>shift+h=previous_tab
-keybind = cmd+s>comma=move_tab:-1
-keybind = cmd+s>period=move_tab:1
-
-# quick tab switch
-keybind = cmd+s>1=goto_tab:1
-keybind = cmd+s>2=goto_tab:2
-keybind = cmd+s>3=goto_tab:3
-keybind = cmd+s>4=goto_tab:4
-keybind = cmd+s>5=goto_tab:5
-keybind = cmd+s>6=goto_tab:6
-keybind = cmd+s>7=goto_tab:7
-keybind = cmd+s>8=goto_tab:8
-keybind = cmd+s>9=goto_tab:9
-
-# split
-keybind = cmd+s>\=new_split:right
-keybind = cmd+s>-=new_split:down
-
-keybind = cmd+s>j=goto_split:bottom
-keybind = cmd+s>k=goto_split:top
-keybind = cmd+s>h=goto_split:left
-keybind = cmd+s>l=goto_split:right
-
-keybind = cmd+s>z=toggle_split_zoom
-
-keybind = cmd+s>e=equalize_splits
-
-# other
+# =====================
+# OTHER
+# =====================
 copy-on-select = clipboard
+keybind = super+t=ignore
+keybind = super+shift+t=ignore

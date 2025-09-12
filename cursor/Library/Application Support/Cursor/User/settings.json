@@ -9,26 +9,26 @@
   "python.condaPath": "/opt/homebrew/Caskroom/miniforge/base/envs/hyperliquid/bin/python",
   "python.terminal.activateEnvironment": true,
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Catppuccin Frappé",
   "editor.fontFamily": "OperatorMonoSSmLig Nerd Font",
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "name": "envKeys",
-        "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
-        "settings": {
-          "foreground": "#19354900"
-        }
-      },
-      {
-        "name": "envKeys",
-        "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
-        "settings": {
-          "foreground": "#19354900"
-        }
-      }
-    ]
-  },
+  // "editor.tokenColorCustomizations": {
+  //   "textMateRules": [
+  //     {
+  //       "name": "envKeys",
+  //       "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
+  //       "settings": {
+  //         "foreground": "#19354900"
+  //       }
+  //     },
+  //     {
+  //       "name": "envKeys",
+  //       "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
+  //       "settings": {
+  //         "foreground": "#19354900"
+  //       }
+  //     }
+  //   ]
+  // },
   "editor.minimap.enabled": false,
   "notebook.formatOnSave.enabled": true,
   "notebook.codeActionsOnSave": {
@@ -56,7 +56,7 @@
   "chat.editor.fontSize": 14,
   "terminal.external.osxExec": "WezTerm.app",
   "terminal.integrated.fontSize": 14,
-  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.iconTheme": "catppuccin-frappe",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true
@@ -103,6 +103,17 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "f", "w"],
+      "commands": [
+        {
+          "command": "periscope.search",
+          "when": "editorTextFocus"
+        }
+      ]
+    }
+  ],
   "git.confirmSync": false,
   "intelephense.files.maxSize": 3000000,
   "intelephense.stubs": [
@@ -176,4 +187,3 @@
     "wordpress"
   ]
 }
->>>>>>> be6b173 (Initial commit)

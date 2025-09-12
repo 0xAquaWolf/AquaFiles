@@ -14,26 +14,27 @@
 
 # === App launch commands ===
 cmd - return : open -n -a "Ghostty.app"
-# cmd + shift - e : open -n -a "PathOfExileClient"
-# cmd + shift - return : Killall "Path Finder" | open -n -a "Path Finder"
 cmd + shift - return : open -n ~
 
-# TODO: figure out window resizing
+# === Manage yabai ===
+ctrl + alt + cmd - y : yabai --restart-service; # y for yabai so Restart yabai
+ctrl + alt + cmd - o : yabai --stop-service; # o for stOp
+ctrl + alt + cmd - s : yabai --start-service; # o for stOp
 
 # === window focus ===
-cmd - h : yabai -m window --focus west
-cmd - k : yabai -m window --focus north
-cmd - l : yabai -m window --focus east
-cmd - j : yabai -m window --focus south
+# cmd - h : yabai -m window --focus west
+# cmd - k : yabai -m window --focus north
+# cmd - l : yabai -m window --focus east
+# cmd - j : yabai -m window --focus south
 
 # === swap windows ===
-ctrl + cmd - j : yabai -m window --swap south
-ctrl + cmd - k : yabai -m window --swap north
-ctrl + cmd - h : yabai -m window --swap west
-ctrl + cmd - l : yabai -m window --swap east
+# ctrl + cmd - j : yabai -m window --swap south
+# ctrl + cmd - k : yabai -m window --swap north
+# ctrl + cmd - h : yabai -m window --swap west
+# ctrl + cmd - l : yabai -m window --swap east
 
 # Enable / Disable gaps in current workspace: ctrl + lalt - g
-ctrl + lalt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
+# ctrl + lalt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # === warp windows (maintain relative tiling) ===
 # ctrl + alt - j : yabai -m window --warp south
@@ -43,32 +44,32 @@ ctrl + lalt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # === send window to desktop and follow focus ===
 
-shift + alt - x : yabai -m window --space recent && yabai -m space --focus recent
-shift + alt - z : yabai -m window --space prev && yabai -m space --focus prev
-shift + alt - c : yabai -m window --space next && yabai -m space --focus next
-shift + alt - 1 : yabai -m window --space  1 && yabai -m space --focus 1
-shift + alt - 2 : yabai -m window --space  2 && yabai -m space --focus 2
-shift + alt - 3 : yabai -m window --space  3 && yabai -m space --focus 3
-shift + alt - 4 : yabai -m window --space  4 && yabai -m space --focus 4
-shift + alt - 5 : yabai -m window --space  5 && yabai -m space --focus 5
-shift + alt - 6 : yabai -m window --space  6 && yabai -m space --focus 6
-shift + alt - 7 : yabai -m window --space  7 && yabai -m space --focus 7
-shift + alt - 8 : yabai -m window --space  8 && yabai -m space --focus 8
-shift + alt - 9 : yabai -m window --space  9 && yabai -m space --focus 9
-shift + alt - 0 : yabai -m window --space 10 && yabai -m space --focus 10
+# shift + alt - x : yabai -m window --space recent && yabai -m space --focus recent
+# shift + alt - z : yabai -m window --space prev && yabai -m space --focus prev
+# shift + alt - c : yabai -m window --space next && yabai -m space --focus next
+# shift + alt - 1 : yabai -m window --space  1 && yabai -m space --focus 1
+# shift + alt - 2 : yabai -m window --space  2 && yabai -m space --focus 2
+# shift + alt - 3 : yabai -m window --space  3 && yabai -m space --focus 3
+# shift + alt - 4 : yabai -m window --space  4 && yabai -m space --focus 4
+# shift + alt - 5 : yabai -m window --space  5 && yabai -m space --focus 5
+# shift + alt - 6 : yabai -m window --space  6 && yabai -m space --focus 6
+# shift + alt - 7 : yabai -m window --space  7 && yabai -m space --focus 7
+# shift + alt - 8 : yabai -m window --space  8 && yabai -m space --focus 8
+# shift + alt - 9 : yabai -m window --space  9 && yabai -m space --focus 9
+# shift + alt - 0 : yabai -m window --space 10 && yabai -m space --focus 10
 
 # move floating window
-shift + ctrl - left : yabai -m window --move rel:-30:0
-shift + ctrl - down : yabai -m window --move rel:0:30
-shift + ctrl - up : yabai -m window --move rel:0:-30
-shift + ctrl - right: yabai -m window --move rel:30:0
+# shift + ctrl - left : yabai -m window --move rel:-30:0
+# shift + ctrl - down : yabai -m window --move rel:0:30
+# shift + ctrl - up : yabai -m window --move rel:0:-30
+# shift + ctrl - right: yabai -m window --move rel:30:0
 
 ## Resize (ctrl + lalt - ...)
 # Resize windows: ctrl + lalt - {h, j, k, l}
-ctrl + lalt - h    : yabai -m window --resize right:-100:0 || yabai -m window --resize left:-100:0
-ctrl + lalt - j    : yabai -m window --resize bottom:0:100 || yabai -m window --resize top:0:100
-ctrl + lalt - k    : yabai -m window --resize bottom:0:-100 || yabai -m window --resize top:0:-100
-ctrl + lalt - l : yabai -m window --resize right:100:0 || yabai -m window --resize left:100:0
+# ctrl + lalt - h    : yabai -m window --resize right:-100:0 || yabai -m window --resize left:-100:0
+# ctrl + lalt - j    : yabai -m window --resize bottom:0:100 || yabai -m window --resize top:0:100
+# ctrl + lalt - k    : yabai -m window --resize bottom:0:-100 || yabai -m window --resize top:0:-100
+# ctrl + lalt - l : yabai -m window --resize right:100:0 || yabai -m window --resize left:100:0
 
 
 # set insertion point in focused container (this is like i3 where you specify where the next window should tile)
@@ -81,54 +82,50 @@ ctrl + lalt - l : yabai -m window --resize right:100:0 || yabai -m window --resi
 # === Layout ===
 
 # toggle sticky and pip top right
-alt - p : yabai -m window --toggle float; yabai -m window --grid 5:5:4:0:1:1
+# alt - p : yabai -m window --toggle float; yabai -m window --grid 5:5:4:0:1:1
 
 # toggle sticky on currently active window
-alt - s : yabai -m window --toggle sticky
+# alt - s : yabai -m window --toggle sticky
 
 # float / unfloat window and restore position
-alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+# alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # toggle topmost (keep above other windows)
-alt - o : yabai -m window --toggle topmost
+# alt - o : yabai -m window --toggle topmost
 
 # toggle picture-in-picture
 # alt - p : yabai -m window --toggle border --toggle pip
 
 # modifying current layout
-shift + alt - r : yabai -m space --rotate 270
-# filp along y-axis
-shift + alt - y : yabai -m space --mirror y-axis
-# flip along x-axis
-shift + alt - x : yabai -m space --mirror y-axis
-# balance out tree of windows (reset to default)
-shift + cmd - b : yabai -m space --balance
+# shift + alt - r : yabai -m space --rotate 270
+# # filp along y-axis
+# shift + alt - y : yabai -m space --mirror y-axis
+# # flip along x-axis
+# shift + alt - x : yabai -m space --mirror y-axis
+# # balance out tree of windows (reset to default)
+# shift + cmd - b : yabai -m space --balance
 
 # Make window native fullscreen
-shift + cmd - m : yabai -m window --toggle zoom-fullscreen
-shift + alt - f : yabai -m window --toggle native-fullscreen
+# shift + cmd - m : yabai -m window --toggle zoom-fullscreen
+# shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # toggle window float
-shift + alt - f: yabai -m window --toggle float --grid 4:4:1:1:2:2
+# shift + alt - f: yabai -m window --toggle float --grid 4:4:1:1:2:2
+#
+# # make floating window fill screen
+# shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
+#
+# # make floating window fill left-half of screen
+# shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
+#
+# # make floating window fill right-half of screen
+# shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
+#
+# # change layout of desktop
+# ctrl + alt - a : yabai -m space --layout bsp
+# ctrl + alt - d : yabai -m space --layout float
+# ctrl + alt - s : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
 
-# make floating window fill screen
-shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
-
-# make floating window fill left-half of screen
-shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
-
-# make floating window fill right-half of screen
-shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
-
-# change layout of desktop
-ctrl + alt - a : yabai -m space --layout bsp
-ctrl + alt - d : yabai -m space --layout float
-ctrl + alt - s : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
-
-# === Manage yabai ===
-ctrl + alt + cmd - y : yabai --restart-service; # y for yabai so Restart yabai
-ctrl + alt + cmd - o : yabai --stop-service; # o for stOp
-ctrl + alt + cmd - s : yabai --start-service; # o for stOp
 
 # === System State Management ===
 # lock screen

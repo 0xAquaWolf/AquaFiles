@@ -4,8 +4,8 @@ return {
 		"shortcuts/no-neck-pain.nvim",
 		cmd = "NoNeckPain",
 		keys = {
-			{ "<leader>nn", "<cmd>NoNeckPain<cr>", desc = "[N]o [N]eckpain" },
-			{ "<leader>n", "", desc = "+no neckpain" },
+			{ "<leader>pn", "<cmd>NoNeckPain<cr>", desc = "[N]o [N]eckpain" },
+			{ "<leader>p", "", desc = "+no neckpain" },
 		},
 		opts = {},
 		-- config = function()

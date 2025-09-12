@@ -31,6 +31,11 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
+    "key": "space f f",
+    "command": "periscope.search",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
     "key": "cmd-t",
     "command": "workbench.action.terminal.toggleTerminal"
   },
@@ -101,11 +106,6 @@
     "command": "editor.action.moveLinesUpAction",
     "when": "vim.mode == 'VisualLine' && editorTextFocus"
   },
-  // {
-  //   "key": "shift-k",
-  //   "command": "editor.action.showHover",
-  //   "when": "vim.mode == 'Normal' && editorTextFocus"
-  // },
   {
     "key": "space c a",
     "command": "editor.action.codeAction",
@@ -262,16 +262,11 @@
     "command": "composerMode.agent"
   },
   {
-    "key": "cmd+e",
-    "command": "composerMode.background"
-},
-{
     "key": "shift+enter",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
-        "text": "\\\r\n"
+      "text": "\\\r\n"
     },
     "when": "terminalFocus"
-}
+  }
 ]
->>>>>>> be6b173 (Initial commit)

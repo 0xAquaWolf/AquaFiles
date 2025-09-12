@@ -4,6 +4,8 @@ SETUVAR --export --path BASE_PATH:/Users/aquawolf/Library/Mobile\x20Documents/iC
 SETUVAR --export CONDA_SUBDIR:osx\x2darm64
 SETUVAR --export EDITOR:nvim
 SETUVAR --export MANPAGER:sh\x20\x2dc\x20\x27col\x20\x2dbx\x20\x7c\x20bat\x20\x2dl\x20man\x20\x2dp\x27
+SETUVAR --export SSH_AGENT_PID:54749
+SETUVAR --export SSH_AUTH_SOCK:/tmp/ssh\x2dsodHNYlQ8xiH/agent\x2e54748
 SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
@@ -33,5 +35,5 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/Users/0xaquawolf/\x2ecodeium/windsurf/bin\x1e/Users/0xaquawolf/\x2econfig/composer/vendor/bin\x1e/Users/0xaquawolf/Library/Android/sdk/platform\x2dtools\x1e/Users/0xaquawolf/Library/Android/sdk/emulator\x1e/Users/0xaquawolf/Library/Application\x20Support/Herd/bin\x1e/Users/0xaquawolf/\x2edeno/bin\x1e/Users/0xaquawolf/\x2ebun/bin\x1e/Users/0xaquawolf/go/bin\x1e/Users/0xaquawolf/scripts\x1e/Users/0xaquawolf/\x2elocal/bin\x1e/bin
+SETUVAR fish_user_paths:/Users/0xaquawolf/\x2elmstudio/bin\x1e/Users/0xaquawolf/\x2ecargo/bin\x1e/Users/0xaquawolf/\x2ecodeium/windsurf/bin\x1e/Users/0xaquawolf/\x2econfig/composer/vendor/bin\x1e/Users/0xaquawolf/Library/Android/sdk/platform\x2dtools\x1e/Users/0xaquawolf/Library/Android/sdk/emulator\x1e/Users/0xaquawolf/Library/Application\x20Support/Herd/bin\x1e/Users/0xaquawolf/\x2edeno/bin\x1e/Users/0xaquawolf/\x2ebun/bin\x1e/Users/0xaquawolf/go/bin\x1e/Users/0xaquawolf/scripts\x1e/Users/0xaquawolf/\x2elocal/bin\x1e/bin
 SETUVAR nvm_default_version:22\x2e11

@@ -5,22 +5,6 @@ echo "Yabai Scripting additions loaded..."
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-# desktop space label
-yabai -m space 1 --label web
-yabai -m space 2 --label code
-yabai -m space 3 --label brain
-yabai -m space 4 --label misc
-yabai -m space 5 --label na
-yabai -m space 6 --label na
-yabai -m space 7 --label discord
-yabai -m space 8 --label finder
-yabai -m space 9 --label Audio
-yabai -m space 10 --label OBS
-
-# specific space settings
-yabai -m config --space mail  layout stack
-yabai -m config --space games layout float
-
 # global settings
 yabai -m config                              \
     external_bar                off:41:0     \
@@ -45,10 +29,10 @@ yabai -m config                              \
     split_ratio                 0.50         \
     split_type                  auto         \
     auto_balance                off          \
-    top_padding                 0           \
-    left_padding                0           \
-    right_padding               0           \
-    bottom_padding              0           \
+    top_padding                 12           \
+    left_padding                12           \
+    right_padding               12           \
+    bottom_padding              12           \
     window_gap                  10           \
     layout                      bsp          \
     mouse_modifier              fn           \
@@ -57,8 +41,8 @@ yabai -m config                              \
     mouse_drop_action           swap
 
 # yabai blacklist rules
-yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
 yabai -m rule --add app="^Raycast Settings$" manage=off
+yabai -m rule --add app="^TimeScribe$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Gestimer$" manage=off
@@ -111,38 +95,38 @@ yabai -m rule --add app="^UTM$" manage=off
 yabai -m rule --add app="^Insta360 Link Controller$" manage=off
 
 # Settings space labels
-yabai -m space 1 --label browser
-yabai -m space 2 --label code
-yabai -m space 3 --label notes
-yabai -m space 4 --label godot
-yabai -m space 5 --label design
-yabai -m space 6 --label terminal
-yabai -m space 7 --label research
-yabai -m space 8 --label brave
-yabai -m space 9 --label telegram
-yabai -m space 10 --label obs
+# yabai -m space 1 --label browser
+# yabai -m space 2 --label code
+# yabai -m space 3 --label notes
+# yabai -m space 4 --label godot
+# yabai -m space 5 --label design
+# yabai -m space 6 --label terminal
+# yabai -m space 7 --label research
+# yabai -m space 8 --label brave
+# yabai -m space 9 --label telegram
+# yabai -m space 10 --label obs
 
 # window rules
-yabai -m rule --add app="^Arc$" space=browser
-yabai -m rule --add app="^Code$" space=code
-yabai -m rule --add app="^Obsidian$" space=notes
-yabai -m rule --add app="^Godot$" space=godot
-yabai -m rule --add app="^Figma$" space=design
-yabai -m rule --add app="^WezTerm$" space=terminal
-yabai -m rule --add app="^Brave Browser$" space=brave
-yabai -m rule --add app="^Telegram$" space=telegram
-yabai -m rule --add app="^Obs$" space=obs
+# yabai -m rule --add app="^Arc$" space=browser
+# yabai -m rule --add app="^Code$" space=code
+# yabai -m rule --add app="^Obsidian$" space=notes
+# yabai -m rule --add app="^Godot$" space=godot
+# yabai -m rule --add app="^Figma$" space=design
+# yabai -m rule --add app="^WezTerm$" space=terminal
+# yabai -m rule --add app="^Brave Browser$" space=brave
+# yabai -m rule --add app="^Telegram$" space=telegram
+# yabai -m rule --add app="^Obs$" space=obs
 
 # window signal events
-yabai -m signal --add event=window_created app="^Arc$" action="yabai -m space --focus browser"
-yabai -m signal --add event=window_created app="^Cursor$" action="yabai -m space --focus code"
-yabai -m signal --add event=window_created app="^Obsidian$" action="yabai -m space --focus notes"
-yabai -m signal --add event=window_created app="^Discord$" action="yabai -m space --focus social"
-yabai -m signal --add event=window_created app="^Godot$" action="yabai -m space --focus godot"
-yabai -m signal --add event=window_created app="^Figma$" action="yabai -m space --focus design"
-yabai -m signal --add event=window_created app="^WezTerm$" action="yabai -m space --focus terminal"
-yabai -m signal --add event=window_created app="^Telegram$" action="yabai -m space --focus telegram"
-yabai -m signal --add event=window_created app="^Obs$" action="yabai -m space --focus obs"
+# yabai -m signal --add event=window_created app="^Arc$" action="yabai -m space --focus browser"
+# yabai -m signal --add event=window_created app="^Cursor$" action="yabai -m space --focus code"
+# yabai -m signal --add event=window_created app="^Obsidian$" action="yabai -m space --focus notes"
+# yabai -m signal --add event=window_created app="^Discord$" action="yabai -m space --focus social"
+# yabai -m signal --add event=window_created app="^Godot$" action="yabai -m space --focus godot"
+# yabai -m signal --add event=window_created app="^Figma$" action="yabai -m space --focus design"
+# yabai -m signal --add event=window_created app="^WezTerm$" action="yabai -m space --focus terminal"
+# yabai -m signal --add event=window_created app="^Telegram$" action="yabai -m space --focus telegram"
+# yabai -m signal --add event=window_created app="^Obs$" action="yabai -m space --focus obs"
 
 # yabai -m rule --add app="^Cursor$" space=code
 # yabai -m rule --add app="^Cursor$" space=code
