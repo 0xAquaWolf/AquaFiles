@@ -93,6 +93,7 @@ yabai -m rule --add app="^OsxFL$" manage=off
 yabai -m rule --add app="^qemu-system-aarch64$" manage=off
 yabai -m rule --add app="^UTM$" manage=off
 yabai -m rule --add app="^Insta360 Link Controller$" manage=off
+yabai -m rule --add app="^Arc$" title="^Developer Tools$" manage=off
 
 # Settings space labels
 # yabai -m space 1 --label browser

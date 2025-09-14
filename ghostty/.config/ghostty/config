@@ -4,7 +4,7 @@
 font-family = "OperatorMonoSSmLig Nerd Font"
 theme = "catppuccin-macchiato"
 font-style = Regular
-font-size = 22
+font-size = 18
 font-thicken = true
 font-feature = "liga"
 font-feature = "calt"
