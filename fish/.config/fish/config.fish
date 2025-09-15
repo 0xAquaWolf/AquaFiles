@@ -84,7 +84,7 @@ set -gx BAT_THEME "Catppuccin Mocha"
 # Application configs
 set -gx ESPANSO_CONFIG ~/.config/espanso/
 set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
-set -Ux BASE_PATH "/Users/aquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/vaults/SecondBrain"
+set -Ux OBSIDIAN_BASE_PATH "/Users/aquawolf/Library/Mobile Documents/iCloud~md~obsidian/Documents/vaults/SecondBrain"
 
 # Development environments
 set -gx BUN_INSTALL "$HOME/.bun"
@@ -158,7 +158,7 @@ alias lt "eza -lAh --icons=always --git --tree --level=4 --long --ignore-glob='n
 alias frc "vim ~/.config/fish/config.fish"
 alias sfs "source ~/.config/fish/config.fish"
 alias nrc "vim ~/.config/nvim/init.lua"
-alias orc "vim $BASE_PATH/.obsidian.vimrc"
+alias orc "vim $OBSIDIAN_BASE_PATH/.obsidian.vimrc"
 alias erc "vim ~/.config/espanso/"
 alias arc "vim ~/.alacritty.yml"
 alias wrc "vim ~/.config/wezterm/wezterm.lua"
@@ -173,12 +173,8 @@ alias zshrc "vim ~/.config/.zshrc"
 # =============================================================================
 # ALIASES - APPLICATIONS
 # =============================================================================
-alias gl gorilla
-alias nf neofetch
 alias ff fastfetch
 alias lg lazygit
-alias ct cointop
-alias surf windsurf
 
 # =============================================================================
 # ALIASES - ZELLIJ
@@ -218,7 +214,6 @@ alias binfo "brew info"
 alias plf "pip list | fzf"
 alias clf "conda list | fzf"
 alias pfz "pip freeze > requirements.txt"
-alias zelalgo "conda activate algo-trading && zellij --layout ~/Projects/algo-trading/moondev-bootcamp/code/day-2/data-streams/crypto-data-streams.kdl"
 
 # =============================================================================
 # ALIASES - MEDIA/DOWNLOADS
@@ -315,15 +310,6 @@ function secure_delete --description "Securely delete file using gshred"
         echo "Error: Failed to overwrite the file: $file_path"
         return 1
     end
-end
-
-function yy --description "Yazi with directory change support"
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        cd -- "$cwd"
-    end
-    rm -f -- "$tmp"
 end
 
 # =============================================================================

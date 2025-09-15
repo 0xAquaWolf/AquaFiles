@@ -224,7 +224,7 @@ pane_frames false
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 
-theme "catppuccin-mocha"
+theme "catppuccin-frappe"
 
 // Choose the theme that is specified in the themes section.
 // Default: default

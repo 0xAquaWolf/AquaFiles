@@ -4,9 +4,11 @@ SETUVAR --export --path BASE_PATH:/Users/aquawolf/Library/Mobile\x20Documents/iC
 SETUVAR --export CONDA_SUBDIR:osx\x2darm64
 SETUVAR --export EDITOR:nvim
 SETUVAR --export MANPAGER:sh\x20\x2dc\x20\x27col\x20\x2dbx\x20\x7c\x20bat\x20\x2dl\x20man\x20\x2dp\x27
+SETUVAR --export --path OBSIDIAN_BASE_PATH:/Users/aquawolf/Library/Mobile\x20Documents/iCloud\x7emd\x7eobsidian/Documents/vaults/SecondBrain
 SETUVAR --export SSH_AGENT_PID:54749
 SETUVAR --export SSH_AUTH_SOCK:/tmp/ssh\x2dsodHNYlQ8xiH/agent\x2e54748
 SETUVAR __fish_initialized:3800
+SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:normal

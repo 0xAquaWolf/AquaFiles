@@ -18,12 +18,10 @@ opt.scrolloff = 8
 
 opt.cursorline = false
 
+vim.g.lazyvim_php_lsp = "intelephense"
+
 -- Check if clipboard support is available
 if vim.fn.has("clipboard") == 1 then
   -- Set the '+' register for clipboard operations
   opt.clipboard:append("unnamedplus")
 end
-
-vim.schedule(function()
-  vim.cmd("NoNeckPain")
-end)
