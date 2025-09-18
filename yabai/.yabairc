@@ -95,6 +95,10 @@ yabai -m rule --add app="^UTM$" manage=off
 yabai -m rule --add app="^Insta360 Link Controller$" manage=off
 yabai -m rule --add app="^Arc$" title="^Developer Tools$" manage=off
 
+
+yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
+
 # Settings space labels
 # yabai -m space 1 --label browser
 # yabai -m space 2 --label code

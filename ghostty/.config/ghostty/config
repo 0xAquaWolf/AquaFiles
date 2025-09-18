@@ -2,7 +2,7 @@
 # FONT & THEME
 # =====================
 font-family = "OperatorMonoSSmLig Nerd Font"
-theme = "catppuccin-macchiato"
+theme = "Catppuccin Macchiato"
 font-style = Regular
 font-size = 18
 font-thicken = true
@@ -52,3 +52,5 @@ keybind = cmd+s>n=new_window
 copy-on-select = clipboard
 keybind = super+t=ignore
 keybind = super+shift+t=ignore
+
+quit-after-last-window-closed = true
