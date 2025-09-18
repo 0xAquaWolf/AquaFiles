@@ -17,6 +17,7 @@ opt.relativenumber = true
 opt.scrolloff = 8
 
 opt.cursorline = false
+opt.swapfile = false
 
 vim.g.lazyvim_php_lsp = "intelephense"
 

@@ -1,0 +1,65 @@
+{
+  "strict types": {
+    "prefix": "strict",
+    "description": "Add strict types declaration",
+    "body": ["declare(strict_types=1);"]
+  },
+  "inv": {
+    "prefix": "inv",
+    "description": "Create PHP __invoke method",
+    "body": [
+      "public function __invoke(${1}): ${2:void}",
+      "{",
+      "    ${3}",
+      "}",
+      ""
+    ]
+  },
+  "public method": {
+    "prefix": "pubf",
+    "description": "Create a public method",
+    "body": ["public function ${1}(${2}): ${3:void}", "{", "    ${0}", "}", ""]
+  },
+  "protected method": {
+    "prefix": "prof",
+    "description": "Create a protected method",
+    "body": [
+      "protected function ${1}(${2}): ${3:void}",
+      "{",
+      "    ${0}",
+      "}",
+      ""
+    ]
+  },
+  "private method": {
+    "prefix": "prif",
+    "description": "Create a private method",
+    "body": ["private function ${1}(${2}): ${3:void}", "{", "    ${0}", "}", ""]
+  },
+  "public static method": {
+    "prefix": "pubsf",
+    "description": "Create a public static method",
+    "body": [
+      "public static function ${1}(${2}): ${3:void}",
+      "{",
+      "    ${0}",
+      "}",
+      ""
+    ]
+  },
+  "pest test (it) method": {
+    "prefix": "it",
+    "description": "Create a pest test",
+    "body": [
+      "it('${1}', function () {",
+      "    // Arrange",
+      "    ${0}",
+      "",
+      "    // Act",
+      "",
+      "    // Assert",
+      "",
+      "});"
+    ]
+  }
+}
