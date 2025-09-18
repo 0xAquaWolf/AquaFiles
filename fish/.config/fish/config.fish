@@ -169,6 +169,11 @@ alias yrc "vim ~/.yabairc"
 alias krc "vim ~/AquaFiles/gen-karabiner-config/rules.ts"
 alias grc "vim ~/AquaFiles/ghostty/.config/ghostty/config"
 alias zshrc "vim ~/.config/.zshrc"
+# =============================================================================
+# ALIASES - AI
+# =============================================================================
+
+alias ccy "claude --dangerously-skip-permissions"
 
 # =============================================================================
 # ALIASES - APPLICATIONS
