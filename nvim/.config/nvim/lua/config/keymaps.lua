@@ -3,6 +3,7 @@
 -- Add any additional keymaps here
 
 local keymap = vim.keymap
+local opts = { noremap = true, silent = true }
 -- remap esc to jj for easier access
 keymap.set("i", "jj", "<Esc>", { noremap = false })
 -- enable and disable completions engine
@@ -24,6 +25,23 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 -- and these are for searching
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
+
+-- LSP keymaps
+keymap.set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>", opts)
+keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", opts)
+
+-- ESLint specific
+keymap.set("n", "<leader>ef", "<cmd>EslintFixAll<cr>", opts)
+keymap.set("n", "<leader>el", "<cmd>Eslint<cr>", opts)
+
+-- Project-specific linting
+keymap.set("n", "<leader>pl", function()
+  vim.cmd("term pnpm lint")
+end, opts)
+
+keymap.set("n", "<leader>pf", function()
+  vim.cmd("term pnpm lint:fix")
+end, opts)
 
 -- Obsidian keymaps
 -- keymap.set("n", "<leader>o", "", { desc = "+obsidian" })
