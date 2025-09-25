@@ -174,6 +174,7 @@ alias zshrc "vim ~/.config/.zshrc"
 # =============================================================================
 
 alias ccy "claude --dangerously-skip-permissions"
+alias claude "claude --dangerously-skip-permissions"
 
 # =============================================================================
 # ALIASES - APPLICATIONS
