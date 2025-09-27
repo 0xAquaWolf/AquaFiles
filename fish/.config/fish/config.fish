@@ -146,11 +146,14 @@ alias logk "tail -f ~/.local/share/karabiner/log/console_user_server.log"
 # =============================================================================
 # ALIASES - FILE LISTING (EZA)
 # =============================================================================
-alias l "eza --icons=always --git"
-alias ls "eza --icons=always --git --git-ignore --ignore-glob='node_modules'"
-alias lla "ls -la"
-alias ll "ls -l"
-alias lt "eza -lAh --icons=always --git --tree --level=4 --long --ignore-glob='node_modules|.git'"
+alias eza "eza --icons=always --git --ignore-glob='node_modules|.git'"
+alias l eza
+alias ls "eza --git-ignore"
+alias lsa "eza -a"
+alias ll "eza -l"
+alias lla "eza -la"
+alias lt "eza -lAh --tree --level=2 --long"
+alias ltt "eza -lAh --tree --level=4 --long"
 
 # =============================================================================
 # ALIASES - CONFIGURATION FILES
@@ -245,7 +248,7 @@ end
 
 function killport --description "Kill process running on specified port"
     if test (count $argv) -eq 0
-        echo "Usage: killport <port_number>"
+        echo "Usage: killport <port_number >"
         return 1
     end
 
@@ -297,7 +300,7 @@ end
 
 function secure_delete --description "Securely delete file using gshred"
     if test (count $argv) -ne 1
-        echo "Usage: secure_delete <path_to_file>"
+        echo "Usage: secure_delete <path_to_file >"
         return 1
     end
 
@@ -352,7 +355,7 @@ function heic2jpg --description "Convert HEIC images to JPEG format"
     end
 
     if test (count $argv) -eq 0
-        echo "Usage: heic2jpg <file.HEIC> [more files...]"
+        echo "Usage: heic2jpg <file.HEIC > [more files...]"
         return 1
     end
 
